@@ -2390,5 +2390,664 @@ export const recipes = [
     "Arrange pears over pastry, leaving a 2-inch border. Fold border over the filling, brush with egg and bake 35–40 minutes until golden."
   ],
   "tip": "Let cool for at least 15 minutes so the juices can set."
+},
+{
+  "id": "butterchicken",
+  "name": "Butter chicken",
+  "sub": "with tomato cream sauce and basmati rice",
+  "category": "Chicken",
+  "time": 45,
+  "servings": 4,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      600,
+      "g",
+      "boneless chicken thighs, cubed"
+    ],
+    [
+      120,
+      "g",
+      "plain yogurt"
+    ],
+    [
+      1,
+      "tbsp",
+      "grated ginger"
+    ],
+    [
+      3,
+      "",
+      "garlic cloves, minced"
+    ],
+    [
+      2,
+      "tsp",
+      "garam masala"
+    ],
+    [
+      1,
+      "tsp",
+      "ground cumin"
+    ],
+    [
+      1,
+      "tsp",
+      "paprika"
+    ],
+    [
+      400,
+      "g",
+      "crushed tomatoes"
+    ],
+    [
+      120,
+      "ml",
+      "heavy cream"
+    ],
+    [
+      30,
+      "g",
+      "butter"
+    ],
+    [
+      250,
+      "g",
+      "basmati rice"
+    ]
+  ],
+  "steps": [
+    "Toss chicken with yogurt, half the garlic and ginger, half the garam masala, cumin, paprika and a pinch of salt. Let stand 15 minutes in the refrigerator while you start the rice.",
+    "Melt half the butter in a skillet over medium-high heat. Shake excess marinade from the chicken and brown in batches. Transfer to a plate.",
+    "Melt remaining butter and stir in remaining garlic, ginger and garam masala for 30 seconds. Add tomatoes and simmer 10 minutes. Return chicken and simmer until it reaches 165°F (74°C).",
+    "Stir in cream and warm gently. Adjust salt and serve over the cooked rice."
+  ],
+  "tip": "Use a wide skillet so the chicken browns in batches."
+},
+{
+  "id": "tonkatsu",
+  "name": "Tonkatsu",
+  "sub": "with shredded cabbage and tangy sauce",
+  "category": "Pork",
+  "time": 30,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      2,
+      "",
+      "boneless pork loin chops, about 150 g each"
+    ],
+    [
+      35,
+      "g",
+      "all-purpose flour"
+    ],
+    [
+      1,
+      "",
+      "egg"
+    ],
+    [
+      70,
+      "g",
+      "panko"
+    ],
+    [
+      150,
+      "ml",
+      "neutral frying oil"
+    ],
+    [
+      150,
+      "g",
+      "green cabbage"
+    ],
+    [
+      2,
+      "tbsp",
+      "ketchup"
+    ],
+    [
+      1,
+      "tbsp",
+      "Worcestershire sauce"
+    ],
+    [
+      1,
+      "tsp",
+      "soy sauce"
+    ],
+    [
+      1,
+      "tsp",
+      "sugar"
+    ]
+  ],
+  "steps": [
+    "Thinly shred cabbage. Stir ketchup, Worcestershire, soy sauce and sugar together for the sauce.",
+    "Pound chops to about ½ inch thick. Season, then coat in flour, beaten egg and panko, pressing the crumbs on gently.",
+    "Heat a shallow layer of oil to 350°F (175°C) in a heavy skillet. Fry cutlets, turning once, until golden and the center reaches 145°F (63°C).",
+    "Drain on a rack and rest at least 3 minutes. Slice and serve with cabbage and sauce."
+  ],
+  "tip": "Let the oil return to temperature between batches."
+},
+{
+  "id": "stroganoff",
+  "name": "Beef stroganoff",
+  "sub": "with mushrooms, sour cream and egg noodles",
+  "category": "Beef",
+  "time": 35,
+  "servings": 4,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      500,
+      "g",
+      "sirloin steak, thinly sliced"
+    ],
+    [
+      300,
+      "g",
+      "mushrooms, sliced"
+    ],
+    [
+      1,
+      "",
+      "onion, thinly sliced"
+    ],
+    [
+      250,
+      "ml",
+      "beef stock"
+    ],
+    [
+      150,
+      "g",
+      "sour cream"
+    ],
+    [
+      1,
+      "tbsp",
+      "Dijon mustard"
+    ],
+    [
+      1,
+      "tbsp",
+      "flour"
+    ],
+    [
+      25,
+      "g",
+      "butter"
+    ],
+    [
+      1,
+      "tbsp",
+      "neutral oil"
+    ],
+    [
+      300,
+      "g",
+      "egg noodles"
+    ]
+  ],
+  "steps": [
+    "Cook noodles according to the package. Pat beef dry, season and sear in hot oil in batches. Transfer to a plate.",
+    "Melt butter in the skillet. Brown mushrooms, then add onion and cook until soft. Stir in flour for 1 minute.",
+    "Whisk in stock and mustard and simmer until lightly thickened. Return beef and its juices, heat to 145°F (63°C) and remove from the heat. Rest 3 minutes.",
+    "Stir a spoonful of warm sauce into the sour cream, then stir it into the skillet. Serve over noodles."
+  ],
+  "tip": "Keep the pan off the heat when adding sour cream to prevent curdling."
+},
+{
+  "id": "piccata",
+  "name": "Chicken piccata",
+  "sub": "with lemon, capers and butter",
+  "category": "Chicken",
+  "time": 25,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      2,
+      "",
+      "thin chicken breast cutlets"
+    ],
+    [
+      30,
+      "g",
+      "flour"
+    ],
+    [
+      1,
+      "tbsp",
+      "olive oil"
+    ],
+    [
+      30,
+      "g",
+      "butter"
+    ],
+    [
+      120,
+      "ml",
+      "chicken stock"
+    ],
+    [
+      1,
+      "",
+      "lemon"
+    ],
+    [
+      1,
+      "tbsp",
+      "capers, drained"
+    ],
+    [
+      1,
+      "tbsp",
+      "chopped parsley"
+    ]
+  ],
+  "steps": [
+    "Season cutlets and dust with flour. Heat oil and half the butter in a skillet and cook chicken until golden on both sides and 165°F (74°C). Transfer to a plate.",
+    "Add stock, lemon juice and capers. Scrape up the browned bits and simmer until slightly reduced.",
+    "Turn off the heat, swirl in remaining butter and return chicken to coat it. Finish with parsley."
+  ],
+  "tip": "Taste the sauce before adding salt because capers are briny."
+},
+{
+  "id": "moussaka",
+  "name": "Moussaka",
+  "sub": "with roasted eggplant, lamb and béchamel",
+  "category": "Lamb",
+  "time": 110,
+  "servings": 6,
+  "difficulty": "Moderate",
+  "description": "",
+  "ingredients": [
+    [
+      2,
+      "",
+      "large eggplants"
+    ],
+    [
+      500,
+      "g",
+      "ground lamb"
+    ],
+    [
+      1,
+      "",
+      "onion, diced"
+    ],
+    [
+      2,
+      "",
+      "garlic cloves, minced"
+    ],
+    [
+      400,
+      "g",
+      "crushed tomatoes"
+    ],
+    [
+      0.5,
+      "tsp",
+      "ground cinnamon"
+    ],
+    [
+      3,
+      "tbsp",
+      "olive oil"
+    ],
+    [
+      40,
+      "g",
+      "butter"
+    ],
+    [
+      40,
+      "g",
+      "flour"
+    ],
+    [
+      500,
+      "ml",
+      "milk"
+    ],
+    [
+      50,
+      "g",
+      "Parmesan, grated"
+    ]
+  ],
+  "steps": [
+    "Slice eggplant ½ inch thick, brush with two-thirds of the oil and roast at 425°F (220°C) for 25 minutes, turning halfway.",
+    "Soften onion in remaining oil. Add garlic and lamb and cook until the lamb reaches 160°F (71°C). Add tomatoes and cinnamon and simmer until thick, about 20 minutes.",
+    "Melt butter, whisk in flour for 1 minute, then gradually whisk in milk. Simmer until thick. Stir in half the Parmesan and season.",
+    "Layer eggplant and lamb sauce in a baking dish. Top with béchamel and remaining Parmesan. Bake at 375°F (190°C) for 30–35 minutes. Rest 15 minutes."
+  ],
+  "tip": "Roasting the eggplant before assembly helps keep the layers firm."
+},
+{
+  "id": "jambalaya",
+  "name": "Chicken and andouille jambalaya",
+  "sub": "with peppers, celery and rice",
+  "category": "Chicken",
+  "time": 55,
+  "servings": 4,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      400,
+      "g",
+      "boneless chicken thighs, cubed"
+    ],
+    [
+      200,
+      "g",
+      "fully cooked andouille, sliced"
+    ],
+    [
+      250,
+      "g",
+      "long-grain rice"
+    ],
+    [
+      1,
+      "",
+      "onion, diced"
+    ],
+    [
+      1,
+      "",
+      "green bell pepper, diced"
+    ],
+    [
+      2,
+      "",
+      "celery stalks, diced"
+    ],
+    [
+      3,
+      "",
+      "garlic cloves, minced"
+    ],
+    [
+      600,
+      "ml",
+      "chicken stock"
+    ],
+    [
+      2,
+      "tsp",
+      "Cajun seasoning"
+    ],
+    [
+      1,
+      "tbsp",
+      "oil"
+    ]
+  ],
+  "steps": [
+    "Brown chicken and sausage in oil in a heavy pot. Transfer to a plate. Soften onion, bell pepper and celery in the same pot.",
+    "Add garlic, Cajun seasoning and rice and stir for 1 minute. Add stock and return chicken and sausage.",
+    "Cover and simmer on low until the rice is tender and chicken reaches 165°F (74°C), about 20–25 minutes. Rest covered for 5 minutes, then fluff."
+  ],
+  "tip": "Cajun seasoning blends vary in salt and heat. Taste before adding more."
+},
+{
+  "id": "falafel",
+  "name": "Falafel pitas",
+  "sub": "with cucumber, tomatoes and tahini",
+  "category": "Vegetarian",
+  "time": 55,
+  "servings": 4,
+  "difficulty": "Moderate",
+  "description": "",
+  "ingredients": [
+    [
+      200,
+      "g",
+      "dried chickpeas, soaked overnight"
+    ],
+    [
+      0.5,
+      "",
+      "onion"
+    ],
+    [
+      2,
+      "",
+      "garlic cloves"
+    ],
+    [
+      25,
+      "g",
+      "parsley"
+    ],
+    [
+      2,
+      "tsp",
+      "ground cumin"
+    ],
+    [
+      1,
+      "tsp",
+      "ground coriander"
+    ],
+    [
+      1,
+      "tsp",
+      "baking powder"
+    ],
+    [
+      150,
+      "ml",
+      "neutral frying oil"
+    ],
+    [
+      4,
+      "",
+      "pitas"
+    ],
+    [
+      0.5,
+      "",
+      "cucumber"
+    ],
+    [
+      2,
+      "",
+      "tomatoes"
+    ],
+    [
+      60,
+      "g",
+      "tahini"
+    ],
+    [
+      1,
+      "",
+      "lemon"
+    ]
+  ],
+  "steps": [
+    "Drain the soaked chickpeas thoroughly. Pulse with onion, garlic, parsley, spices and salt until finely chopped and able to hold together. Chill for 20 minutes.",
+    "Mix in baking powder and shape into small patties. Shallow-fry in oil at 350°F (175°C), turning once, until deep golden and cooked through, about 3–4 minutes per side.",
+    "Whisk tahini with lemon juice and enough water to drizzle. Fill warmed pitas with falafel, chopped cucumber and tomatoes, and sauce."
+  ],
+  "tip": "Use soaked dried chickpeas. Canned chickpeas make the mixture too soft."
+},
+{
+  "id": "carbonara",
+  "name": "Spaghetti carbonara",
+  "sub": "with guanciale, Pecorino and black pepper",
+  "category": "Pork",
+  "time": 25,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      200,
+      "g",
+      "spaghetti"
+    ],
+    [
+      100,
+      "g",
+      "guanciale"
+    ],
+    [
+      2,
+      "",
+      "large pasteurized eggs"
+    ],
+    [
+      60,
+      "g",
+      "Pecorino Romano, finely grated"
+    ],
+    [
+      1,
+      "tsp",
+      "cracked black pepper"
+    ]
+  ],
+  "steps": [
+    "Cook spaghetti in lightly salted water. Reserve a mug of cooking water.",
+    "Dice guanciale and cook in a skillet over medium heat until crisp. Remove the skillet from the heat. Beat the pasteurized eggs with most of the Pecorino and the pepper.",
+    "Toss hot drained pasta with guanciale and its fat. Off the heat, add the egg mixture and toss briskly, adding splashes of hot pasta water until glossy. Serve with the remaining cheese."
+  ],
+  "tip": "Finely grated cheese melts more evenly into the sauce."
+},
+{
+  "id": "teriyakisalmon",
+  "name": "Teriyaki salmon",
+  "sub": "with rice and steamed broccoli",
+  "category": "Fish",
+  "time": 30,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      2,
+      "",
+      "salmon fillets, about 150 g each"
+    ],
+    [
+      150,
+      "g",
+      "rice"
+    ],
+    [
+      250,
+      "g",
+      "broccoli florets"
+    ],
+    [
+      2,
+      "tbsp",
+      "soy sauce"
+    ],
+    [
+      2,
+      "tbsp",
+      "mirin"
+    ],
+    [
+      1,
+      "tbsp",
+      "brown sugar"
+    ],
+    [
+      1,
+      "tsp",
+      "grated ginger"
+    ],
+    [
+      1,
+      "tsp",
+      "neutral oil"
+    ]
+  ],
+  "steps": [
+    "Cook rice according to the package. Steam broccoli until crisp-tender.",
+    "Simmer soy sauce, mirin, sugar and ginger in a small saucepan until lightly syrupy.",
+    "Pat salmon dry and sear in oil, skin side down if it has skin. Turn and cook until the center reaches 145°F (63°C). Brush with glaze and serve with rice and broccoli."
+  ],
+  "tip": "Brush on the glaze near the end so the sugar does not scorch."
+},
+{
+  "id": "applecrisp",
+  "name": "Apple crisp",
+  "sub": "with cinnamon and a buttery oat topping",
+  "category": "Dessert",
+  "time": 55,
+  "servings": 6,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      750,
+      "g",
+      "tart apples"
+    ],
+    [
+      1,
+      "tbsp",
+      "lemon juice"
+    ],
+    [
+      25,
+      "g",
+      "sugar"
+    ],
+    [
+      1,
+      "tsp",
+      "cinnamon"
+    ],
+    [
+      1,
+      "tbsp",
+      "cornstarch"
+    ],
+    [
+      85,
+      "g",
+      "rolled oats"
+    ],
+    [
+      60,
+      "g",
+      "flour"
+    ],
+    [
+      65,
+      "g",
+      "brown sugar"
+    ],
+    [
+      75,
+      "g",
+      "unsalted butter"
+    ]
+  ],
+  "steps": [
+    "Heat oven to 375°F (190°C). Peel and slice apples, then toss with lemon juice, sugar, cinnamon and cornstarch. Spread in an 8-inch baking dish.",
+    "Mix oats, flour, brown sugar and a pinch of salt. Rub in cold cubed butter until clumps form. Scatter over the apples.",
+    "Bake 35–45 minutes until the fruit bubbles at the edges and the topping is golden. Rest 10 minutes before serving."
+  ],
+  "tip": "Combine two varieties of apple for a mix of textures."
 }
 ];
