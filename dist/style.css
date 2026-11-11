@@ -68,3 +68,7 @@
   header { flex-wrap: wrap; gap: 14px; }
   header nav { flex-wrap: wrap; gap: 12px; }
 }
+/* Whole card opens the recipe; the title button carries the accessible name. */
+.open-recipe::after { content: ""; position: absolute; inset: 0; }
+.save { z-index: 2; }
+.card-image img { background: var(--line); }

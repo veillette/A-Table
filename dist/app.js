@@ -1,19 +1,80 @@
 import { recipes } from './recipes.js';
+import { ALL_CATEGORIES, categoriesOf, filterRecipes, resultLabel, escapeHtml } from './lib/format.js';
+import { loadFavorites, saveFavorites, toggleFavorite } from './lib/favorites.js';
+import { cardsHtml } from './ui/cards.js';
+import { createDetail } from './ui/detail.js';
 
-const $=s=>document.querySelector(s),image=r=>`images/${r.id}.webp`;let active='All recipes',savedOnly=false;let favorites;try{favorites=JSON.parse(localStorage.getItem('atable-saved')||'[]');if(!Array.isArray(favorites))favorites=[]}catch{favorites=[]}
-const searchText = text => text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
-function render(){const query=searchText($('#search').value);const list=recipes.filter(r=>(active==='All recipes'||r.category===active)&&(!savedOnly||favorites.includes(r.id))&&searchText([r.name,r.sub,...r.ingredients.map(i=>i[2])].join(' ')).includes(query));$('#cards').innerHTML=list.map(r=>`<article class="card"><div class="card-image"><img src="${image(r)}" alt="${r.name} ${r.sub}" loading="lazy"></div><button class="save" data-save="${r.id}" aria-label="${favorites.includes(r.id)?'Unsave':'Save'} ${r.name}" aria-pressed="${favorites.includes(r.id)}">${favorites.includes(r.id)?'♥':'♡'}</button><div class="card-content"><p class="eyebrow">${r.category} · THE EVERYDAY COLLECTION</p><button class="open-recipe" data-open="${r.id}"><h3>${r.name}</h3><p class="desc">${r.sub}</p><div class="meta"><span>◷ ${r.time} MIN</span><span>${r.difficulty}</span><span>View card ↗</span></div></button></div></article>`).join('');$('#empty').hidden=!!list.length;$('#result-count').textContent=`${String(list.length).padStart(2,'0')} ${savedOnly?'SAVED ':''}RECIPES TO MAKE YOUR OWN`;$('#saved-count').textContent=favorites.length;$('#saved').setAttribute('aria-pressed',savedOnly);}
-$('#filters').innerHTML=['All recipes', ...new Set(recipes.map(recipe => recipe.category))].map((c,i)=>`<button data-filter="${c}" class="${i?'':'active'}" aria-pressed="${!i}">${c}</button>`).join('');$('#filters').onclick=e=>{const b=e.target.closest('[data-filter]');if(!b)return;active=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',x===b)});render()};$('#search').oninput=render;$('#saved').onclick=()=>{savedOnly=!savedOnly;render();$('#recipes').scrollIntoView({behavior:'smooth'})};$('#cards').onclick=e=>{const save=e.target.closest('[data-save]'),open=e.target.closest('[data-open]');if(save){const id=save.dataset.save;favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];try{localStorage.setItem('atable-saved',JSON.stringify(favorites))}catch{}render()}if(open)show(open.dataset.open)};
-let current,servings=2;function show(id){current=recipes.find(r=>r.id===id);servings=current.servings ?? 2;detail();$('#recipe').showModal();document.body.style.overflow='hidden'}function detail(){const r=current;$('#recipe-body').innerHTML=`<img class="detail-photo" src="${image(r)}" alt="${r.name} ${r.sub}"><div class="detail"><p class="eyebrow">À TABLE / ${r.category.toUpperCase()}</p><h2 id="recipe-title">${r.name}</h2><p>${r.sub}<br>${r.description}</p><div class="detail-tools"><span>◷ ${r.time} minutes · ${r.difficulty}</span><button id="minus" aria-label="Fewer servings" ${servings<=1?'disabled':''}>−</button><span>${servings} servings</span><button id="plus" aria-label="More servings">+</button><button id="print">Print card ↗</button></div><div class="detail-columns"><section><h3>What you'll need</h3><ul class="ingredients">${r.ingredients.map(i=>`<li><label><input type="checkbox"><span>${Number((i[0]*servings/(r.servings ?? 2)).toFixed(2))} ${i[1]} ${i[2]}</span></label></li>`).join('')}</ul><p class="tip">Pantry staples: salt and black pepper.</p></section><section><h3>Let's get cooking</h3><ol class="steps">${r.steps.map(s=>`<li>${s}</li>`).join('')}</ol><p class="tip"><strong>A little kitchen wisdom</strong><br>${r.tip}</p><p class="scaling-note">Ingredient amounts scale with servings; use a suitably sized pan.</p></section></div></div>`;$('#minus').onclick=()=>changeServings(-1);$('#plus').onclick=()=>changeServings(1);$('#print').onclick=()=>window.print()}
-function closeRecipe(){$('#recipe').close();document.body.style.overflow=''}$('.close').onclick=closeRecipe;$('#recipe').addEventListener('close',()=>document.body.style.overflow='');$('#recipe').addEventListener('click',e=>{if(e.target===$('#recipe')){const b=e.target.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)closeRecipe()}});$('#featured').onclick=()=>show('salmon');render();
+const $ = (selector) => document.querySelector(selector);
 
-function changeServings(delta) {
-  const checkedIngredients = [...document.querySelectorAll('.ingredients input')].map(input => input.checked);
-  servings += delta;
-  detail();
-  document.querySelectorAll('.ingredients input').forEach((input, index) => {
-    input.checked = checkedIngredients[index];
-  });
-  const control = delta < 0 && servings > 1 ? '#minus' : '#plus';
-  $(control).focus();
+const state = {
+  category: ALL_CATEGORIES,
+  savedOnly: false,
+  query: '',
+  favorites: loadFavorites(),
+};
+
+const detail = createDetail($('#recipe'));
+
+function render() {
+  const list = filterRecipes(recipes, { ...state, savedIds: state.favorites });
+  $('#cards').innerHTML = cardsHtml(list, state.favorites);
+  $('#empty').hidden = list.length > 0;
+  $('#result-count').textContent = resultLabel(list.length, state.savedOnly);
+  $('#saved-count').textContent = state.favorites.length;
+  $('#saved').setAttribute('aria-pressed', state.savedOnly);
 }
+
+function renderFilters() {
+  $('#filters').innerHTML = categoriesOf(recipes)
+    .map(
+      (category) =>
+        `<button data-filter="${escapeHtml(category)}" class="${category === state.category ? 'active' : ''}" aria-pressed="${category === state.category}">${escapeHtml(category)}</button>`,
+    )
+    .join('');
+}
+
+$('#filters').onclick = (event) => {
+  const button = event.target.closest('[data-filter]');
+  if (!button) return;
+  state.category = button.dataset.filter;
+  document.querySelectorAll('[data-filter]').forEach((el) => {
+    const selected = el === button;
+    el.classList.toggle('active', selected);
+    el.setAttribute('aria-pressed', selected);
+  });
+  render();
+};
+
+$('#search').oninput = (event) => {
+  state.query = event.target.value;
+  render();
+};
+
+$('#saved').onclick = () => {
+  state.savedOnly = !state.savedOnly;
+  render();
+  $('#recipes').scrollIntoView({ behavior: 'smooth' });
+};
+
+$('#cards').onclick = (event) => {
+  const save = event.target.closest('[data-save]');
+  const open = event.target.closest('[data-open]');
+  if (save) {
+    state.favorites = toggleFavorite(state.favorites, save.dataset.save);
+    saveFavorites(state.favorites);
+    render();
+    // Cards are rebuilt on every change, so put keyboard focus back on the same button.
+    $(`[data-save="${CSS.escape(save.dataset.save)}"]`)?.focus();
+  }
+  if (open) openRecipe(open.dataset.open);
+};
+
+function openRecipe(id) {
+  const recipe = recipes.find((r) => r.id === id);
+  if (recipe) detail.open(recipe);
+}
+
+$('#featured').onclick = () => openRecipe('salmon');
+
+renderFilters();
+render();

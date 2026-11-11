@@ -1,0 +1,20 @@
+{
+  "name": "a-table",
+  "version": "1.0.0",
+  "private": true,
+  "description": "À Table recipe collection: a static site in dist/ with data checks and tests.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-recipes.mjs",
+    "test:unit": "node --test tests/",
+    "validate:html": "html-validate dist/index.html",
+    "test": "npm run validate && npm run test:unit && npm run validate:html"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "html-validate": "^11.21.0"
+  },
+  "engines": {
+    "node": ">=26"
+  }
+}
