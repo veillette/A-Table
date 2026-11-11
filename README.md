@@ -15,7 +15,7 @@ Recipes live in `dist/recipes.js`. Each recipe is one object in the `recipes` ar
 | `id` | string | Lowercase letters, digits and hyphens. Must be unique. Also names the image files. |
 | `name` | string | Card and dialog title. |
 | `sub` | string | Short subtitle shown under the title. |
-| `category` | string | Used for the filter buttons. Existing: Fish, Chicken, Vegetarian, Beef, Pork, Turkey, Breakfast, Dessert, Lamb. |
+| `category` | string | Used for the filter buttons and search. Filter buttons are built from the categories in use in `recipes.js`. |
 | `time` | whole number | Minutes. |
 | `difficulty` | string | One of `Easy`, `Moderate`, `A little practice`. |
 | `servings` | whole number | Base servings the ingredient amounts are written for. Always set explicitly. |

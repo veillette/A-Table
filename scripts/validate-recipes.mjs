@@ -63,6 +63,13 @@ export function validateRecipes(recipes, imageIds = null) {
 
     if (!Array.isArray(r.steps) || r.steps.length === 0 || !r.steps.every(isText)) {
       fail('steps must be a non-empty array of text');
+    } else {
+      // AGENTS.md: every oven or internal temperature is given in both Fahrenheit and Celsius.
+      r.steps.forEach((step, i) => {
+        const fahrenheit = (step.match(/°F/g) || []).length;
+        const celsius = (step.match(/°C/g) || []).length;
+        if (fahrenheit !== celsius) fail(`step ${i + 1} must give each temperature in both °F and °C`);
+      });
     }
 
     for (const field of ['name', 'sub', 'description', 'tip']) {

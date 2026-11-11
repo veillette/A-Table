@@ -33,6 +33,11 @@ describe('search', () => {
     assert.ok(recipeSearchText(sample[0]).includes('cream'));
   });
 
+  test('matches the category name, so searching "fish" finds fish recipes', () => {
+    assert.deepEqual(filterRecipes(sample, { query: 'fish' }).map((r) => r.id), ['b']);
+    assert.deepEqual(filterRecipes(sample, { query: 'dessert' }).map((r) => r.id), ['a']);
+  });
+
   test('filters by query, category and saved state together', () => {
     assert.deepEqual(filterRecipes(sample, { query: 'creme' }).map((r) => r.id), ['a']);
     assert.deepEqual(filterRecipes(sample, { query: 'salmon' }).map((r) => r.id), ['b']);

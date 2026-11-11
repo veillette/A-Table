@@ -14,7 +14,7 @@ export function createDetail(dialog) {
 
   function render() {
     const r = recipe;
-    body.innerHTML = `<img class="detail-photo" src="${imagePath(r.id)}" alt="" decoding="async">
+    body.innerHTML = `<img class="detail-photo" src="${imagePath(r.id)}" alt="${escapeHtml(r.name)}" decoding="async">
 <div class="detail">
   <p class="eyebrow">À TABLE / ${escapeHtml(r.category.toUpperCase())}</p>
   <h2 id="recipe-title">${escapeHtml(r.name)}</h2>

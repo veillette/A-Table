@@ -22,4 +22,7 @@ test('validator catches the problems that used to ship', () => {
   assert.match(validateRecipes([{ ...base, description: 'undefined' }]).join('\n'), /placeholder/);
   assert.match(validateRecipes([base, base]).join('\n'), /duplicate id/);
   assert.match(validateRecipes([base], new Set()).join('\n'), /missing images\/x.webp/);
+  assert.match(validateRecipes([{ ...base, steps: ['Heat oven to 425°F.'] }]).join('\n'), /both °F and °C/);
+  assert.match(validateRecipes([{ ...base, steps: ['Cook to 165°C.'] }]).join('\n'), /both °F and °C/);
+  assert.deepEqual(validateRecipes([{ ...base, steps: ['Heat oven to 425°F (220°C).'] }]), []);
 });

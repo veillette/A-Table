@@ -9,9 +9,9 @@ export const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (c) => HT
 export const normalizeText = (text) =>
   text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
 
-/** The text a search query is matched against: name, subtitle and ingredient names. */
+/** The text a search query is matched against: name, subtitle, category and ingredient names. */
 export const recipeSearchText = (recipe) =>
-  normalizeText([recipe.name, recipe.sub, ...recipe.ingredients.map((i) => i[2])].join(' '));
+  normalizeText([recipe.name, recipe.sub, recipe.category, ...recipe.ingredients.map((i) => i[2])].join(' '));
 
 export const ALL_CATEGORIES = 'All recipes';
 
