@@ -979,10 +979,347 @@ const recipes=[
     "Bake for 30–35 minutes until the center is set and reaches 160°F (71°C). Rest for 5 minutes before serving."
   ],
   "tip": "Use an apple that holds its shape, such as Honeycrisp."
+},
+{
+  "id": "tourtiere",
+  "name": "Tourtière québécoise",
+  "sub": "with pork, beef and warm spices",
+  "category": "Pork",
+  "time": 100,
+  "description": "A double-crust meat pie with a tender potato-bound filling.",
+  "ingredients": [
+    [
+      1,
+      "pack",
+      "pastry for a double-crust 9-inch pie"
+    ],
+    [
+      350,
+      "g",
+      "ground pork"
+    ],
+    [
+      250,
+      "g",
+      "ground beef"
+    ],
+    [
+      1,
+      "",
+      "onion, finely chopped"
+    ],
+    [
+      1,
+      "",
+      "medium potato, peeled and diced"
+    ],
+    [
+      120,
+      "ml",
+      "water"
+    ],
+    [
+      0.5,
+      "tsp",
+      "ground cinnamon"
+    ],
+    [
+      0.25,
+      "tsp",
+      "ground cloves"
+    ],
+    [
+      1,
+      "",
+      "egg, beaten"
+    ]
+  ],
+  "steps": [
+    "Boil the potato until tender, then drain and mash. Brown the pork, beef and onion in a skillet, breaking up the meat.",
+    "Add the water, cinnamon, cloves, salt and pepper. Simmer until the liquid has nearly evaporated and the meat reaches 160°F (71°C). Stir in the mashed potato and let the filling cool.",
+    "Heat the oven to 400°F (200°C). Line a 9-inch pie dish with pastry, add the filling, cover with the second crust and seal. Cut steam vents and brush with beaten egg.",
+    "Bake 35–45 minutes until golden and hot in the center. Rest 10 minutes before slicing."
+  ],
+  "tip": "A whole 9-inch pie serves six. Use a larger dish or multiple pies when scaling.",
+  "difficulty": "Moderate",
+  "servings": 6
+},
+{
+  "id": "suzette",
+  "name": "Crêpes Suzette",
+  "sub": "with orange butter sauce",
+  "category": "Dessert",
+  "time": 50,
+  "description": "Thin crêpes folded into a glossy orange sauce.",
+  "ingredients": [
+    [
+      65,
+      "g",
+      "all-purpose flour"
+    ],
+    [
+      1,
+      "",
+      "egg"
+    ],
+    [
+      160,
+      "ml",
+      "milk"
+    ],
+    [
+      1,
+      "tbsp",
+      "melted butter"
+    ],
+    [
+      2,
+      "",
+      "oranges"
+    ],
+    [
+      30,
+      "g",
+      "butter for the sauce"
+    ],
+    [
+      25,
+      "g",
+      "sugar"
+    ],
+    [
+      1,
+      "tbsp",
+      "orange liqueur, optional"
+    ]
+  ],
+  "steps": [
+    "Whisk flour, egg and milk until smooth. Stir in melted butter and a pinch of salt, then rest 20 minutes.",
+    "Pour a thin layer of batter into a lightly greased hot skillet. Cook until set and golden, flip briefly, then repeat to make four crêpes.",
+    "Zest one orange and juice both. Simmer the juice, zest and sugar until slightly syrupy. Whisk in the sauce butter and stir in the liqueur if using.",
+    "Fold each crêpe into quarters and warm in the sauce. Spoon the sauce over the crêpes to serve."
+  ],
+  "tip": "This stovetop version skips flambéing. For an alcohol-free sauce, omit the liqueur.",
+  "difficulty": "Easy"
+},
+{
+  "id": "sarrasin",
+  "name": "Crêpes au sarrasin",
+  "sub": "galettes complètes with ham, egg and Gruyère",
+  "category": "Pork",
+  "time": 55,
+  "description": "Breton buckwheat galettes with crisp edges and a savory filling.",
+  "ingredients": [
+    [
+      100,
+      "g",
+      "buckwheat flour"
+    ],
+    [
+      240,
+      "ml",
+      "water"
+    ],
+    [
+      0.5,
+      "tsp",
+      "fine salt"
+    ],
+    [
+      2,
+      "",
+      "eggs for the filling"
+    ],
+    [
+      2,
+      "slices",
+      "ham"
+    ],
+    [
+      60,
+      "g",
+      "Gruyère, grated"
+    ],
+    [
+      1,
+      "tbsp",
+      "butter"
+    ]
+  ],
+  "steps": [
+    "Whisk buckwheat flour, water and salt until smooth. Rest 30 minutes.",
+    "Heat a wide skillet and grease lightly with butter. Swirl in half the batter in a thin layer. Cook until the edges lift, then flip.",
+    "Scatter half the cheese and one slice of ham around the center and crack an egg into the middle. Cover over low heat until the white and yolk are set.",
+    "Fold the four sides inward to form a square, leaving the egg visible. Repeat with the remaining batter and filling."
+  ],
+  "tip": "Add a splash of water if the rested batter is too thick to swirl.",
+  "difficulty": "Easy"
+},
+{
+  "id": "clafoutis",
+  "name": "Clafoutis aux cerises",
+  "sub": "with cherries and vanilla",
+  "category": "Dessert",
+  "time": 45,
+  "description": "Cherries baked in a lightly sweetened custard.",
+  "ingredients": [
+    [
+      200,
+      "g",
+      "cherries, pitted"
+    ],
+    [
+      2,
+      "",
+      "eggs"
+    ],
+    [
+      40,
+      "g",
+      "sugar"
+    ],
+    [
+      40,
+      "g",
+      "all-purpose flour"
+    ],
+    [
+      150,
+      "ml",
+      "whole milk"
+    ],
+    [
+      0.5,
+      "tsp",
+      "vanilla extract"
+    ],
+    [
+      1,
+      "tsp",
+      "butter for the dish"
+    ]
+  ],
+  "steps": [
+    "Heat the oven to 350°F (175°C). Butter a small baking dish and spread the cherries across the bottom.",
+    "Whisk eggs and sugar. Add flour and a pinch of salt, then whisk in milk and vanilla until smooth.",
+    "Pour over the cherries and bake 30–35 minutes, until puffed and set in the center. Serve warm or at room temperature."
+  ],
+  "tip": "Pat the cherries dry after pitting to avoid watering down the batter.",
+  "difficulty": "Easy"
+},
+{
+  "id": "gratin",
+  "name": "Gratin dauphinois",
+  "sub": "with cream, garlic and nutmeg",
+  "category": "Vegetarian",
+  "time": 75,
+  "description": "Thinly sliced potatoes baked until tender under a golden crust.",
+  "ingredients": [
+    [
+      500,
+      "g",
+      "Yukon Gold potatoes"
+    ],
+    [
+      200,
+      "ml",
+      "heavy cream"
+    ],
+    [
+      75,
+      "ml",
+      "whole milk"
+    ],
+    [
+      1,
+      "",
+      "garlic clove"
+    ],
+    [
+      1,
+      "tsp",
+      "butter"
+    ],
+    [
+      0.125,
+      "tsp",
+      "ground nutmeg"
+    ]
+  ],
+  "steps": [
+    "Heat the oven to 350°F (175°C). Rub a small baking dish with the cut garlic clove, then butter it.",
+    "Peel potatoes and slice about ⅛ inch thick. Layer them in the dish with salt, pepper and nutmeg.",
+    "Pour in the cream and milk. Bake 55–65 minutes until the top is golden and a knife slides through easily. Rest 10 minutes before serving."
+  ],
+  "tip": "Leave the sliced potatoes unrinsed. Their starch helps thicken the cream.",
+  "difficulty": "Easy"
+},
+{
+  "id": "pouding",
+  "name": "Pouding chômeur à l’érable",
+  "sub": "with warm maple cream sauce",
+  "category": "Dessert",
+  "time": 40,
+  "description": "A Québécois vanilla cake that bakes over its own maple sauce.",
+  "ingredients": [
+    [
+      80,
+      "g",
+      "all-purpose flour"
+    ],
+    [
+      1,
+      "tsp",
+      "baking powder"
+    ],
+    [
+      25,
+      "g",
+      "soft butter"
+    ],
+    [
+      35,
+      "g",
+      "sugar"
+    ],
+    [
+      1,
+      "",
+      "egg"
+    ],
+    [
+      60,
+      "ml",
+      "milk"
+    ],
+    [
+      0.5,
+      "tsp",
+      "vanilla extract"
+    ],
+    [
+      100,
+      "ml",
+      "maple syrup"
+    ],
+    [
+      100,
+      "ml",
+      "heavy cream"
+    ]
+  ],
+  "steps": [
+    "Heat the oven to 350°F (175°C). Grease two deep ramekins and set them on a rimmed baking sheet.",
+    "Cream butter and sugar. Beat in the egg and vanilla. Fold in the flour and baking powder, alternating with milk. Divide between ramekins.",
+    "Bring the maple syrup and cream to a simmer. Pour gently over the batter. Bake 22–28 minutes until the cake is golden and springs back. Rest 5 minutes and serve with the sauce from the bottom."
+  ],
+  "tip": "Use deep ramekins with room for the sauce to bubble.",
+  "difficulty": "Easy"
 }
 ];
 const $=s=>document.querySelector(s),image=r=>`images/${r.id}.webp`;let active='All recipes',savedOnly=false;let favorites;try{favorites=JSON.parse(localStorage.getItem('atable-saved')||'[]');if(!Array.isArray(favorites))favorites=[]}catch{favorites=[]}
-function render(){const query=$('#search').value.toLowerCase();const list=recipes.filter(r=>(active==='All recipes'||r.category===active)&&(!savedOnly||favorites.includes(r.id))&&[r.name,r.sub,...r.ingredients.map(i=>i[2])].join(' ').toLowerCase().includes(query));$('#cards').innerHTML=list.map(r=>`<article class="card"><div class="card-image"><img src="${image(r)}" alt="${r.name} ${r.sub}" loading="lazy"></div><button class="save" data-save="${r.id}" aria-label="${favorites.includes(r.id)?'Unsave':'Save'} ${r.name}" aria-pressed="${favorites.includes(r.id)}">${favorites.includes(r.id)?'♥':'♡'}</button><div class="card-content"><p class="eyebrow">${r.category} · THE EVERYDAY COLLECTION</p><button class="open-recipe" data-open="${r.id}"><h3>${r.name}</h3><p class="desc">${r.sub}</p><div class="meta"><span>◷ ${r.time} MIN</span><span>${r.difficulty}</span><span>View card ↗</span></div></button></div></article>`).join('');$('#empty').hidden=!!list.length;$('#result-count').textContent=`${String(list.length).padStart(2,'0')} ${savedOnly?'SAVED ':''}RECIPES TO MAKE YOUR OWN`;$('#saved-count').textContent=favorites.length;$('#saved').setAttribute('aria-pressed',savedOnly);}
+const searchText = text => text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
+function render(){const query=searchText($('#search').value);const list=recipes.filter(r=>(active==='All recipes'||r.category===active)&&(!savedOnly||favorites.includes(r.id))&&searchText([r.name,r.sub,...r.ingredients.map(i=>i[2])].join(' ')).includes(query));$('#cards').innerHTML=list.map(r=>`<article class="card"><div class="card-image"><img src="${image(r)}" alt="${r.name} ${r.sub}" loading="lazy"></div><button class="save" data-save="${r.id}" aria-label="${favorites.includes(r.id)?'Unsave':'Save'} ${r.name}" aria-pressed="${favorites.includes(r.id)}">${favorites.includes(r.id)?'♥':'♡'}</button><div class="card-content"><p class="eyebrow">${r.category} · THE EVERYDAY COLLECTION</p><button class="open-recipe" data-open="${r.id}"><h3>${r.name}</h3><p class="desc">${r.sub}</p><div class="meta"><span>◷ ${r.time} MIN</span><span>${r.difficulty}</span><span>View card ↗</span></div></button></div></article>`).join('');$('#empty').hidden=!!list.length;$('#result-count').textContent=`${String(list.length).padStart(2,'0')} ${savedOnly?'SAVED ':''}RECIPES TO MAKE YOUR OWN`;$('#saved-count').textContent=favorites.length;$('#saved').setAttribute('aria-pressed',savedOnly);}
 $('#filters').innerHTML=['All recipes', ...new Set(recipes.map(recipe => recipe.category))].map((c,i)=>`<button data-filter="${c}" class="${i?'':'active'}" aria-pressed="${!i}">${c}</button>`).join('');$('#filters').onclick=e=>{const b=e.target.closest('[data-filter]');if(!b)return;active=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',x===b)});render()};$('#search').oninput=render;$('#saved').onclick=()=>{savedOnly=!savedOnly;render();$('#recipes').scrollIntoView({behavior:'smooth'})};$('#cards').onclick=e=>{const save=e.target.closest('[data-save]'),open=e.target.closest('[data-open]');if(save){const id=save.dataset.save;favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];try{localStorage.setItem('atable-saved',JSON.stringify(favorites))}catch{}render()}if(open)show(open.dataset.open)};
-let current,servings=2;function show(id){current=recipes.find(r=>r.id===id);servings=2;detail();$('#recipe').showModal();document.body.style.overflow='hidden'}function detail(){const r=current;$('#recipe-body').innerHTML=`<img class="detail-photo" src="${image(r)}" alt="${r.name} ${r.sub}"><div class="detail"><p class="eyebrow">À TABLE / ${r.category.toUpperCase()}</p><h2>${r.name}</h2><p>${r.sub}<br>${r.description}</p><div class="detail-tools"><span>◷ ${r.time} minutes · ${r.difficulty}</span><button id="minus" aria-label="Fewer servings" ${servings<=1?'disabled':''}>−</button><span>${servings} servings</span><button id="plus" aria-label="More servings">+</button><button id="print">Print card ↗</button></div><div class="detail-columns"><section><h3>What you'll need</h3><ul class="ingredients">${r.ingredients.map(i=>`<li><label><input type="checkbox"><span>${Number((i[0]*servings/2).toFixed(2))} ${i[1]} ${i[2]}</span></label></li>`).join('')}</ul><p class="tip">Pantry staples: salt and black pepper.</p></section><section><h3>Let's get cooking</h3><ol class="steps">${r.steps.map(s=>`<li>${s}</li>`).join('')}</ol><p class="tip"><strong>A little kitchen wisdom</strong><br>${r.tip}</p><p style="font-size:10px;color:#758071">Ingredient amounts scale with servings; use a suitably sized pan.</p></section></div></div>`;$('#minus').onclick=()=>{servings--;detail()};$('#plus').onclick=()=>{servings++;detail()};$('#print').onclick=()=>window.print()}
+let current,servings=2;function show(id){current=recipes.find(r=>r.id===id);servings=current.servings ?? 2;detail();$('#recipe').showModal();document.body.style.overflow='hidden'}function detail(){const r=current;$('#recipe-body').innerHTML=`<img class="detail-photo" src="${image(r)}" alt="${r.name} ${r.sub}"><div class="detail"><p class="eyebrow">À TABLE / ${r.category.toUpperCase()}</p><h2>${r.name}</h2><p>${r.sub}<br>${r.description}</p><div class="detail-tools"><span>◷ ${r.time} minutes · ${r.difficulty}</span><button id="minus" aria-label="Fewer servings" ${servings<=1?'disabled':''}>−</button><span>${servings} servings</span><button id="plus" aria-label="More servings">+</button><button id="print">Print card ↗</button></div><div class="detail-columns"><section><h3>What you'll need</h3><ul class="ingredients">${r.ingredients.map(i=>`<li><label><input type="checkbox"><span>${Number((i[0]*servings/(r.servings ?? 2)).toFixed(2))} ${i[1]} ${i[2]}</span></label></li>`).join('')}</ul><p class="tip">Pantry staples: salt and black pepper.</p></section><section><h3>Let's get cooking</h3><ol class="steps">${r.steps.map(s=>`<li>${s}</li>`).join('')}</ol><p class="tip"><strong>A little kitchen wisdom</strong><br>${r.tip}</p><p style="font-size:10px;color:#758071">Ingredient amounts scale with servings; use a suitably sized pan.</p></section></div></div>`;$('#minus').onclick=()=>{servings--;detail()};$('#plus').onclick=()=>{servings++;detail()};$('#print').onclick=()=>window.print()}
 function closeRecipe(){$('#recipe').close();document.body.style.overflow=''}$('.close').onclick=closeRecipe;$('#recipe').addEventListener('close',()=>document.body.style.overflow='');$('#recipe').addEventListener('click',e=>{if(e.target===$('#recipe')){const b=e.target.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)closeRecipe()}});$('#featured').onclick=()=>show('salmon');render();
