@@ -44,6 +44,8 @@ export function validateRecipes(recipes, imageIds = null) {
     if (!DIFFICULTIES.includes(r.difficulty)) fail(`difficulty must be one of: ${DIFFICULTIES.join(', ')}`);
     if (!isPositiveInt(r.servings)) fail('servings must be a positive whole number (explicit, not defaulted)');
 
+    if (r.featured !== undefined && typeof r.featured !== 'boolean') fail('featured must be true or omitted');
+
     if (!Array.isArray(r.ingredients) || r.ingredients.length === 0) {
       fail('ingredients must be a non-empty array');
     } else {
@@ -71,6 +73,9 @@ export function validateRecipes(recipes, imageIds = null) {
 
     if (imageIds && r.id && !imageIds.has(r.id)) fail(`missing images/${r.id}.webp`);
   }
+
+  const featuredCount = recipes.filter((r) => r && r.featured === true).length;
+  if (featuredCount !== 1) errors.push(`exactly one recipe must have featured: true (found ${featuredCount})`);
 
   if (imageIds) {
     for (const id of imageIds) {

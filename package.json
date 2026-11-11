@@ -7,12 +7,14 @@
   "scripts": {
     "validate": "node scripts/validate-recipes.mjs",
     "test:unit": "node --test tests/",
+    "test:offline": "node --test tests/browser/offline.spec.mjs",
     "validate:html": "html-validate dist/index.html",
     "test": "npm run validate && npm run test:unit && npm run validate:html"
   },
   "license": "UNLICENSED",
   "devDependencies": {
-    "html-validate": "^11.21.0"
+    "html-validate": "^11.21.0",
+    "playwright": "^1.65.0"
   },
   "engines": {
     "node": ">=26"

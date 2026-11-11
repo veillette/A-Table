@@ -11,10 +11,12 @@ test('every recipe passes the data schema and has its images', () => {
 
 test('validator catches the problems that used to ship', () => {
   const base = {
-    id: 'x', name: 'X', sub: 's', category: 'C', time: 10, difficulty: 'Easy', servings: 2,
+    id: 'x', featured: true, name: 'X', sub: 's', category: 'C', time: 10, difficulty: 'Easy', servings: 2,
     description: 'd', ingredients: [[1, '', 'egg']], steps: ['go'], tip: 't',
   };
   assert.deepEqual(validateRecipes([base]), []);
+  assert.match(validateRecipes([{ ...base, featured: false }]).join('\n'), /exactly one recipe must have featured/);
+  assert.match(validateRecipes([{ ...base, featured: 'yes' }]).join('\n'), /featured must be true or omitted/);
   assert.match(validateRecipes([{ ...base, description: '' }]).join('\n'), /description is required/);
   assert.match(validateRecipes([{ ...base, servings: undefined }]).join('\n'), /servings must be/);
   assert.match(validateRecipes([{ ...base, description: 'undefined' }]).join('\n'), /placeholder/);
