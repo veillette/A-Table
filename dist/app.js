@@ -74,7 +74,9 @@ function openRecipe(id) {
   if (recipe) detail.open(recipe);
 }
 
-$('#featured').onclick = () => openRecipe('salmon');
+// The hero recipe is the one marked `featured: true` in recipes.js (validated by npm run validate).
+const featured = recipes.find((r) => r.featured);
+if (featured) $('#featured').onclick = () => detail.open(featured);
 
 renderFilters();
 render();

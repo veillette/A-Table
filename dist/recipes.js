@@ -3,6 +3,7 @@
 export const recipes = [
 {
   id: "salmon",
+  featured: true,
   name: "Lemon & herb salmon",
   sub: "with roasted potatoes & green beans",
   category: "Fish",

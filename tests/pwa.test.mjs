@@ -1,6 +1,7 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -82,5 +83,20 @@ describe('service worker precache', () => {
     for (const asset of assets) {
       assert.ok(listed.has(asset), `${asset} must be added to SHELL in sw.js`);
     }
+  });
+
+  test('SHELL_VERSION is bumped whenever SHELL changes', () => {
+    // tests/shell.lock.json holds the version and a hash of SHELL. If SHELL changes, bump
+    // SHELL_VERSION in sw.js and update the lock: set "version" to the new value and "hash"
+    // to the sha256 printed in the failure message.
+    const version = read('sw.js').match(/const SHELL_VERSION = '([^']+)'/)[1];
+    const lock = JSON.parse(readFileSync(new URL('./shell.lock.json', import.meta.url), 'utf8'));
+    const hash = createHash('sha256').update(JSON.stringify(shell)).digest('hex');
+    assert.equal(
+      hash,
+      lock.hash,
+      `SHELL changed. Bump SHELL_VERSION in sw.js and set tests/shell.lock.json to {"version": "<new>", "hash": "${hash}"}`,
+    );
+    assert.equal(version, lock.version, 'SHELL_VERSION in sw.js must match tests/shell.lock.json');
   });
 });
