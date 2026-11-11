@@ -1315,5 +1315,1080 @@ export const recipes = [
   ],
   "tip": "Use deep ramekins with room for the sauce to bubble.",
   "difficulty": "Easy"
+},
+{
+  "id": "pate",
+  "name": "Pâté chinois",
+  "sub": "with beef, corn and mashed potatoes",
+  "category": "Beef",
+  "time": 55,
+  "servings": 4,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      600,
+      "g",
+      "potatoes"
+    ],
+    [
+      400,
+      "g",
+      "ground beef"
+    ],
+    [
+      1,
+      "",
+      "onion"
+    ],
+    [
+      1,
+      "tbsp",
+      "oil"
+    ],
+    [
+      300,
+      "g",
+      "creamed corn"
+    ],
+    [
+      100,
+      "g",
+      "corn kernels"
+    ],
+    [
+      60,
+      "ml",
+      "milk"
+    ],
+    [
+      30,
+      "g",
+      "butter"
+    ]
+  ],
+  "steps": [
+    "Boil peeled, cubed potatoes until tender. Drain and mash with milk, butter and salt.",
+    "Dice the onion and soften in oil. Add beef, season and cook to 160°F (71°C).",
+    "Spread beef in a baking dish, cover with both kinds of corn, then spread the mash on top. Bake at 400°F (200°C) for 25 minutes."
+  ],
+  "tip": "Rough up the mash with a fork for crisp peaks."
+},
+{
+  "id": "feves",
+  "name": "Fèves au lard à l’érable",
+  "sub": "with salt pork and maple syrup",
+  "category": "Pork",
+  "time": 125,
+  "servings": 4,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      500,
+      "g",
+      "cooked navy beans, drained"
+    ],
+    [
+      100,
+      "g",
+      "salt pork, diced"
+    ],
+    [
+      1,
+      "",
+      "onion, diced"
+    ],
+    [
+      60,
+      "ml",
+      "maple syrup"
+    ],
+    [
+      1,
+      "tbsp",
+      "Dijon mustard"
+    ],
+    [
+      250,
+      "ml",
+      "water"
+    ]
+  ],
+  "steps": [
+    "Heat oven to 325°F (165°C). Brown the salt pork in an ovenproof pot and soften the onion in the rendered fat.",
+    "Stir in beans, maple syrup, mustard and water. Cover and bake for 90 minutes.",
+    "Uncover and bake 20–25 minutes more until the sauce thickens. Taste before salting."
+  ],
+  "tip": "Using cooked beans keeps the recipe practical for a weekend lunch."
+},
+{
+  "id": "soupepois",
+  "name": "Soupe aux pois québécoise",
+  "sub": "with yellow split peas and ham",
+  "category": "Pork",
+  "time": 95,
+  "servings": 4,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      250,
+      "g",
+      "yellow split peas"
+    ],
+    [
+      200,
+      "g",
+      "cooked ham, diced"
+    ],
+    [
+      1,
+      "",
+      "onion, diced"
+    ],
+    [
+      1,
+      "",
+      "carrot, diced"
+    ],
+    [
+      1,
+      "",
+      "celery stalk, diced"
+    ],
+    [
+      1.2,
+      "L",
+      "low-sodium stock"
+    ],
+    [
+      1,
+      "",
+      "bay leaf"
+    ],
+    [
+      1,
+      "tbsp",
+      "butter"
+    ]
+  ],
+  "steps": [
+    "Rinse split peas. Soften the onion, carrot and celery in butter for 6 minutes.",
+    "Add peas, stock and bay leaf. Simmer gently for 60–75 minutes until the peas are tender, stirring occasionally.",
+    "Add ham and simmer 10 minutes. Remove the bay leaf and season to taste."
+  ],
+  "tip": "Mash a ladleful of peas against the pot for a thicker soup."
+},
+{
+  "id": "quiche",
+  "name": "Quiche Lorraine",
+  "sub": "with bacon and cream",
+  "category": "Pork",
+  "time": 75,
+  "servings": 6,
+  "difficulty": "Moderate",
+  "description": "",
+  "ingredients": [
+    [
+      1,
+      "",
+      "9-inch pie crust"
+    ],
+    [
+      180,
+      "g",
+      "bacon, diced"
+    ],
+    [
+      4,
+      "",
+      "eggs"
+    ],
+    [
+      250,
+      "ml",
+      "heavy cream"
+    ],
+    [
+      100,
+      "ml",
+      "milk"
+    ],
+    [
+      0.125,
+      "tsp",
+      "nutmeg"
+    ]
+  ],
+  "steps": [
+    "Line a pie dish with crust. Prick, line with parchment and weights, and bake 15 minutes at 375°F (190°C). Remove weights and bake 5 minutes more.",
+    "Cook bacon until browned and drain. Whisk eggs, cream, milk, nutmeg and pepper.",
+    "Scatter bacon in the crust, add custard and bake at 350°F (175°C) for 30–40 minutes, until the center reaches 160°F (71°C). Rest 10 minutes."
+  ],
+  "tip": "Bake on a sheet pan to catch drips."
+},
+{
+  "id": "ratatouille",
+  "name": "Ratatouille provençale",
+  "sub": "with eggplant, zucchini and peppers",
+  "category": "Vegetarian",
+  "time": 55,
+  "servings": 4,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      1,
+      "",
+      "eggplant"
+    ],
+    [
+      2,
+      "",
+      "zucchini"
+    ],
+    [
+      2,
+      "",
+      "bell peppers"
+    ],
+    [
+      1,
+      "",
+      "onion"
+    ],
+    [
+      3,
+      "",
+      "garlic cloves"
+    ],
+    [
+      400,
+      "g",
+      "crushed tomatoes"
+    ],
+    [
+      3,
+      "tbsp",
+      "olive oil"
+    ],
+    [
+      1,
+      "tsp",
+      "dried thyme"
+    ]
+  ],
+  "steps": [
+    "Dice the vegetables. Brown eggplant and zucchini in batches in two-thirds of the oil, then set aside.",
+    "Soften onion and peppers in remaining oil. Add minced garlic, tomatoes and thyme and simmer 15 minutes.",
+    "Return eggplant and zucchini to the pot and simmer 10–15 minutes. Season with salt and pepper."
+  ],
+  "tip": "Brown the vegetables in batches so they retain their shape."
+},
+{
+  "id": "croque",
+  "name": "Croque-monsieur",
+  "sub": "with ham, Gruyère and béchamel",
+  "category": "Pork",
+  "time": 25,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      4,
+      "",
+      "thick sandwich bread slices"
+    ],
+    [
+      100,
+      "g",
+      "sliced ham"
+    ],
+    [
+      100,
+      "g",
+      "Gruyère, grated"
+    ],
+    [
+      15,
+      "g",
+      "butter"
+    ],
+    [
+      15,
+      "g",
+      "flour"
+    ],
+    [
+      180,
+      "ml",
+      "milk"
+    ],
+    [
+      2,
+      "tsp",
+      "Dijon mustard"
+    ]
+  ],
+  "steps": [
+    "Melt butter in a saucepan and stir in flour for 1 minute. Gradually whisk in milk and simmer until thick. Season with salt and pepper.",
+    "Toast the bread lightly. Spread mustard inside and fill with ham and half the cheese.",
+    "Spread béchamel on top, sprinkle with remaining cheese and broil on a sheet pan until bubbling, 2–4 minutes."
+  ],
+  "tip": "Keep an eye on the broiler. The cheese browns quickly."
+},
+{
+  "id": "tatin",
+  "name": "Tarte Tatin",
+  "sub": "with caramelized apples",
+  "category": "Dessert",
+  "time": 65,
+  "servings": 6,
+  "difficulty": "Moderate",
+  "description": "",
+  "ingredients": [
+    [
+      6,
+      "",
+      "firm apples"
+    ],
+    [
+      100,
+      "g",
+      "sugar"
+    ],
+    [
+      50,
+      "g",
+      "unsalted butter"
+    ],
+    [
+      1,
+      "",
+      "sheet puff pastry"
+    ],
+    [
+      2,
+      "tbsp",
+      "water"
+    ]
+  ],
+  "steps": [
+    "Heat oven to 375°F (190°C). Peel, halve and core the apples.",
+    "In a 9-inch ovenproof skillet, cook sugar and water to an amber caramel. Take off heat, stir in butter carefully and arrange the apples rounded side down. Cook gently for 10 minutes.",
+    "Cover with pastry and tuck in the edges. Bake 30–35 minutes until deeply golden. Rest 10 minutes, then carefully invert onto a rimmed plate."
+  ],
+  "tip": "Use oven mitts and a plate larger than the skillet when inverting."
+},
+{
+  "id": "madeleines",
+  "name": "Madeleines au citron",
+  "sub": "with lemon zest and butter",
+  "category": "Dessert",
+  "time": 55,
+  "servings": 6,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      100,
+      "g",
+      "flour"
+    ],
+    [
+      90,
+      "g",
+      "sugar"
+    ],
+    [
+      2,
+      "",
+      "eggs"
+    ],
+    [
+      85,
+      "g",
+      "unsalted butter"
+    ],
+    [
+      0.5,
+      "tsp",
+      "baking powder"
+    ],
+    [
+      1,
+      "",
+      "lemon"
+    ]
+  ],
+  "steps": [
+    "Melt butter and let it cool. Whisk eggs and sugar until pale, then add lemon zest.",
+    "Fold in flour and baking powder, then the butter. Chill batter for 30 minutes. Butter a madeleine pan.",
+    "Fill the molds three-quarters full and bake at 400°F (200°C) for 8–11 minutes until golden at the edges."
+  ],
+  "tip": "Makes about 12 madeleines in a standard pan."
+},
+{
+  "id": "bourguignon",
+  "name": "Bœuf bourguignon",
+  "sub": "with mushrooms, carrots and red wine",
+  "category": "Beef",
+  "time": 185,
+  "servings": 4,
+  "difficulty": "Moderate",
+  "description": "",
+  "ingredients": [
+    [
+      700,
+      "g",
+      "beef chuck, cubed"
+    ],
+    [
+      2,
+      "",
+      "carrots, sliced"
+    ],
+    [
+      1,
+      "",
+      "onion, diced"
+    ],
+    [
+      200,
+      "g",
+      "mushrooms, quartered"
+    ],
+    [
+      350,
+      "ml",
+      "dry red wine"
+    ],
+    [
+      250,
+      "ml",
+      "beef stock"
+    ],
+    [
+      1,
+      "tbsp",
+      "tomato paste"
+    ],
+    [
+      1,
+      "tbsp",
+      "flour"
+    ],
+    [
+      2,
+      "tbsp",
+      "oil"
+    ],
+    [
+      2,
+      "sprigs",
+      "thyme"
+    ]
+  ],
+  "steps": [
+    "Pat beef dry and brown in batches in half the oil. Soften onion and carrots in the same pot. Stir in flour and tomato paste.",
+    "Add wine and scrape up the browned bits. Add stock, beef and thyme. Cover and braise at 325°F (165°C) for about 2½ hours until fork tender.",
+    "Brown mushrooms in remaining oil and stir into the stew. Remove thyme and season to taste."
+  ],
+  "tip": "The stew reheats well the next day."
+},
+{
+  "id": "saladenicoise",
+  "name": "Salade niçoise",
+  "sub": "with tuna, eggs, potatoes and green beans",
+  "category": "Fish",
+  "time": 35,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      200,
+      "g",
+      "baby potatoes"
+    ],
+    [
+      150,
+      "g",
+      "green beans"
+    ],
+    [
+      2,
+      "",
+      "eggs"
+    ],
+    [
+      140,
+      "g",
+      "canned tuna, drained"
+    ],
+    [
+      150,
+      "g",
+      "cherry tomatoes"
+    ],
+    [
+      40,
+      "g",
+      "Niçoise or black olives"
+    ],
+    [
+      2,
+      "tbsp",
+      "olive oil"
+    ],
+    [
+      1,
+      "tbsp",
+      "red wine vinegar"
+    ],
+    [
+      1,
+      "tsp",
+      "Dijon mustard"
+    ]
+  ],
+  "steps": [
+    "Boil potatoes until tender, then halve. Blanch beans for 3–4 minutes and cool in cold water.",
+    "Hard-boil eggs for 10–11 minutes, cool, peel and quarter. Halve the tomatoes.",
+    "Arrange potatoes, beans, tuna, eggs, tomatoes and olives on a platter. Whisk oil, vinegar and mustard and drizzle over."
+  ],
+  "tip": "Dress the potatoes while they are still warm."
+},
+{
+  "id": "merlu",
+  "name": "Fish with lemon and caper butter",
+  "sub": "with a browned butter pan sauce",
+  "category": "Fish",
+  "time": 20,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      2,
+      "",
+      "hake or cod fillets, about 150 g each"
+    ],
+    [
+      2,
+      "tbsp",
+      "flour"
+    ],
+    [
+      1,
+      "tbsp",
+      "oil"
+    ],
+    [
+      30,
+      "g",
+      "butter"
+    ],
+    [
+      1,
+      "tbsp",
+      "capers, drained"
+    ],
+    [
+      1,
+      "",
+      "lemon"
+    ],
+    [
+      1,
+      "tbsp",
+      "chopped parsley"
+    ]
+  ],
+  "steps": [
+    "Pat fish dry, season and dust lightly with flour.",
+    "Heat oil in a skillet. Cook fish for 3–5 minutes per side, depending on thickness, until it reaches 145°F (63°C). Transfer to warm plates.",
+    "Lower heat and add butter. When it smells nutty, take off the heat and add capers, lemon juice and parsley. Spoon over fish."
+  ],
+  "tip": "Have the lemon and capers ready before browning the butter."
+},
+{
+  "id": "citron",
+  "name": "Gâteau au yaourt et au citron",
+  "sub": "with lemon zest and plain yogurt",
+  "category": "Dessert",
+  "time": 65,
+  "servings": 8,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      200,
+      "g",
+      "flour"
+    ],
+    [
+      2,
+      "tsp",
+      "baking powder"
+    ],
+    [
+      150,
+      "g",
+      "sugar"
+    ],
+    [
+      3,
+      "",
+      "eggs"
+    ],
+    [
+      125,
+      "g",
+      "plain yogurt"
+    ],
+    [
+      85,
+      "ml",
+      "neutral oil"
+    ],
+    [
+      1,
+      "",
+      "lemon"
+    ]
+  ],
+  "steps": [
+    "Heat oven to 350°F (175°C). Grease and line an 8-by-4-inch loaf pan.",
+    "Rub lemon zest into sugar. Whisk in eggs, yogurt and oil. Fold in flour, baking powder and a pinch of salt.",
+    "Pour into the pan and bake 42–50 minutes until a skewer comes out clean. Cool 10 minutes before turning out."
+  ],
+  "tip": "For extra lemon flavor, brush the warm loaf with a little juice from the zested lemon."
+},
+{
+  "id": "dahl",
+  "name": "Red lentil dal",
+  "sub": "with tomatoes and basmati rice",
+  "category": "Vegetarian",
+  "time": 35,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      130,
+      "g",
+      "red lentils"
+    ],
+    [
+      140,
+      "g",
+      "basmati rice"
+    ],
+    [
+      1,
+      "",
+      "onion, diced"
+    ],
+    [
+      2,
+      "",
+      "garlic cloves, minced"
+    ],
+    [
+      1,
+      "tsp",
+      "grated ginger"
+    ],
+    [
+      1,
+      "tsp",
+      "ground cumin"
+    ],
+    [
+      0.5,
+      "tsp",
+      "turmeric"
+    ],
+    [
+      200,
+      "g",
+      "crushed tomatoes"
+    ],
+    [
+      1,
+      "tbsp",
+      "oil"
+    ]
+  ],
+  "steps": [
+    "Cook rice according to the package. Rinse the lentils.",
+    "Soften onion in oil, then add garlic, ginger, cumin and turmeric and stir for 30 seconds.",
+    "Add tomatoes, lentils and 400 ml water per two servings. Simmer 20–25 minutes, stirring occasionally. Season and serve over rice."
+  ],
+  "tip": "Add a splash of water if the lentils thicken before becoming tender."
+},
+{
+  "id": "ginger",
+  "name": "Ginger-scallion chicken",
+  "sub": "with steamed rice",
+  "category": "Chicken",
+  "time": 35,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      300,
+      "g",
+      "boneless chicken thighs"
+    ],
+    [
+      150,
+      "g",
+      "rice"
+    ],
+    [
+      4,
+      "",
+      "scallions"
+    ],
+    [
+      20,
+      "g",
+      "fresh ginger"
+    ],
+    [
+      2,
+      "tbsp",
+      "neutral oil"
+    ],
+    [
+      1,
+      "tbsp",
+      "soy sauce"
+    ],
+    [
+      1,
+      "tsp",
+      "rice vinegar"
+    ]
+  ],
+  "steps": [
+    "Cook rice according to the package. Thinly slice scallions and grate ginger.",
+    "Season chicken and sear in half the oil over medium-high heat. Turn and continue cooking until the center reaches 165°F (74°C). Rest briefly before slicing.",
+    "Warm the remaining oil, then remove from heat and stir in ginger, scallions, soy sauce and vinegar. Spoon over chicken and rice."
+  ],
+  "tip": "Use the scallion greens and whites for the sauce."
+},
+{
+  "id": "orzo",
+  "name": "Lemon chicken orzo soup",
+  "sub": "with dill and carrots",
+  "category": "Chicken",
+  "time": 40,
+  "servings": 4,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      350,
+      "g",
+      "boneless chicken breast"
+    ],
+    [
+      120,
+      "g",
+      "orzo"
+    ],
+    [
+      1,
+      "",
+      "onion, diced"
+    ],
+    [
+      2,
+      "",
+      "carrots, sliced"
+    ],
+    [
+      1.2,
+      "L",
+      "chicken stock"
+    ],
+    [
+      1,
+      "",
+      "lemon"
+    ],
+    [
+      2,
+      "tbsp",
+      "chopped dill"
+    ],
+    [
+      1,
+      "tbsp",
+      "olive oil"
+    ]
+  ],
+  "steps": [
+    "Soften onion and carrots in oil for 5 minutes. Add stock and chicken and simmer until the chicken reaches 165°F (74°C).",
+    "Remove chicken and shred. Add orzo to the broth and simmer according to its package.",
+    "Return chicken to the pot. Add lemon juice and dill and season to taste."
+  ],
+  "tip": "If making ahead, cook the orzo separately and add it to each bowl."
+},
+{
+  "id": "halloumi",
+  "name": "Grilled halloumi couscous bowl",
+  "sub": "with cucumber, tomatoes and lemon",
+  "category": "Vegetarian",
+  "time": 25,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      160,
+      "g",
+      "halloumi"
+    ],
+    [
+      120,
+      "g",
+      "couscous"
+    ],
+    [
+      0.5,
+      "",
+      "cucumber"
+    ],
+    [
+      180,
+      "g",
+      "cherry tomatoes"
+    ],
+    [
+      1,
+      "",
+      "lemon"
+    ],
+    [
+      2,
+      "tbsp",
+      "olive oil"
+    ],
+    [
+      2,
+      "tbsp",
+      "chopped mint"
+    ]
+  ],
+  "steps": [
+    "Prepare couscous according to the package. Fluff and let cool slightly.",
+    "Dice cucumber and halve tomatoes. Toss with couscous, mint, lemon juice and half the oil.",
+    "Slice halloumi and sear in the remaining oil until golden on both sides. Serve over the couscous."
+  ],
+  "tip": "Taste before salting. Halloumi is already quite salty."
+},
+{
+  "id": "panzanella",
+  "name": "Tuscan panzanella",
+  "sub": "with ripe tomatoes, toasted bread and basil",
+  "category": "Vegetarian",
+  "time": 30,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      180,
+      "g",
+      "day-old country bread"
+    ],
+    [
+      400,
+      "g",
+      "ripe tomatoes"
+    ],
+    [
+      0.5,
+      "",
+      "red onion"
+    ],
+    [
+      15,
+      "g",
+      "fresh basil"
+    ],
+    [
+      3,
+      "tbsp",
+      "olive oil"
+    ],
+    [
+      1,
+      "tbsp",
+      "red wine vinegar"
+    ]
+  ],
+  "steps": [
+    "Cube bread and toast at 400°F (200°C) for 8–12 minutes until golden.",
+    "Chop tomatoes and salt lightly in a bowl. Let stand 10 minutes to release their juices. Thinly slice onion.",
+    "Toss tomatoes and juices with bread, onion, basil, oil and vinegar. Let stand 5 minutes before serving."
+  ],
+  "tip": "Use bread with a sturdy crumb so it can absorb the dressing."
+},
+{
+  "id": "gnocchi",
+  "name": "Skillet gnocchi with mushrooms",
+  "sub": "with spinach, garlic and butter",
+  "category": "Vegetarian",
+  "time": 25,
+  "servings": 2,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      400,
+      "g",
+      "shelf-stable gnocchi"
+    ],
+    [
+      250,
+      "g",
+      "mushrooms, sliced"
+    ],
+    [
+      100,
+      "g",
+      "baby spinach"
+    ],
+    [
+      2,
+      "",
+      "garlic cloves, minced"
+    ],
+    [
+      25,
+      "g",
+      "butter"
+    ],
+    [
+      1,
+      "tbsp",
+      "olive oil"
+    ]
+  ],
+  "steps": [
+    "Brown mushrooms in oil over medium-high heat, then transfer to a plate.",
+    "Melt butter and add gnocchi. Cook, turning occasionally, until golden and tender. Add a splash of water and cover briefly if the centers are still firm.",
+    "Add garlic, mushrooms and spinach. Toss until spinach wilts and season to taste."
+  ],
+  "tip": "Use a wide skillet to give the gnocchi room to crisp."
+},
+{
+  "id": "frittata",
+  "name": "Spinach and feta frittata",
+  "sub": "with scallions and black pepper",
+  "category": "Breakfast",
+  "time": 30,
+  "servings": 4,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      6,
+      "",
+      "eggs"
+    ],
+    [
+      100,
+      "g",
+      "baby spinach"
+    ],
+    [
+      80,
+      "g",
+      "feta, crumbled"
+    ],
+    [
+      3,
+      "",
+      "scallions, sliced"
+    ],
+    [
+      2,
+      "tbsp",
+      "milk"
+    ],
+    [
+      1,
+      "tbsp",
+      "olive oil"
+    ]
+  ],
+  "steps": [
+    "Heat oven to 375°F (190°C). Sauté scallions and spinach in oil in an ovenproof skillet until wilted.",
+    "Whisk eggs with milk and pepper. Stir in feta and pour over the vegetables.",
+    "Cook over low heat for 2 minutes, then bake 10–15 minutes until the center is set and reaches 160°F (71°C). Rest briefly before slicing."
+  ],
+  "tip": "Squeeze out excess moisture if substituting thawed frozen spinach."
+},
+{
+  "id": "galette",
+  "name": "Rustic pear galette",
+  "sub": "with cinnamon and flaky pastry",
+  "category": "Dessert",
+  "time": 60,
+  "servings": 6,
+  "difficulty": "Easy",
+  "description": "",
+  "ingredients": [
+    [
+      1,
+      "",
+      "round pie crust"
+    ],
+    [
+      3,
+      "",
+      "firm pears"
+    ],
+    [
+      30,
+      "g",
+      "sugar"
+    ],
+    [
+      1,
+      "tbsp",
+      "cornstarch"
+    ],
+    [
+      0.5,
+      "tsp",
+      "cinnamon"
+    ],
+    [
+      1,
+      "tbsp",
+      "lemon juice"
+    ],
+    [
+      1,
+      "",
+      "egg, beaten"
+    ]
+  ],
+  "steps": [
+    "Heat oven to 400°F (200°C). Roll pastry onto a parchment-lined sheet pan.",
+    "Slice pears thinly and toss with sugar, cornstarch, cinnamon and lemon juice.",
+    "Arrange pears over pastry, leaving a 2-inch border. Fold border over the filling, brush with egg and bake 35–40 minutes until golden."
+  ],
+  "tip": "Let cool for at least 15 minutes so the juices can set."
 }
 ];
