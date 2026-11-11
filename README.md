@@ -37,9 +37,23 @@ magick dist/images/<id>.webp -resize '720x720>' -quality 72 -define webp:method=
 
 Fonts load from Google Fonts. Saved favorites remain in the visitor's browser.
 
+## Install and offline use (PWA)
+
+The site is a Progressive Web App. Visitors can install it from the browser (Add to Home Screen, or the install icon in the address bar), and it opens without a connection after one visit.
+
+- `dist/manifest.webmanifest` sets the name, colours and icons. Paths are relative, so the app also works under a subpath such as `username.github.io/A-Table/`.
+- `dist/sw.js` is the service worker. On install it precaches the app shell listed in `SHELL`. Pages, scripts and styles use network first, so recipe changes appear after a deploy, with the cache used only when offline. Images and fonts use stale-while-revalidate. Card and recipe images are cached as visitors view them, not all at once, to keep the first visit light.
+- `dist/pwa.js` registers the service worker. The site works without it.
+- `dist/icons/` holds the icons: ink green `#243a31` with a cream "À" in Noto Serif Bold. Regenerate with ImageMagick, for example `magick -size 512x512 xc:none -fill '#243a31' -draw "roundrectangle 0,0 511,511 96,96" -font <serif-bold.ttf> -fill '#f7f4ec' -pointsize 330 -gravity center -annotate +0+-10 'À' dist/icons/icon-512.png`, then resize for `icon-192.png`.
+
+When you add or rename a `.js` or `.css` file, add it to `SHELL` in `dist/sw.js`. `npm test` fails if a script or stylesheet is missing from the list. When the precached files change, bump `SHELL_VERSION` so old caches are replaced.
+
+After a change, check install and offline use in a real browser: load the site, wait for it to finish, switch the network off, and reload.
+
 ## Project layout
 
 - `dist/`: the site. `index.html`, `style.css`, `theme.js` (theme picker), `app.js` (wiring), `recipes.js` (data).
+- `dist/manifest.webmanifest`, `dist/icons/`, `dist/sw.js`, `dist/pwa.js`: the installable web app and offline support (see below).
 - `dist/lib/`: pure helpers (search, filtering, scaling, escaping) and favorites storage. No DOM access.
 - `dist/ui/`: card and dialog rendering.
 - `tests/`: unit tests for the helpers and the recipe data.
