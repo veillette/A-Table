@@ -28,6 +28,12 @@ and the deployment artifact; there is no build step.
    the photo workflow below.
 5. Run the checks and inspect the recipe in a browser. Search, categories, recipe
    counts and image paths are derived from the array and need no manual entries.
+6. Report the recipe id, name and category, where its photo came from (with
+   attribution if reused), each check run and its result, and whether anything
+   is committed. Do not commit or push unless asked.
+
+The step-by-step checklist is the same for every agent. In Claude Code, the
+`add-recipe` skill in `.claude/skills/` points here.
 
 Every recipe needs these fields:
 
@@ -47,8 +53,8 @@ Every recipe needs these fields:
 
 `featured: true` is optional, and exactly one recipe in the collection must have
 it. Keep the existing featured recipe when adding ordinary recipes. If changing
-the featured recipe is requested, also update the fixed hero photo, alternative
-text and copy in `dist/index.html`.
+the featured recipe is requested, the hero updates itself from that recipe's data.
+Check the hero in the browser after the change.
 
 ### Recipe content
 
@@ -88,7 +94,7 @@ With ImageMagick, create the full image and thumbnail from the chosen source
 
 ```sh
 magick /path/to/source.png -resize '1200x1200>' -quality 82 -define webp:method=6 dist/images/new-recipe.webp
-magick dist/images/new-recipe.webp -resize '720x720>' -quality 72 -define webp:method=6 dist/images/thumbs/new-recipe.webp
+npm run thumbs -- new-recipe
 ```
 
 ## Verification

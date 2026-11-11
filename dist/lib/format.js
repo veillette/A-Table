@@ -36,12 +36,37 @@ export function scaleQuantity(quantity, servings, baseServings) {
   return Number(((quantity * servings) / baseServings).toFixed(2));
 }
 
+const FRACTIONS = [
+  [1 / 8, '⅛'],
+  [1 / 4, '¼'],
+  [1 / 3, '⅓'],
+  [1 / 2, '½'],
+  [2 / 3, '⅔'],
+  [3 / 4, '¾'],
+];
+const FRACTION_TOLERANCE = 0.02;
+
+/**
+ * Show an amount with a kitchen fraction where one fits: 0.5 -> "½", 1.33 -> "1 ⅓".
+ * Other values keep their decimal form, e.g. 0.37 -> "0.37".
+ */
+export function formatAmount(value) {
+  if (value < FRACTION_TOLERANCE) return String(value);
+  const whole = Math.floor(value);
+  const rest = value - whole;
+  if (rest < FRACTION_TOLERANCE) return String(whole);
+  if (1 - rest < FRACTION_TOLERANCE) return String(whole + 1);
+  const match = FRACTIONS.find(([fraction]) => Math.abs(rest - fraction) < FRACTION_TOLERANCE);
+  if (!match) return String(value);
+  return whole === 0 ? match[1] : `${whole} ${match[1]}`;
+}
+
 /**
  * Human-readable ingredient line, e.g. [400, 'g', 'baby potatoes'] -> "400 g baby potatoes".
  * An empty unit (counted items such as eggs) is skipped rather than leaving a double space.
  */
 export function formatIngredient([quantity, unit, name], servings, baseServings) {
-  const amount = scaleQuantity(quantity, servings, baseServings);
+  const amount = formatAmount(scaleQuantity(quantity, servings, baseServings));
   return [amount, unit, name].filter((part) => part !== '' && part != null).join(' ');
 }
 

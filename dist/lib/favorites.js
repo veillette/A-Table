@@ -23,6 +23,11 @@ export function saveFavorites(favorites, storage = globalThis.localStorage) {
   }
 }
 
+/** Keep only ids that still match a recipe, so removed or renamed recipes stop counting as saved. */
+export function pruneFavorites(favorites, knownIds) {
+  return favorites.filter((id) => knownIds.has(id));
+}
+
 /** Return a new list with the id added or removed. */
 export function toggleFavorite(favorites, id) {
   return favorites.includes(id) ? favorites.filter((x) => x !== id) : [...favorites, id];

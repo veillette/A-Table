@@ -1,24 +1,34 @@
 import { recipes } from './recipes.js';
 import { ALL_CATEGORIES, categoriesOf, filterRecipes, resultLabel, escapeHtml } from './lib/format.js';
-import { loadFavorites, saveFavorites, toggleFavorite } from './lib/favorites.js';
+import { loadFavorites, saveFavorites, toggleFavorite, pruneFavorites } from './lib/favorites.js';
+import { imagePath } from './lib/format.js';
 import { cardsHtml } from './ui/cards.js';
 import { createDetail } from './ui/detail.js';
 
 const $ = (selector) => document.querySelector(selector);
 
+const knownIds = new Set(recipes.map((r) => r.id));
+const storedFavorites = loadFavorites();
+const favorites = pruneFavorites(storedFavorites, knownIds);
+if (favorites.length !== storedFavorites.length) saveFavorites(favorites);
+
 const state = {
   category: ALL_CATEGORIES,
   savedOnly: false,
   query: '',
-  favorites: loadFavorites(),
+  favorites,
 };
 
 const detail = createDetail($('#recipe'));
+
+const EMPTY_MESSAGE = 'No recipes found. Try another ingredient or category.';
+const NO_SAVED_MESSAGE = 'Tap ♡ on a recipe to save it.';
 
 function render() {
   const list = filterRecipes(recipes, { ...state, savedIds: state.favorites });
   $('#cards').innerHTML = cardsHtml(list, state.favorites);
   $('#empty').hidden = list.length > 0;
+  $('#empty').textContent = state.savedOnly && state.favorites.length === 0 ? NO_SAVED_MESSAGE : EMPTY_MESSAGE;
   $('#result-count').textContent = resultLabel(list.length, state.savedOnly);
   $('#saved-count').textContent = state.favorites.length;
   $('#saved').setAttribute('aria-pressed', state.savedOnly);
@@ -75,8 +85,15 @@ function openRecipe(id) {
 }
 
 // The hero recipe is the one marked `featured: true` in recipes.js (validated by npm run validate).
+// Its photo, name and subtitle fill the hero, so changing `featured` updates the page.
 const featured = recipes.find((r) => r.featured);
-if (featured) $('#featured').onclick = () => detail.open(featured);
+if (featured) {
+  $('#hero-photo').src = imagePath(featured.id);
+  $('#hero-photo').alt = `${featured.name}, ${featured.sub}`;
+  $('#hero-name').textContent = featured.name;
+  $('#hero-sub').textContent = featured.sub;
+  $('#featured').onclick = () => detail.open(featured);
+}
 
 renderFilters();
 render();

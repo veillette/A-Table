@@ -8,6 +8,7 @@ import {
   categoriesOf,
   scaleQuantity,
   formatIngredient,
+  formatAmount,
   resultLabel,
 } from '../dist/lib/format.js';
 
@@ -65,6 +66,17 @@ describe('servings and amounts', () => {
 
   test('does not leave a double space when the unit is empty', () => {
     assert.ok(!formatIngredient([2, '', 'eggs'], 2, 2).includes('  '));
+  });
+
+  test('shows common kitchen fractions instead of decimals', () => {
+    assert.equal(formatAmount(0.5), '½');
+    assert.equal(formatAmount(1.33), '1 ⅓');
+    assert.equal(formatAmount(0.67), '⅔');
+    assert.equal(formatAmount(2.75), '2 ¾');
+    assert.equal(formatAmount(3), '3');
+    assert.equal(formatAmount(2.999), '3');
+    assert.equal(formatAmount(0.37), '0.37');
+    assert.equal(formatIngredient([0.5, '', 'cucumber, sliced'], 2, 2), '½ cucumber, sliced');
   });
 });
 

@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-recipes.mjs",
+    "thumbs": "node scripts/make-thumbs.mjs",
     "test:unit": "node --test tests/",
     "test:offline": "node --test tests/browser/offline.spec.mjs",
     "validate:html": "html-validate dist/index.html",

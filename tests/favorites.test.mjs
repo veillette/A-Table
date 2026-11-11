@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { loadFavorites, saveFavorites, toggleFavorite, STORAGE_KEY } from '../dist/lib/favorites.js';
+import { loadFavorites, saveFavorites, toggleFavorite, pruneFavorites, STORAGE_KEY } from '../dist/lib/favorites.js';
 
 function memoryStorage(initial = {}) {
   const data = new Map(Object.entries(initial));
@@ -34,6 +34,10 @@ describe('favorites storage', () => {
     const broken = { getItem() { throw new Error('denied'); }, setItem() { throw new Error('denied'); } };
     assert.deepEqual(loadFavorites(broken), []);
     assert.equal(saveFavorites(['x'], broken), false);
+  });
+
+  test('drops saved ids that no longer match a recipe', () => {
+    assert.deepEqual(pruneFavorites(['salmon', 'removed-recipe'], new Set(['salmon', 'pasta'])), ['salmon']);
   });
 
   test('toggles an id in and out without mutating the input', () => {

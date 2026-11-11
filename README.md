@@ -30,13 +30,15 @@ Images: each recipe needs two WebP files with the same name as its `id`:
 - `dist/images/<id>.webp`: full size (about 1200 px wide), used in the dialog.
 - `dist/images/thumbs/<id>.webp`: card thumbnail (about 720 px wide), used in the grid.
 
-To create a thumbnail from a new full-size image, for example with ImageMagick:
+To create missing thumbnails from the full-size photos (needs ImageMagick's `magick` command):
 
 ```sh
-magick dist/images/<id>.webp -resize '720x720>' -quality 72 -define webp:method=6 dist/images/thumbs/<id>.webp
+npm run thumbs                 # only missing thumbnails
+npm run thumbs -- --force      # rebuild all thumbnails
+npm run thumbs -- salmon       # one recipe
 ```
 
-The hero photo at the top of `dist/index.html` is a fixed image (`images/salmon.webp`). If you change the `featured` recipe, update the hero image and text to match.
+The hero at the top of the page takes its photo, name and subtitle from the `featured` recipe, so changing which recipe is featured needs no other edit. Its static text in `dist/index.html` is only a placeholder until the script runs.
 
 Fonts (DM Sans and Libre Caslon Display) are self-hosted in `dist/fonts/`, and `dist/fonts.css` declares them. Nothing is loaded from Google. The font files are open-source (SIL Open Font License). To update them, fetch new files from Google Fonts and regenerate `fonts.css`.
 
