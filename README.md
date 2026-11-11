@@ -8,6 +8,6 @@ Serve `dist/` with any static HTTP server, for example `python3 -m http.server 8
 
 ## Content
 
-Recipes are stored in `dist/app.js`. Edit the recipe objects to add or update cards. Recipe images are stored in `dist/images/` as WebP files. Fonts load from Google Fonts. Saved favorites remain in the visitor's browser.
+Recipes are stored in `dist/recipes.js`. Edit the recipe objects to add or update cards. Recipe images are stored in `dist/images/` as WebP files. Fonts load from Google Fonts. Saved favorites remain in the visitor's browser.
 
 The site uses plain HTML, CSS, and JavaScript with no build dependencies. Deploy `dist/` to a static host. For GitHub Pages, publish from the included GitHub Actions workflow.
