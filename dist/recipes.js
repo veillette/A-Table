@@ -1,3053 +1,1587 @@
+// Recipe data for À Table. See README.md for the field reference.
+// Ingredient rows are [quantity, unit, name]; use '' for counted items (e.g. [2, '', 'eggs']).
 export const recipes = [
-{id:'salmon',name:'Lemon & herb salmon',sub:'with roasted potatoes & green beans',category:'Fish',time:35,difficulty:'Easy',description:'Golden potatoes, tender salmon, and a generous squeeze of lemon. A fresh take on the sheet-pan supper.',ingredients:[[2,'','salmon fillets (about 150 g each)'],[400,'g','baby potatoes, halved'],[200,'g','green beans, trimmed'],[1,'','lemon'],[2,'tbsp','olive oil'],[2,'tsp','Dijon mustard'],[2,'tbsp','chopped parsley']],steps:['Heat the oven to 425°F (220°C). Toss potatoes with half the oil, salt, and pepper on a sheet pan. Roast for 20 minutes, turning once.','Mix the remaining oil with mustard, half the lemon juice, and parsley. Pat the salmon dry and spread the mixture over the top.','Add salmon and green beans to the pan. Season the beans and roast for 12–15 minutes, until the fish reaches 145°F (63°C) in the thickest part and the potatoes are tender.','Serve with the remaining lemon cut into wedges. Spoon any pan juices over the salmon.'],tip:'Cut the potatoes into evenly sized pieces so they roast at the same rate.'},
-{id:'chicken',name:'Coconut curry chicken',sub:'with ginger, spinach & jasmine rice',category:'Chicken',time:30,difficulty:'Easy',description:'A cozy coconut sauce with a little warmth and plenty of bright lime.',ingredients:[[300,'g','boneless chicken thighs, sliced'],[150,'g','jasmine rice'],[200,'ml','coconut milk'],[1,'tbsp','red curry paste'],[1,'tbsp','grated ginger'],[100,'g','baby spinach'],[1,'','lime'],[1,'tbsp','neutral oil']],steps:['Cook the rice according to its package directions. Keep covered while you prepare the curry.','Heat oil in a deep skillet over medium-high heat. Add chicken and cook for 4–5 minutes, turning to brown both sides.','Stir in ginger and curry paste for 1 minute. Pour in coconut milk and 100 ml water per two servings. Simmer gently for 10–12 minutes, until chicken reaches 165°F (74°C).','Fold in spinach until wilted. Add lime juice and salt to taste. Serve over rice.'],tip:'Curry pastes vary in heat. Start with less and add more to suit your table.'},
-{id:'risotto',name:'Creamy mushroom risotto',sub:'with Parmesan & fresh thyme',category:'Vegetarian',time:40,difficulty:'A little practice',description:'Slow down, stir a little, and turn a handful of simple ingredients into dinner.',ingredients:[[160,'g','arborio rice'],[250,'g','mushrooms, sliced'],[700,'ml','vegetable stock'],[1,'','small onion, finely diced'],[2,'tbsp','butter'],[40,'g','Parmesan, grated'],[1,'tsp','thyme leaves']],steps:['Warm stock in a saucepan over low heat. In another pan, melt half the butter over medium-high heat and brown mushrooms for 6–8 minutes. Set aside.','Lower heat to medium. Add remaining butter and onion; soften for 5 minutes. Stir in rice and thyme for 1 minute.','Add warm stock a ladle at a time, stirring often and letting each addition mostly absorb before the next. Continue for 18–25 minutes, until rice is tender with a slight bite. Add hot water if more liquid is needed.','Stir in mushrooms and Parmesan. Season with salt and pepper. Add a splash of stock or water for a loose, creamy texture and serve immediately.'],tip:'Keep the stock warm and the rice at a gentle simmer. The finished risotto should flow onto the plate.'},
-{id:'soup',name:'Carrot & coriander soup',sub:'with a swirl of cream & crusty bread',category:'Vegetarian',time:35,difficulty:'Easy',description:'A silky, gently spiced bowl of comfort for cooler evenings.',ingredients:[[500,'g','carrots, sliced'],[1,'','onion, chopped'],[1,'tbsp','olive oil'],[1,'tsp','ground coriander'],[600,'ml','vegetable stock'],[2,'tbsp','cream, optional'],[2,'tbsp','fresh coriander leaves']],steps:['Heat oil in a saucepan over medium heat. Cook onion for 5 minutes until softened. Stir in ground coriander for 30 seconds.','Add carrots and stock. Bring to a simmer, cover, and cook for 20–25 minutes, until carrots are very tender.','Remove from heat. Blend carefully with an immersion blender until smooth. Add water to thin as desired and season with salt and pepper.','Ladle into bowls. Finish with cream and fresh coriander, and serve with bread.'],tip:'For batch cooking, freeze the blended soup before adding cream. Add the cream after reheating.'},
-{id:'pasta',name:'Tomato & basil pasta',sub:'with garlic & shaved Parmesan',category:'Vegetarian',time:25,difficulty:'Easy',description:'Sweet tomatoes, fragrant basil, and a sauce that comes together while the pasta cooks.',ingredients:[[180,'g','pasta'],[300,'g','cherry tomatoes, halved'],[2,'','garlic cloves, sliced'],[2,'tbsp','olive oil'],[20,'g','Parmesan, grated'],[10,'g','fresh basil']],steps:['Bring a large pot of salted water to a boil. Cook pasta according to the package, reserving a mug of cooking water before draining.','Meanwhile, heat oil over medium heat in a skillet. Add garlic and cook for 30 seconds without browning.','Add tomatoes and a pinch of salt. Simmer for 10–12 minutes, pressing some tomatoes to release their juices.','Toss in pasta with a splash of cooking water. Stir until glossy, then add torn basil and Parmesan. Season and serve.'],tip:'The starchy pasta water helps the olive oil and tomato juices become a silky sauce.'},
-{id:'souvlaki',name:'Greek chicken souvlaki',sub:'with cucumber yogurt & warm pita',category:'Chicken',time:30,difficulty:'Easy',description:'Lemony, oregano-scented chicken with cool cucumber yogurt and plenty of crunch.',ingredients:[[300,'g','boneless chicken breast, cubed'],[2,'','pita breads'],[150,'g','plain Greek yogurt'],[0.5,'','cucumber, grated and squeezed dry'],[1,'','lemon'],[2,'tbsp','olive oil'],[1,'tsp','dried oregano'],[1,'','garlic clove, grated']],steps:['Mix oil, oregano, half the garlic, half the lemon juice, salt, and pepper. Toss with chicken. Let stand for 10 minutes while preparing the sauce.','Mix yogurt, cucumber, remaining garlic, and lemon juice to taste. Season with salt.','Heat a grill pan or skillet over medium-high heat. Cook chicken for 8–12 minutes, turning often, until the center reaches 165°F (74°C).','Warm pita in a dry pan. Serve with chicken and cucumber yogurt. Add sliced tomato or lettuce if you like.'],tip:'If using wooden skewers over an open flame, soak them first. Cooking the pieces directly in a skillet works just as well.'},
 {
-  "id": "beef-broccoli",
-  "name": "Beef & broccoli",
-  "sub": "with ginger, soy & rice",
-  "category": "Beef",
-  "time": 25,
-  "difficulty": "Easy",
-  "description": "Beef & broccoli with ginger, soy & rice.",
-  "ingredients": [
-    [
-      250,
-      "g",
-      "flank steak, thinly sliced"
-    ],
-    [
-      300,
-      "g",
-      "broccoli florets"
-    ],
-    [
-      150,
-      "g",
-      "rice"
-    ],
-    [
-      2,
-      "tbsp",
-      "soy sauce"
-    ],
-    [
-      1,
-      "tbsp",
-      "cornstarch"
-    ],
-    [
-      1,
-      "tbsp",
-      "grated ginger"
-    ],
-    [
-      1,
-      "tbsp",
-      "neutral oil"
-    ],
-    [
-      1,
-      "tsp",
-      "brown sugar"
-    ]
+  id: "salmon",
+  name: "Lemon & herb salmon",
+  sub: "with roasted potatoes & green beans",
+  category: "Fish",
+  time: 35,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Golden potatoes, tender salmon, and a generous squeeze of lemon. A fresh take on the sheet-pan supper.",
+  ingredients: [
+    [2, "", "salmon fillets (about 150 g each)"],
+    [400, "g", "baby potatoes, halved"],
+    [200, "g", "green beans, trimmed"],
+    [1, "", "lemon"],
+    [2, "tbsp", "olive oil"],
+    [2, "tsp", "Dijon mustard"],
+    [2, "tbsp", "chopped parsley"],
   ],
-  "steps": [
+  steps: [
+    "Heat the oven to 425°F (220°C). Toss potatoes with half the oil, salt, and pepper on a sheet pan. Roast for 20 minutes, turning once.",
+    "Mix the remaining oil with mustard, half the lemon juice, and parsley. Pat the salmon dry and spread the mixture over the top.",
+    "Add salmon and green beans to the pan. Season the beans and roast for 12–15 minutes, until the fish reaches 145°F (63°C) in the thickest part and the potatoes are tender.",
+    "Serve with the remaining lemon cut into wedges. Spoon any pan juices over the salmon.",
+  ],
+  tip: "Cut the potatoes into evenly sized pieces so they roast at the same rate.",
+},
+{
+  id: "chicken",
+  name: "Coconut curry chicken",
+  sub: "with ginger, spinach & jasmine rice",
+  category: "Chicken",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "A cozy coconut sauce with a little warmth and plenty of bright lime.",
+  ingredients: [
+    [300, "g", "boneless chicken thighs, sliced"],
+    [150, "g", "jasmine rice"],
+    [200, "ml", "coconut milk"],
+    [1, "tbsp", "red curry paste"],
+    [1, "tbsp", "grated ginger"],
+    [100, "g", "baby spinach"],
+    [1, "", "lime"],
+    [1, "tbsp", "neutral oil"],
+  ],
+  steps: [
+    "Cook the rice according to its package directions. Keep covered while you prepare the curry.",
+    "Heat oil in a deep skillet over medium-high heat. Add chicken and cook for 4–5 minutes, turning to brown both sides.",
+    "Stir in ginger and curry paste for 1 minute. Pour in coconut milk and 100 ml water per two servings. Simmer gently for 10–12 minutes, until chicken reaches 165°F (74°C).",
+    "Fold in spinach until wilted. Add lime juice and salt to taste. Serve over rice.",
+  ],
+  tip: "Curry pastes vary in heat. Start with less and add more to suit your table.",
+},
+{
+  id: "risotto",
+  name: "Creamy mushroom risotto",
+  sub: "with Parmesan & fresh thyme",
+  category: "Vegetarian",
+  time: 40,
+  difficulty: "A little practice",
+  servings: 2,
+  description: "Slow down, stir a little, and turn a handful of simple ingredients into dinner.",
+  ingredients: [
+    [160, "g", "arborio rice"],
+    [250, "g", "mushrooms, sliced"],
+    [700, "ml", "vegetable stock"],
+    [1, "", "small onion, finely diced"],
+    [2, "tbsp", "butter"],
+    [40, "g", "Parmesan, grated"],
+    [1, "tsp", "thyme leaves"],
+  ],
+  steps: [
+    "Warm stock in a saucepan over low heat. In another pan, melt half the butter over medium-high heat and brown mushrooms for 6–8 minutes. Set aside.",
+    "Lower heat to medium. Add remaining butter and onion; soften for 5 minutes. Stir in rice and thyme for 1 minute.",
+    "Add warm stock a ladle at a time, stirring often and letting each addition mostly absorb before the next. Continue for 18–25 minutes, until rice is tender with a slight bite. Add hot water if more liquid is needed.",
+    "Stir in mushrooms and Parmesan. Season with salt and pepper. Add a splash of stock or water for a loose, creamy texture and serve immediately.",
+  ],
+  tip: "Keep the stock warm and the rice at a gentle simmer. The finished risotto should flow onto the plate.",
+},
+{
+  id: "soup",
+  name: "Carrot & coriander soup",
+  sub: "with a swirl of cream & crusty bread",
+  category: "Vegetarian",
+  time: 35,
+  difficulty: "Easy",
+  servings: 2,
+  description: "A silky, gently spiced bowl of comfort for cooler evenings.",
+  ingredients: [
+    [500, "g", "carrots, sliced"],
+    [1, "", "onion, chopped"],
+    [1, "tbsp", "olive oil"],
+    [1, "tsp", "ground coriander"],
+    [600, "ml", "vegetable stock"],
+    [2, "tbsp", "cream, optional"],
+    [2, "tbsp", "fresh coriander leaves"],
+  ],
+  steps: [
+    "Heat oil in a saucepan over medium heat. Cook onion for 5 minutes until softened. Stir in ground coriander for 30 seconds.",
+    "Add carrots and stock. Bring to a simmer, cover, and cook for 20–25 minutes, until carrots are very tender.",
+    "Remove from heat. Blend carefully with an immersion blender until smooth. Add water to thin as desired and season with salt and pepper.",
+    "Ladle into bowls. Finish with cream and fresh coriander, and serve with bread.",
+  ],
+  tip: "For batch cooking, freeze the blended soup before adding cream. Add the cream after reheating.",
+},
+{
+  id: "pasta",
+  name: "Tomato & basil pasta",
+  sub: "with garlic & shaved Parmesan",
+  category: "Vegetarian",
+  time: 25,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Sweet tomatoes, fragrant basil, and a sauce that comes together while the pasta cooks.",
+  ingredients: [
+    [180, "g", "pasta"],
+    [300, "g", "cherry tomatoes, halved"],
+    [2, "", "garlic cloves, sliced"],
+    [2, "tbsp", "olive oil"],
+    [20, "g", "Parmesan, grated"],
+    [10, "g", "fresh basil"],
+  ],
+  steps: [
+    "Bring a large pot of salted water to a boil. Cook pasta according to the package, reserving a mug of cooking water before draining.",
+    "Meanwhile, heat oil over medium heat in a skillet. Add garlic and cook for 30 seconds without browning.",
+    "Add tomatoes and a pinch of salt. Simmer for 10–12 minutes, pressing some tomatoes to release their juices.",
+    "Toss in pasta with a splash of cooking water. Stir until glossy, then add torn basil and Parmesan. Season and serve.",
+  ],
+  tip: "The starchy pasta water helps the olive oil and tomato juices become a silky sauce.",
+},
+{
+  id: "souvlaki",
+  name: "Greek chicken souvlaki",
+  sub: "with cucumber yogurt & warm pita",
+  category: "Chicken",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Lemony, oregano-scented chicken with cool cucumber yogurt and plenty of crunch.",
+  ingredients: [
+    [300, "g", "boneless chicken breast, cubed"],
+    [2, "", "pita breads"],
+    [150, "g", "plain Greek yogurt"],
+    [0.5, "", "cucumber, grated and squeezed dry"],
+    [1, "", "lemon"],
+    [2, "tbsp", "olive oil"],
+    [1, "tsp", "dried oregano"],
+    [1, "", "garlic clove, grated"],
+  ],
+  steps: [
+    "Mix oil, oregano, half the garlic, half the lemon juice, salt, and pepper. Toss with chicken. Let stand for 10 minutes while preparing the sauce.",
+    "Mix yogurt, cucumber, remaining garlic, and lemon juice to taste. Season with salt.",
+    "Heat a grill pan or skillet over medium-high heat. Cook chicken for 8–12 minutes, turning often, until the center reaches 165°F (74°C).",
+    "Warm pita in a dry pan. Serve with chicken and cucumber yogurt. Add sliced tomato or lettuce if you like.",
+  ],
+  tip: "If using wooden skewers over an open flame, soak them first. Cooking the pieces directly in a skillet works just as well.",
+},
+{
+  id: "beef-broccoli",
+  name: "Beef & broccoli",
+  sub: "with ginger, soy & rice",
+  category: "Beef",
+  time: 25,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Beef & broccoli with ginger, soy & rice.",
+  ingredients: [
+    [250, "g", "flank steak, thinly sliced"],
+    [300, "g", "broccoli florets"],
+    [150, "g", "rice"],
+    [2, "tbsp", "soy sauce"],
+    [1, "tbsp", "cornstarch"],
+    [1, "tbsp", "grated ginger"],
+    [1, "tbsp", "neutral oil"],
+    [1, "tsp", "brown sugar"],
+  ],
+  steps: [
     "Cook the rice according to the package. Whisk soy sauce, cornstarch, sugar and ¼ cup water per two servings.",
     "Sear the beef in hot oil for 2–3 minutes, working in batches. Transfer to a plate. Stir-fry broccoli for 4 minutes with a splash of water.",
-    "Add ginger, beef and sauce. Toss until glossy and the beef reaches 145°F (63°C), then rest 3 minutes before serving over rice."
+    "Add ginger, beef and sauce. Toss until glossy and the beef reaches 145°F (63°C), then rest 3 minutes before serving over rice.",
   ],
-  "tip": "Slice across the grain for tender bites."
+  tip: "Slice across the grain for tender bites.",
 },
 {
-  "id": "pork-tenderloin",
-  "name": "Mustard pork tenderloin",
-  "sub": "with roasted carrots",
-  "category": "Pork",
-  "time": 40,
-  "difficulty": "Easy",
-  "description": "Mustard pork tenderloin with roasted carrots.",
-  "ingredients": [
-    [
-      350,
-      "g",
-      "pork tenderloin"
-    ],
-    [
-      400,
-      "g",
-      "carrots, cut into sticks"
-    ],
-    [
-      2,
-      "tbsp",
-      "Dijon mustard"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      1,
-      "tsp",
-      "dried thyme"
-    ]
+  id: "pork-tenderloin",
+  name: "Mustard pork tenderloin",
+  sub: "with roasted carrots",
+  category: "Pork",
+  time: 40,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Mustard pork tenderloin with roasted carrots.",
+  ingredients: [
+    [350, "g", "pork tenderloin"],
+    [400, "g", "carrots, cut into sticks"],
+    [2, "tbsp", "Dijon mustard"],
+    [1, "tbsp", "olive oil"],
+    [1, "tsp", "dried thyme"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 425°F (220°C). Toss carrots with half the oil, salt and pepper. Roast for 10 minutes.",
     "Rub pork with mustard, thyme and remaining oil. Place beside carrots and roast for 18–25 minutes, until the center reaches 145°F (63°C).",
-    "Rest the pork for at least 3 minutes. Slice and serve with the carrots."
+    "Rest the pork for at least 3 minutes. Slice and serve with the carrots.",
   ],
-  "tip": "Tuck the thin end of the pork underneath so it cooks evenly."
+  tip: "Tuck the thin end of the pork underneath so it cooks evenly.",
 },
 {
-  "id": "sausage-peppers",
-  "name": "Italian sausage & peppers",
-  "sub": "with sweet onions",
-  "category": "Pork",
-  "time": 35,
-  "difficulty": "Easy",
-  "description": "Italian sausage & peppers with sweet onions.",
-  "ingredients": [
-    [
-      300,
-      "g",
-      "Italian pork sausage links"
-    ],
-    [
-      2,
-      "",
-      "bell peppers, sliced"
-    ],
-    [
-      1,
-      "",
-      "onion, sliced"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      1,
-      "tsp",
-      "dried oregano"
-    ]
+  id: "sausage-peppers",
+  name: "Italian sausage & peppers",
+  sub: "with sweet onions",
+  category: "Pork",
+  time: 35,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Italian sausage & peppers with sweet onions.",
+  ingredients: [
+    [300, "g", "Italian pork sausage links"],
+    [2, "", "bell peppers, sliced"],
+    [1, "", "onion, sliced"],
+    [1, "tbsp", "olive oil"],
+    [1, "tsp", "dried oregano"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 425°F (220°C). Toss peppers and onion with oil, oregano and pepper.",
     "Spread vegetables on a sheet pan and add sausages. Roast for 25–30 minutes, turning halfway through, until sausages reach 160°F (71°C).",
-    "Slice the sausages and toss with the vegetables and pan juices."
+    "Slice the sausages and toss with the vegetables and pan juices.",
   ],
-  "tip": "Use a large sheet pan so the peppers brown."
+  tip: "Use a large sheet pan so the peppers brown.",
 },
 {
-  "id": "chicken-fajitas",
-  "name": "Chicken fajitas",
-  "sub": "with peppers & warm tortillas",
-  "category": "Chicken",
-  "time": 30,
-  "difficulty": "Easy",
-  "description": "Chicken fajitas with peppers & warm tortillas.",
-  "ingredients": [
-    [
-      300,
-      "g",
-      "boneless chicken breast, sliced"
-    ],
-    [
-      2,
-      "",
-      "bell peppers, sliced"
-    ],
-    [
-      1,
-      "",
-      "onion, sliced"
-    ],
-    [
-      4,
-      "",
-      "flour tortillas"
-    ],
-    [
-      1,
-      "",
-      "lime"
-    ],
-    [
-      1,
-      "tbsp",
-      "neutral oil"
-    ],
-    [
-      2,
-      "tsp",
-      "chili powder"
-    ],
-    [
-      1,
-      "tsp",
-      "ground cumin"
-    ]
+  id: "chicken-fajitas",
+  name: "Chicken fajitas",
+  sub: "with peppers & warm tortillas",
+  category: "Chicken",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Chicken fajitas with peppers & warm tortillas.",
+  ingredients: [
+    [300, "g", "boneless chicken breast, sliced"],
+    [2, "", "bell peppers, sliced"],
+    [1, "", "onion, sliced"],
+    [4, "", "flour tortillas"],
+    [1, "", "lime"],
+    [1, "tbsp", "neutral oil"],
+    [2, "tsp", "chili powder"],
+    [1, "tsp", "ground cumin"],
   ],
-  "steps": [
+  steps: [
     "Toss chicken with half the oil, chili powder, cumin and salt. Cook in a hot skillet until browned and 165°F (74°C). Transfer to a clean plate.",
     "Add the rest of the oil and cook the peppers and onion for 6–8 minutes. Return chicken to the skillet and squeeze over half the lime.",
-    "Warm the tortillas and fill with chicken and peppers. Serve with the remaining lime."
+    "Warm the tortillas and fill with chicken and peppers. Serve with the remaining lime.",
   ],
-  "tip": "Let the pan heat before adding the peppers for better browning."
+  tip: "Let the pan heat before adding the peppers for better browning.",
 },
 {
-  "id": "lemon-orzo",
-  "name": "Lemon spinach orzo",
-  "sub": "with crumbled feta",
-  "category": "Vegetarian",
-  "time": 25,
-  "difficulty": "Easy",
-  "description": "Lemon spinach orzo with crumbled feta.",
-  "ingredients": [
-    [
-      160,
-      "g",
-      "orzo"
-    ],
-    [
-      100,
-      "g",
-      "baby spinach"
-    ],
-    [
-      80,
-      "g",
-      "feta"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ],
-    [
-      2,
-      "",
-      "garlic cloves, minced"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ]
+  id: "lemon-orzo",
+  name: "Lemon spinach orzo",
+  sub: "with crumbled feta",
+  category: "Vegetarian",
+  time: 25,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Lemon spinach orzo with crumbled feta.",
+  ingredients: [
+    [160, "g", "orzo"],
+    [100, "g", "baby spinach"],
+    [80, "g", "feta"],
+    [1, "", "lemon"],
+    [2, "", "garlic cloves, minced"],
+    [1, "tbsp", "olive oil"],
   ],
-  "steps": [
+  steps: [
     "Cook orzo in salted water. Reserve a little cooking water before draining.",
     "Heat oil in a skillet and cook garlic for 30 seconds. Add spinach and stir until wilted.",
-    "Add orzo, lemon zest and juice, and a splash of pasta water. Fold in feta and season to taste."
+    "Add orzo, lemon zest and juice, and a splash of pasta water. Fold in feta and season to taste.",
   ],
-  "tip": "Use feta made with vegetarian rennet if needed."
+  tip: "Use feta made with vegetarian rennet if needed.",
 },
 {
-  "id": "lentil-soup",
-  "name": "Red lentil & tomato soup",
-  "sub": "with cumin and carrots",
-  "category": "Vegetarian",
-  "time": 35,
-  "difficulty": "Easy",
-  "description": "Red lentil & tomato soup with cumin and carrots.",
-  "ingredients": [
-    [
-      150,
-      "g",
-      "red lentils, rinsed"
-    ],
-    [
-      400,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      500,
-      "ml",
-      "vegetable stock"
-    ],
-    [
-      1,
-      "",
-      "carrot, diced"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      1,
-      "tsp",
-      "ground cumin"
-    ]
+  id: "lentil-soup",
+  name: "Red lentil & tomato soup",
+  sub: "with cumin and carrots",
+  category: "Vegetarian",
+  time: 35,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Red lentil & tomato soup with cumin and carrots.",
+  ingredients: [
+    [150, "g", "red lentils, rinsed"],
+    [400, "g", "crushed tomatoes"],
+    [500, "ml", "vegetable stock"],
+    [1, "", "carrot, diced"],
+    [1, "", "onion, diced"],
+    [1, "tbsp", "olive oil"],
+    [1, "tsp", "ground cumin"],
   ],
-  "steps": [
+  steps: [
     "Soften onion and carrot in olive oil for 6 minutes. Add cumin and stir for 30 seconds.",
     "Add lentils, tomatoes and stock. Simmer for 22–25 minutes, stirring occasionally, until lentils are soft.",
-    "Season to taste and add a little water if the soup is too thick."
+    "Season to taste and add a little water if the soup is too thick.",
   ],
-  "tip": "The soup thickens as it cools. Add water when reheating."
+  tip: "The soup thickens as it cools. Add water when reheating.",
 },
 {
-  "id": "black-bean-tacos",
-  "name": "Black bean tacos",
-  "sub": "with avocado & lime",
-  "category": "Vegetarian",
-  "time": 20,
-  "difficulty": "Easy",
-  "description": "Black bean tacos with avocado & lime.",
-  "ingredients": [
-    [
-      240,
-      "g",
-      "cooked black beans, drained"
-    ],
-    [
-      1,
-      "",
-      "avocado"
-    ],
-    [
-      1,
-      "",
-      "lime"
-    ],
-    [
-      4,
-      "",
-      "corn tortillas"
-    ],
-    [
-      1,
-      "tsp",
-      "ground cumin"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ]
+  id: "black-bean-tacos",
+  name: "Black bean tacos",
+  sub: "with avocado & lime",
+  category: "Vegetarian",
+  time: 20,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Black bean tacos with avocado & lime.",
+  ingredients: [
+    [240, "g", "cooked black beans, drained"],
+    [1, "", "avocado"],
+    [1, "", "lime"],
+    [4, "", "corn tortillas"],
+    [1, "tsp", "ground cumin"],
+    [1, "tbsp", "olive oil"],
   ],
-  "steps": [
+  steps: [
     "Warm oil and cumin in a skillet for 30 seconds. Add beans and a splash of water and simmer for 5 minutes. Mash some beans with a fork.",
     "Slice the avocado and toss with half the lime juice and a pinch of salt. Warm tortillas in a dry skillet.",
-    "Fill tortillas with beans and avocado. Serve with the remaining lime."
+    "Fill tortillas with beans and avocado. Serve with the remaining lime.",
   ],
-  "tip": "Wrap warm tortillas in a towel to keep them pliable."
+  tip: "Wrap warm tortillas in a towel to keep them pliable.",
 },
 {
-  "id": "cod-tomatoes",
-  "name": "Baked cod & cherry tomatoes",
-  "sub": "with olives & garlic",
-  "category": "Fish",
-  "time": 30,
-  "difficulty": "Easy",
-  "description": "Baked cod & cherry tomatoes with olives & garlic.",
-  "ingredients": [
-    [
-      2,
-      "",
-      "cod fillets, about 150 g each"
-    ],
-    [
-      250,
-      "g",
-      "cherry tomatoes"
-    ],
-    [
-      50,
-      "g",
-      "pitted olives"
-    ],
-    [
-      2,
-      "",
-      "garlic cloves, sliced"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ]
+  id: "cod-tomatoes",
+  name: "Baked cod & cherry tomatoes",
+  sub: "with olives & garlic",
+  category: "Fish",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Baked cod & cherry tomatoes with olives & garlic.",
+  ingredients: [
+    [2, "", "cod fillets, about 150 g each"],
+    [250, "g", "cherry tomatoes"],
+    [50, "g", "pitted olives"],
+    [2, "", "garlic cloves, sliced"],
+    [1, "tbsp", "olive oil"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 425°F (220°C). Toss tomatoes, olives and garlic with oil in a baking dish and roast for 10 minutes.",
     "Nestle cod into the tomatoes. Season with pepper and roast for 10–14 minutes until the center reaches 145°F (63°C).",
-    "Serve the fish with the tomatoes and spoon the pan juices over it."
+    "Serve the fish with the tomatoes and spoon the pan juices over it.",
   ],
-  "tip": "Pat the cod dry before adding it to the baking dish."
+  tip: "Pat the cod dry before adding it to the baking dish.",
 },
 {
-  "id": "shrimp-rice",
-  "name": "Garlic shrimp & rice",
-  "sub": "with peas & lemon",
-  "category": "Fish",
-  "time": 25,
-  "difficulty": "Easy",
-  "description": "Garlic shrimp & rice with peas & lemon.",
-  "ingredients": [
-    [
-      250,
-      "g",
-      "raw peeled shrimp"
-    ],
-    [
-      150,
-      "g",
-      "rice"
-    ],
-    [
-      100,
-      "g",
-      "frozen peas"
-    ],
-    [
-      2,
-      "",
-      "garlic cloves, minced"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ],
-    [
-      1,
-      "tbsp",
-      "butter"
-    ]
+  id: "shrimp-rice",
+  name: "Garlic shrimp & rice",
+  sub: "with peas & lemon",
+  category: "Fish",
+  time: 25,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Garlic shrimp & rice with peas & lemon.",
+  ingredients: [
+    [250, "g", "raw peeled shrimp"],
+    [150, "g", "rice"],
+    [100, "g", "frozen peas"],
+    [2, "", "garlic cloves, minced"],
+    [1, "", "lemon"],
+    [1, "tbsp", "butter"],
   ],
-  "steps": [
+  steps: [
     "Cook rice according to the package. Stir in peas during the last 3 minutes and finish cooking.",
     "Pat shrimp dry. Melt butter over medium-high heat, add garlic for 30 seconds, then add shrimp and cook until firm and opaque throughout, about 2 minutes per side.",
-    "Squeeze lemon over the shrimp and serve over the rice and peas."
+    "Squeeze lemon over the shrimp and serve over the rice and peas.",
   ],
-  "tip": "Thaw frozen shrimp before cooking so they cook evenly."
+  tip: "Thaw frozen shrimp before cooking so they cook evenly.",
 },
 {
-  "id": "chicken-tray",
-  "name": "Chicken & sweet potato tray bake",
-  "sub": "with roasted red onion",
-  "category": "Chicken",
-  "time": 45,
-  "difficulty": "Easy",
-  "description": "Chicken & sweet potato tray bake with roasted red onion.",
-  "ingredients": [
-    [
-      400,
-      "g",
-      "boneless chicken thighs"
-    ],
-    [
-      350,
-      "g",
-      "sweet potatoes, cubed"
-    ],
-    [
-      1,
-      "",
-      "red onion, cut into wedges"
-    ],
-    [
-      2,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      1,
-      "tsp",
-      "smoked paprika"
-    ]
+  id: "chicken-tray",
+  name: "Chicken & sweet potato tray bake",
+  sub: "with roasted red onion",
+  category: "Chicken",
+  time: 45,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Chicken & sweet potato tray bake with roasted red onion.",
+  ingredients: [
+    [400, "g", "boneless chicken thighs"],
+    [350, "g", "sweet potatoes, cubed"],
+    [1, "", "red onion, cut into wedges"],
+    [2, "tbsp", "olive oil"],
+    [1, "tsp", "smoked paprika"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 425°F (220°C). Toss sweet potatoes and onion with half the oil and a pinch of salt. Roast for 10 minutes.",
     "Coat chicken in remaining oil, paprika, salt and pepper. Add to the pan and roast for 20–25 minutes, until chicken reaches 165°F (74°C).",
-    "Serve chicken with the roasted vegetables and spoon over any pan juices."
+    "Serve chicken with the roasted vegetables and spoon over any pan juices.",
   ],
-  "tip": "Cut sweet potatoes into roughly ¾-inch cubes."
+  tip: "Cut sweet potatoes into roughly ¾-inch cubes.",
 },
 {
-  "id": "turkey-meatballs",
-  "name": "Turkey meatballs & spaghetti",
-  "sub": "with tomato sauce",
-  "category": "Turkey",
-  "time": 35,
-  "difficulty": "Easy",
-  "description": "Turkey meatballs & spaghetti with tomato sauce.",
-  "ingredients": [
-    [
-      300,
-      "g",
-      "ground turkey"
-    ],
-    [
-      35,
-      "g",
-      "breadcrumbs"
-    ],
-    [
-      1,
-      "",
-      "egg"
-    ],
-    [
-      400,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      160,
-      "g",
-      "spaghetti"
-    ],
-    [
-      1,
-      "tsp",
-      "dried oregano"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ]
+  id: "turkey-meatballs",
+  name: "Turkey meatballs & spaghetti",
+  sub: "with tomato sauce",
+  category: "Turkey",
+  time: 35,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Turkey meatballs & spaghetti with tomato sauce.",
+  ingredients: [
+    [300, "g", "ground turkey"],
+    [35, "g", "breadcrumbs"],
+    [1, "", "egg"],
+    [400, "g", "crushed tomatoes"],
+    [160, "g", "spaghetti"],
+    [1, "tsp", "dried oregano"],
+    [1, "tbsp", "olive oil"],
   ],
-  "steps": [
+  steps: [
     "Mix turkey, breadcrumbs, egg, oregano and salt. Shape into small meatballs.",
     "Brown in olive oil, then add tomatoes and simmer gently for 12–15 minutes, until meatballs reach 165°F (74°C).",
-    "Cook spaghetti in salted water, drain and serve topped with meatballs and sauce."
+    "Cook spaghetti in salted water, drain and serve topped with meatballs and sauce.",
   ],
-  "tip": "Moisten your hands before rolling the meatballs."
+  tip: "Moisten your hands before rolling the meatballs.",
 },
 {
-  "id": "chickpea-curry",
-  "name": "Chickpea & spinach curry",
-  "sub": "with coconut milk & rice",
-  "category": "Vegetarian",
-  "time": 30,
-  "difficulty": "Easy",
-  "description": "Chickpea & spinach curry with coconut milk & rice.",
-  "ingredients": [
-    [
-      240,
-      "g",
-      "cooked chickpeas, drained"
-    ],
-    [
-      200,
-      "ml",
-      "coconut milk"
-    ],
-    [
-      200,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      100,
-      "g",
-      "baby spinach"
-    ],
-    [
-      150,
-      "g",
-      "rice"
-    ],
-    [
-      1,
-      "tbsp",
-      "curry powder"
-    ],
-    [
-      1,
-      "tbsp",
-      "neutral oil"
-    ]
+  id: "chickpea-curry",
+  name: "Chickpea & spinach curry",
+  sub: "with coconut milk & rice",
+  category: "Vegetarian",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Chickpea & spinach curry with coconut milk & rice.",
+  ingredients: [
+    [240, "g", "cooked chickpeas, drained"],
+    [200, "ml", "coconut milk"],
+    [200, "g", "crushed tomatoes"],
+    [100, "g", "baby spinach"],
+    [150, "g", "rice"],
+    [1, "tbsp", "curry powder"],
+    [1, "tbsp", "neutral oil"],
   ],
-  "steps": [
+  steps: [
     "Cook rice according to the package.",
     "Warm oil in a skillet. Stir curry powder for 30 seconds, then add chickpeas, tomatoes and coconut milk. Simmer for 15 minutes.",
-    "Fold in spinach until wilted. Season with salt and serve over rice."
+    "Fold in spinach until wilted. Season with salt and serve over rice.",
   ],
-  "tip": "For a thicker sauce, crush a spoonful of the chickpeas as the curry simmers."
+  tip: "For a thicker sauce, crush a spoonful of the chickpeas as the curry simmers.",
 },
 {
-  "id": "sesame-tofu",
-  "name": "Crispy sesame tofu",
-  "sub": "with green beans & rice",
-  "category": "Vegetarian",
-  "time": 30,
-  "difficulty": "Easy",
-  "description": "Crispy sesame tofu with green beans & rice.",
-  "ingredients": [
-    [
-      300,
-      "g",
-      "extra-firm tofu"
-    ],
-    [
-      200,
-      "g",
-      "green beans, trimmed"
-    ],
-    [
-      150,
-      "g",
-      "rice"
-    ],
-    [
-      2,
-      "tbsp",
-      "cornstarch"
-    ],
-    [
-      2,
-      "tbsp",
-      "soy sauce"
-    ],
-    [
-      1,
-      "tbsp",
-      "neutral oil"
-    ],
-    [
-      1,
-      "tsp",
-      "sesame oil"
-    ],
-    [
-      1,
-      "tsp",
-      "sesame seeds"
-    ]
+  id: "sesame-tofu",
+  name: "Crispy sesame tofu",
+  sub: "with green beans & rice",
+  category: "Vegetarian",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Crispy sesame tofu with green beans & rice.",
+  ingredients: [
+    [300, "g", "extra-firm tofu"],
+    [200, "g", "green beans, trimmed"],
+    [150, "g", "rice"],
+    [2, "tbsp", "cornstarch"],
+    [2, "tbsp", "soy sauce"],
+    [1, "tbsp", "neutral oil"],
+    [1, "tsp", "sesame oil"],
+    [1, "tsp", "sesame seeds"],
   ],
-  "steps": [
+  steps: [
     "Cook rice. Pat tofu dry, cube it and toss with cornstarch.",
     "Heat neutral oil and fry tofu for 8–10 minutes, turning until golden. Transfer to a plate. Stir-fry green beans for 5 minutes with a splash of water.",
-    "Return tofu to the pan. Add soy sauce and sesame oil. Toss, sprinkle with sesame seeds and serve with rice."
+    "Return tofu to the pan. Add soy sauce and sesame oil. Toss, sprinkle with sesame seeds and serve with rice.",
   ],
-  "tip": "Allow space between tofu cubes to crisp the edges."
+  tip: "Allow space between tofu cubes to crisp the edges.",
 },
 {
-  "id": "tomato-soup",
-  "name": "Tomato soup & grilled cheese",
-  "sub": "with sharp cheddar",
-  "category": "Vegetarian",
-  "time": 30,
-  "difficulty": "Easy",
-  "description": "Tomato soup & grilled cheese with sharp cheddar.",
-  "ingredients": [
-    [
-      400,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      300,
-      "ml",
-      "vegetable stock"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      2,
-      "tbsp",
-      "cream"
-    ],
-    [
-      4,
-      "",
-      "bread slices"
-    ],
-    [
-      100,
-      "g",
-      "cheddar, sliced"
-    ],
-    [
-      2,
-      "tbsp",
-      "butter"
-    ]
+  id: "tomato-soup",
+  name: "Tomato soup & grilled cheese",
+  sub: "with sharp cheddar",
+  category: "Vegetarian",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Tomato soup & grilled cheese with sharp cheddar.",
+  ingredients: [
+    [400, "g", "crushed tomatoes"],
+    [300, "ml", "vegetable stock"],
+    [1, "", "onion, diced"],
+    [2, "tbsp", "cream"],
+    [4, "", "bread slices"],
+    [100, "g", "cheddar, sliced"],
+    [2, "tbsp", "butter"],
   ],
-  "steps": [
+  steps: [
     "Soften onion in half the butter for 5 minutes. Add tomatoes and stock and simmer 15 minutes. Blend with an immersion blender and stir in cream.",
     "Divide cheese between two sandwiches. Butter their outer sides with remaining butter.",
-    "Toast sandwiches in a skillet over medium heat for 3–4 minutes per side. Serve with hot soup."
+    "Toast sandwiches in a skillet over medium heat for 3–4 minutes per side. Serve with hot soup.",
   ],
-  "tip": "Keep the skillet at medium heat so the cheddar melts before the bread burns."
+  tip: "Keep the skillet at medium heat so the cheddar melts before the bread burns.",
 },
 {
-  "id": "potato-leek",
-  "name": "Potato & leek soup",
-  "sub": "with cream & chives",
-  "category": "Vegetarian",
-  "time": 35,
-  "difficulty": "Easy",
-  "description": "Potato & leek soup with cream & chives.",
-  "ingredients": [
-    [
-      400,
-      "g",
-      "Yukon Gold potatoes, diced"
-    ],
-    [
-      2,
-      "",
-      "leeks, white and light green parts sliced"
-    ],
-    [
-      500,
-      "ml",
-      "vegetable stock"
-    ],
-    [
-      60,
-      "ml",
-      "cream"
-    ],
-    [
-      1,
-      "tbsp",
-      "butter"
-    ],
-    [
-      1,
-      "tbsp",
-      "chopped chives"
-    ]
+  id: "potato-leek",
+  name: "Potato & leek soup",
+  sub: "with cream & chives",
+  category: "Vegetarian",
+  time: 35,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Potato & leek soup with cream & chives.",
+  ingredients: [
+    [400, "g", "Yukon Gold potatoes, diced"],
+    [2, "", "leeks, white and light green parts sliced"],
+    [500, "ml", "vegetable stock"],
+    [60, "ml", "cream"],
+    [1, "tbsp", "butter"],
+    [1, "tbsp", "chopped chives"],
   ],
-  "steps": [
+  steps: [
     "Rinse sliced leeks thoroughly. Soften them in butter over medium heat for 7 minutes.",
     "Add potatoes and stock and simmer 20 minutes, until potatoes are soft. Blend briefly with an immersion blender.",
-    "Stir in cream, season to taste and scatter chives over each bowl."
+    "Stir in cream, season to taste and scatter chives over each bowl.",
   ],
-  "tip": "Blend only until smooth to keep the potatoes from turning gluey."
+  tip: "Blend only until smooth to keep the potatoes from turning gluey.",
 },
 {
-  "id": "beef-chili",
-  "name": "Beef & kidney bean chili",
-  "sub": "with tomatoes & cumin",
-  "category": "Beef",
-  "time": 45,
-  "difficulty": "Easy",
-  "description": "Beef & kidney bean chili with tomatoes & cumin.",
-  "ingredients": [
-    [
-      300,
-      "g",
-      "ground beef"
-    ],
-    [
-      240,
-      "g",
-      "cooked kidney beans, drained"
-    ],
-    [
-      400,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      1,
-      "tbsp",
-      "chili powder"
-    ],
-    [
-      1,
-      "tsp",
-      "ground cumin"
-    ],
-    [
-      1,
-      "tbsp",
-      "neutral oil"
-    ]
+  id: "beef-chili",
+  name: "Beef & kidney bean chili",
+  sub: "with tomatoes & cumin",
+  category: "Beef",
+  time: 45,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Beef & kidney bean chili with tomatoes & cumin.",
+  ingredients: [
+    [300, "g", "ground beef"],
+    [240, "g", "cooked kidney beans, drained"],
+    [400, "g", "crushed tomatoes"],
+    [1, "", "onion, diced"],
+    [1, "tbsp", "chili powder"],
+    [1, "tsp", "ground cumin"],
+    [1, "tbsp", "neutral oil"],
   ],
-  "steps": [
+  steps: [
     "Heat oil and soften onion for 5 minutes. Add beef and break it up with a spoon. Cook to 160°F (71°C).",
     "Stir in chili powder and cumin, then add tomatoes, beans and ½ cup water per two servings.",
-    "Simmer uncovered for 25 minutes. Stir occasionally and season to taste."
+    "Simmer uncovered for 25 minutes. Stir occasionally and season to taste.",
   ],
-  "tip": "This freezes well in individual portions."
+  tip: "This freezes well in individual portions.",
 },
 {
-  "id": "pesto-chicken",
-  "name": "Basil pesto chicken",
-  "sub": "with cherry tomatoes & couscous",
-  "category": "Chicken",
-  "time": 30,
-  "difficulty": "Easy",
-  "description": "Basil pesto chicken with cherry tomatoes & couscous.",
-  "ingredients": [
-    [
-      2,
-      "",
-      "boneless chicken breasts, about 150 g each"
-    ],
-    [
-      200,
-      "g",
-      "cherry tomatoes"
-    ],
-    [
-      120,
-      "g",
-      "couscous"
-    ],
-    [
-      3,
-      "tbsp",
-      "basil pesto"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ]
+  id: "pesto-chicken",
+  name: "Basil pesto chicken",
+  sub: "with cherry tomatoes & couscous",
+  category: "Chicken",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Basil pesto chicken with cherry tomatoes & couscous.",
+  ingredients: [
+    [2, "", "boneless chicken breasts, about 150 g each"],
+    [200, "g", "cherry tomatoes"],
+    [120, "g", "couscous"],
+    [3, "tbsp", "basil pesto"],
+    [1, "tbsp", "olive oil"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 425°F (220°C). Toss tomatoes in oil and add chicken to the dish. Spread two-thirds of the pesto over chicken.",
     "Roast for 18–24 minutes, until chicken reaches 165°F (74°C). Prepare couscous according to its package.",
-    "Fluff couscous and stir in remaining pesto from the clean jar. Serve with chicken, tomatoes and pan juices."
+    "Fluff couscous and stir in remaining pesto from the clean jar. Serve with chicken, tomatoes and pan juices.",
   ],
-  "tip": "Choose similarly sized breasts so they cook at the same rate."
+  tip: "Choose similarly sized breasts so they cook at the same rate.",
 },
 {
-  "id": "shakshuka",
-  "name": "Tomato & pepper shakshuka",
-  "sub": "with gently poached eggs",
-  "category": "Vegetarian",
-  "time": 30,
-  "difficulty": "Easy",
-  "description": "Tomato & pepper shakshuka with gently poached eggs.",
-  "ingredients": [
-    [
-      4,
-      "",
-      "eggs"
-    ],
-    [
-      400,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      1,
-      "",
-      "red bell pepper, diced"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      1,
-      "tsp",
-      "ground cumin"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ]
+  id: "shakshuka",
+  name: "Tomato & pepper shakshuka",
+  sub: "with gently poached eggs",
+  category: "Vegetarian",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Tomato & pepper shakshuka with gently poached eggs.",
+  ingredients: [
+    [4, "", "eggs"],
+    [400, "g", "crushed tomatoes"],
+    [1, "", "red bell pepper, diced"],
+    [1, "", "onion, diced"],
+    [1, "tsp", "ground cumin"],
+    [1, "tbsp", "olive oil"],
   ],
-  "steps": [
+  steps: [
     "Soften pepper and onion in oil for 7 minutes. Stir in cumin, tomatoes and salt. Simmer 10 minutes until slightly thickened.",
     "Make four wells in the sauce and crack an egg into each. Cover and simmer gently until the whites and yolks are set.",
-    "Season with pepper and serve directly from the skillet."
+    "Season with pepper and serve directly from the skillet.",
   ],
-  "tip": "A wide skillet leaves space between the eggs."
+  tip: "A wide skillet leaves space between the eggs.",
 },
 {
-  "id": "tuna-pasta",
-  "name": "Lemon tuna pasta",
-  "sub": "with sweet peas",
-  "category": "Fish",
-  "time": 20,
-  "difficulty": "Easy",
-  "description": "Lemon tuna pasta with sweet peas.",
-  "ingredients": [
-    [
-      180,
-      "g",
-      "pasta"
-    ],
-    [
-      140,
-      "g",
-      "canned tuna, drained"
-    ],
-    [
-      100,
-      "g",
-      "frozen peas"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ],
-    [
-      2,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      1,
-      "",
-      "garlic clove, minced"
-    ]
+  id: "tuna-pasta",
+  name: "Lemon tuna pasta",
+  sub: "with sweet peas",
+  category: "Fish",
+  time: 20,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Lemon tuna pasta with sweet peas.",
+  ingredients: [
+    [180, "g", "pasta"],
+    [140, "g", "canned tuna, drained"],
+    [100, "g", "frozen peas"],
+    [1, "", "lemon"],
+    [2, "tbsp", "olive oil"],
+    [1, "", "garlic clove, minced"],
   ],
-  "steps": [
+  steps: [
     "Cook pasta in salted water and add peas during the final 2 minutes. Reserve a mug of pasta water before draining.",
     "Warm oil and garlic in a skillet for 30 seconds. Add pasta, peas, tuna, lemon zest and a splash of pasta water.",
-    "Toss gently until warmed through. Finish with lemon juice and black pepper."
+    "Toss gently until warmed through. Finish with lemon juice and black pepper.",
   ],
-  "tip": "Add pasta water a little at a time until it coats the noodles."
+  tip: "Add pasta water a little at a time until it coats the noodles.",
 },
 {
-  "id": "apple-oats",
-  "name": "Apple cinnamon baked oats",
-  "sub": "with rolled oats & maple syrup",
-  "category": "Breakfast",
-  "time": 40,
-  "difficulty": "Easy",
-  "description": "Apple cinnamon baked oats with rolled oats & maple syrup.",
-  "ingredients": [
-    [
-      100,
-      "g",
-      "rolled oats"
-    ],
-    [
-      1,
-      "",
-      "apple, diced"
-    ],
-    [
-      240,
-      "ml",
-      "milk"
-    ],
-    [
-      1,
-      "",
-      "egg"
-    ],
-    [
-      2,
-      "tbsp",
-      "maple syrup"
-    ],
-    [
-      1,
-      "tsp",
-      "ground cinnamon"
-    ],
-    [
-      0.5,
-      "tsp",
-      "baking powder"
-    ]
+  id: "apple-oats",
+  name: "Apple cinnamon baked oats",
+  sub: "with rolled oats & maple syrup",
+  category: "Breakfast",
+  time: 40,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Apple cinnamon baked oats with rolled oats & maple syrup.",
+  ingredients: [
+    [100, "g", "rolled oats"],
+    [1, "", "apple, diced"],
+    [240, "ml", "milk"],
+    [1, "", "egg"],
+    [2, "tbsp", "maple syrup"],
+    [1, "tsp", "ground cinnamon"],
+    [0.5, "tsp", "baking powder"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 350°F (175°C) and lightly grease a small baking dish.",
     "Whisk milk, egg and maple syrup. Stir in oats, cinnamon, baking powder and apple.",
-    "Bake for 30–35 minutes until the center is set and reaches 160°F (71°C). Rest for 5 minutes before serving."
+    "Bake for 30–35 minutes until the center is set and reaches 160°F (71°C). Rest for 5 minutes before serving.",
   ],
-  "tip": "Use an apple that holds its shape, such as Honeycrisp."
+  tip: "Use an apple that holds its shape, such as Honeycrisp.",
 },
 {
-  "id": "tourtiere",
-  "name": "Tourtière québécoise",
-  "sub": "with pork, beef and warm spices",
-  "category": "Pork",
-  "time": 100,
-  "description": "A double-crust meat pie with a tender potato-bound filling.",
-  "ingredients": [
-    [
-      1,
-      "pack",
-      "pastry for a double-crust 9-inch pie"
-    ],
-    [
-      350,
-      "g",
-      "ground pork"
-    ],
-    [
-      250,
-      "g",
-      "ground beef"
-    ],
-    [
-      1,
-      "",
-      "onion, finely chopped"
-    ],
-    [
-      1,
-      "",
-      "medium potato, peeled and diced"
-    ],
-    [
-      120,
-      "ml",
-      "water"
-    ],
-    [
-      0.5,
-      "tsp",
-      "ground cinnamon"
-    ],
-    [
-      0.25,
-      "tsp",
-      "ground cloves"
-    ],
-    [
-      1,
-      "",
-      "egg, beaten"
-    ]
+  id: "tourtiere",
+  name: "Tourtière québécoise",
+  sub: "with pork, beef and warm spices",
+  category: "Pork",
+  time: 100,
+  difficulty: "Moderate",
+  servings: 6,
+  description: "A double-crust meat pie with a tender potato-bound filling.",
+  ingredients: [
+    [1, "pack", "pastry for a double-crust 9-inch pie"],
+    [350, "g", "ground pork"],
+    [250, "g", "ground beef"],
+    [1, "", "onion, finely chopped"],
+    [1, "", "medium potato, peeled and diced"],
+    [120, "ml", "water"],
+    [0.5, "tsp", "ground cinnamon"],
+    [0.25, "tsp", "ground cloves"],
+    [1, "", "egg, beaten"],
   ],
-  "steps": [
+  steps: [
     "Boil the potato until tender, then drain and mash. Brown the pork, beef and onion in a skillet, breaking up the meat.",
     "Add the water, cinnamon, cloves, salt and pepper. Simmer until the liquid has nearly evaporated and the meat reaches 160°F (71°C). Stir in the mashed potato and let the filling cool.",
     "Heat the oven to 400°F (200°C). Line a 9-inch pie dish with pastry, add the filling, cover with the second crust and seal. Cut steam vents and brush with beaten egg.",
-    "Bake 35–45 minutes until golden and hot in the center. Rest 10 minutes before slicing."
+    "Bake 35–45 minutes until golden and hot in the center. Rest 10 minutes before slicing.",
   ],
-  "tip": "A whole 9-inch pie serves six. Use a larger dish or multiple pies when scaling.",
-  "difficulty": "Moderate",
-  "servings": 6
+  tip: "A whole 9-inch pie serves six. Use a larger dish or multiple pies when scaling.",
 },
 {
-  "id": "suzette",
-  "name": "Crêpes Suzette",
-  "sub": "with orange butter sauce",
-  "category": "Dessert",
-  "time": 50,
-  "description": "Thin crêpes folded into a glossy orange sauce.",
-  "ingredients": [
-    [
-      65,
-      "g",
-      "all-purpose flour"
-    ],
-    [
-      1,
-      "",
-      "egg"
-    ],
-    [
-      160,
-      "ml",
-      "milk"
-    ],
-    [
-      1,
-      "tbsp",
-      "melted butter"
-    ],
-    [
-      2,
-      "",
-      "oranges"
-    ],
-    [
-      30,
-      "g",
-      "butter for the sauce"
-    ],
-    [
-      25,
-      "g",
-      "sugar"
-    ],
-    [
-      1,
-      "tbsp",
-      "orange liqueur, optional"
-    ]
+  id: "suzette",
+  name: "Crêpes Suzette",
+  sub: "with orange butter sauce",
+  category: "Dessert",
+  time: 50,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Thin crêpes folded into a glossy orange sauce.",
+  ingredients: [
+    [65, "g", "all-purpose flour"],
+    [1, "", "egg"],
+    [160, "ml", "milk"],
+    [1, "tbsp", "melted butter"],
+    [2, "", "oranges"],
+    [30, "g", "butter for the sauce"],
+    [25, "g", "sugar"],
+    [1, "tbsp", "orange liqueur, optional"],
   ],
-  "steps": [
+  steps: [
     "Whisk flour, egg and milk until smooth. Stir in melted butter and a pinch of salt, then rest 20 minutes.",
     "Pour a thin layer of batter into a lightly greased hot skillet. Cook until set and golden, flip briefly, then repeat to make four crêpes.",
     "Zest one orange and juice both. Simmer the juice, zest and sugar until slightly syrupy. Whisk in the sauce butter and stir in the liqueur if using.",
-    "Fold each crêpe into quarters and warm in the sauce. Spoon the sauce over the crêpes to serve."
+    "Fold each crêpe into quarters and warm in the sauce. Spoon the sauce over the crêpes to serve.",
   ],
-  "tip": "This stovetop version skips flambéing. For an alcohol-free sauce, omit the liqueur.",
-  "difficulty": "Easy"
+  tip: "This stovetop version skips flambéing. For an alcohol-free sauce, omit the liqueur.",
 },
 {
-  "id": "sarrasin",
-  "name": "Crêpes au sarrasin",
-  "sub": "galettes complètes with ham, egg and Gruyère",
-  "category": "Pork",
-  "time": 55,
-  "description": "Breton buckwheat galettes with crisp edges and a savory filling.",
-  "ingredients": [
-    [
-      100,
-      "g",
-      "buckwheat flour"
-    ],
-    [
-      240,
-      "ml",
-      "water"
-    ],
-    [
-      0.5,
-      "tsp",
-      "fine salt"
-    ],
-    [
-      2,
-      "",
-      "eggs for the filling"
-    ],
-    [
-      2,
-      "slices",
-      "ham"
-    ],
-    [
-      60,
-      "g",
-      "Gruyère, grated"
-    ],
-    [
-      1,
-      "tbsp",
-      "butter"
-    ]
+  id: "sarrasin",
+  name: "Crêpes au sarrasin",
+  sub: "galettes complètes with ham, egg and Gruyère",
+  category: "Pork",
+  time: 55,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Breton buckwheat galettes with crisp edges and a savory filling.",
+  ingredients: [
+    [100, "g", "buckwheat flour"],
+    [240, "ml", "water"],
+    [0.5, "tsp", "fine salt"],
+    [2, "", "eggs for the filling"],
+    [2, "slices", "ham"],
+    [60, "g", "Gruyère, grated"],
+    [1, "tbsp", "butter"],
   ],
-  "steps": [
+  steps: [
     "Whisk buckwheat flour, water and salt until smooth. Rest 30 minutes.",
     "Heat a wide skillet and grease lightly with butter. Swirl in half the batter in a thin layer. Cook until the edges lift, then flip.",
     "Scatter half the cheese and one slice of ham around the center and crack an egg into the middle. Cover over low heat until the white and yolk are set.",
-    "Fold the four sides inward to form a square, leaving the egg visible. Repeat with the remaining batter and filling."
+    "Fold the four sides inward to form a square, leaving the egg visible. Repeat with the remaining batter and filling.",
   ],
-  "tip": "Add a splash of water if the rested batter is too thick to swirl.",
-  "difficulty": "Easy"
+  tip: "Add a splash of water if the rested batter is too thick to swirl.",
 },
 {
-  "id": "clafoutis",
-  "name": "Clafoutis aux cerises",
-  "sub": "with cherries and vanilla",
-  "category": "Dessert",
-  "time": 45,
-  "description": "Cherries baked in a lightly sweetened custard.",
-  "ingredients": [
-    [
-      200,
-      "g",
-      "cherries, pitted"
-    ],
-    [
-      2,
-      "",
-      "eggs"
-    ],
-    [
-      40,
-      "g",
-      "sugar"
-    ],
-    [
-      40,
-      "g",
-      "all-purpose flour"
-    ],
-    [
-      150,
-      "ml",
-      "whole milk"
-    ],
-    [
-      0.5,
-      "tsp",
-      "vanilla extract"
-    ],
-    [
-      1,
-      "tsp",
-      "butter for the dish"
-    ]
+  id: "clafoutis",
+  name: "Clafoutis aux cerises",
+  sub: "with cherries and vanilla",
+  category: "Dessert",
+  time: 45,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Cherries baked in a lightly sweetened custard.",
+  ingredients: [
+    [200, "g", "cherries, pitted"],
+    [2, "", "eggs"],
+    [40, "g", "sugar"],
+    [40, "g", "all-purpose flour"],
+    [150, "ml", "whole milk"],
+    [0.5, "tsp", "vanilla extract"],
+    [1, "tsp", "butter for the dish"],
   ],
-  "steps": [
+  steps: [
     "Heat the oven to 350°F (175°C). Butter a small baking dish and spread the cherries across the bottom.",
     "Whisk eggs and sugar. Add flour and a pinch of salt, then whisk in milk and vanilla until smooth.",
-    "Pour over the cherries and bake 30–35 minutes, until puffed and set in the center. Serve warm or at room temperature."
+    "Pour over the cherries and bake 30–35 minutes, until puffed and set in the center. Serve warm or at room temperature.",
   ],
-  "tip": "Pat the cherries dry after pitting to avoid watering down the batter.",
-  "difficulty": "Easy"
+  tip: "Pat the cherries dry after pitting to avoid watering down the batter.",
 },
 {
-  "id": "gratin",
-  "name": "Gratin dauphinois",
-  "sub": "with cream, garlic and nutmeg",
-  "category": "Vegetarian",
-  "time": 75,
-  "description": "Thinly sliced potatoes baked until tender under a golden crust.",
-  "ingredients": [
-    [
-      500,
-      "g",
-      "Yukon Gold potatoes"
-    ],
-    [
-      200,
-      "ml",
-      "heavy cream"
-    ],
-    [
-      75,
-      "ml",
-      "whole milk"
-    ],
-    [
-      1,
-      "",
-      "garlic clove"
-    ],
-    [
-      1,
-      "tsp",
-      "butter"
-    ],
-    [
-      0.125,
-      "tsp",
-      "ground nutmeg"
-    ]
+  id: "gratin",
+  name: "Gratin dauphinois",
+  sub: "with cream, garlic and nutmeg",
+  category: "Vegetarian",
+  time: 75,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Thinly sliced potatoes baked until tender under a golden crust.",
+  ingredients: [
+    [500, "g", "Yukon Gold potatoes"],
+    [200, "ml", "heavy cream"],
+    [75, "ml", "whole milk"],
+    [1, "", "garlic clove"],
+    [1, "tsp", "butter"],
+    [0.125, "tsp", "ground nutmeg"],
   ],
-  "steps": [
+  steps: [
     "Heat the oven to 350°F (175°C). Rub a small baking dish with the cut garlic clove, then butter it.",
     "Peel potatoes and slice about ⅛ inch thick. Layer them in the dish with salt, pepper and nutmeg.",
-    "Pour in the cream and milk. Bake 55–65 minutes until the top is golden and a knife slides through easily. Rest 10 minutes before serving."
+    "Pour in the cream and milk. Bake 55–65 minutes until the top is golden and a knife slides through easily. Rest 10 minutes before serving.",
   ],
-  "tip": "Leave the sliced potatoes unrinsed. Their starch helps thicken the cream.",
-  "difficulty": "Easy"
+  tip: "Leave the sliced potatoes unrinsed. Their starch helps thicken the cream.",
 },
 {
-  "id": "pouding",
-  "name": "Pouding chômeur à l’érable",
-  "sub": "with warm maple cream sauce",
-  "category": "Dessert",
-  "time": 40,
-  "description": "A Québécois vanilla cake that bakes over its own maple sauce.",
-  "ingredients": [
-    [
-      80,
-      "g",
-      "all-purpose flour"
-    ],
-    [
-      1,
-      "tsp",
-      "baking powder"
-    ],
-    [
-      25,
-      "g",
-      "soft butter"
-    ],
-    [
-      35,
-      "g",
-      "sugar"
-    ],
-    [
-      1,
-      "",
-      "egg"
-    ],
-    [
-      60,
-      "ml",
-      "milk"
-    ],
-    [
-      0.5,
-      "tsp",
-      "vanilla extract"
-    ],
-    [
-      100,
-      "ml",
-      "maple syrup"
-    ],
-    [
-      100,
-      "ml",
-      "heavy cream"
-    ]
+  id: "pouding",
+  name: "Pouding chômeur à l’érable",
+  sub: "with warm maple cream sauce",
+  category: "Dessert",
+  time: 40,
+  difficulty: "Easy",
+  servings: 2,
+  description: "A Québécois vanilla cake that bakes over its own maple sauce.",
+  ingredients: [
+    [80, "g", "all-purpose flour"],
+    [1, "tsp", "baking powder"],
+    [25, "g", "soft butter"],
+    [35, "g", "sugar"],
+    [1, "", "egg"],
+    [60, "ml", "milk"],
+    [0.5, "tsp", "vanilla extract"],
+    [100, "ml", "maple syrup"],
+    [100, "ml", "heavy cream"],
   ],
-  "steps": [
+  steps: [
     "Heat the oven to 350°F (175°C). Grease two deep ramekins and set them on a rimmed baking sheet.",
     "Cream butter and sugar. Beat in the egg and vanilla. Fold in the flour and baking powder, alternating with milk. Divide between ramekins.",
-    "Bring the maple syrup and cream to a simmer. Pour gently over the batter. Bake 22–28 minutes until the cake is golden and springs back. Rest 5 minutes and serve with the sauce from the bottom."
+    "Bring the maple syrup and cream to a simmer. Pour gently over the batter. Bake 22–28 minutes until the cake is golden and springs back. Rest 5 minutes and serve with the sauce from the bottom.",
   ],
-  "tip": "Use deep ramekins with room for the sauce to bubble.",
-  "difficulty": "Easy"
+  tip: "Use deep ramekins with room for the sauce to bubble.",
 },
 {
-  "id": "pate",
-  "name": "Pâté chinois",
-  "sub": "with beef, corn and mashed potatoes",
-  "category": "Beef",
-  "time": 55,
-  "servings": 4,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      600,
-      "g",
-      "potatoes"
-    ],
-    [
-      400,
-      "g",
-      "ground beef"
-    ],
-    [
-      1,
-      "",
-      "onion"
-    ],
-    [
-      1,
-      "tbsp",
-      "oil"
-    ],
-    [
-      300,
-      "g",
-      "creamed corn"
-    ],
-    [
-      100,
-      "g",
-      "corn kernels"
-    ],
-    [
-      60,
-      "ml",
-      "milk"
-    ],
-    [
-      30,
-      "g",
-      "butter"
-    ]
+  id: "pate",
+  name: "Pâté chinois",
+  sub: "with beef, corn and mashed potatoes",
+  category: "Beef",
+  time: 55,
+  difficulty: "Easy",
+  servings: 4,
+  description: "A comforting Québec classic: seasoned ground beef and sweet corn under a golden blanket of buttery mashed potatoes.",
+  ingredients: [
+    [600, "g", "potatoes"],
+    [400, "g", "ground beef"],
+    [1, "", "onion"],
+    [1, "tbsp", "oil"],
+    [300, "g", "creamed corn"],
+    [100, "g", "corn kernels"],
+    [60, "ml", "milk"],
+    [30, "g", "butter"],
   ],
-  "steps": [
+  steps: [
     "Boil peeled, cubed potatoes until tender. Drain and mash with milk, butter and salt.",
     "Dice the onion and soften in oil. Add beef, season and cook to 160°F (71°C).",
-    "Spread beef in a baking dish, cover with both kinds of corn, then spread the mash on top. Bake at 400°F (200°C) for 25 minutes."
+    "Spread beef in a baking dish, cover with both kinds of corn, then spread the mash on top. Bake at 400°F (200°C) for 25 minutes.",
   ],
-  "tip": "Rough up the mash with a fork for crisp peaks."
+  tip: "Rough up the mash with a fork for crisp peaks.",
 },
 {
-  "id": "feves",
-  "name": "Fèves au lard à l’érable",
-  "sub": "with salt pork and maple syrup",
-  "category": "Pork",
-  "time": 125,
-  "servings": 4,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      500,
-      "g",
-      "cooked navy beans, drained"
-    ],
-    [
-      100,
-      "g",
-      "salt pork, diced"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      60,
-      "ml",
-      "maple syrup"
-    ],
-    [
-      1,
-      "tbsp",
-      "Dijon mustard"
-    ],
-    [
-      250,
-      "ml",
-      "water"
-    ]
+  id: "feves",
+  name: "Fèves au lard à l’érable",
+  sub: "with salt pork and maple syrup",
+  category: "Pork",
+  time: 125,
+  difficulty: "Easy",
+  servings: 4,
+  description: "Beans slow-baked with salt pork and maple syrup, a sweet and savory taste of the Québec sugar shack.",
+  ingredients: [
+    [500, "g", "cooked navy beans, drained"],
+    [100, "g", "salt pork, diced"],
+    [1, "", "onion, diced"],
+    [60, "ml", "maple syrup"],
+    [1, "tbsp", "Dijon mustard"],
+    [250, "ml", "water"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 325°F (165°C). Brown the salt pork in an ovenproof pot and soften the onion in the rendered fat.",
     "Stir in beans, maple syrup, mustard and water. Cover and bake for 90 minutes.",
-    "Uncover and bake 20–25 minutes more until the sauce thickens. Taste before salting."
+    "Uncover and bake 20–25 minutes more until the sauce thickens. Taste before salting.",
   ],
-  "tip": "Using cooked beans keeps the recipe practical for a weekend lunch."
+  tip: "Using cooked beans keeps the recipe practical for a weekend lunch.",
 },
 {
-  "id": "soupepois",
-  "name": "Soupe aux pois québécoise",
-  "sub": "with yellow split peas and ham",
-  "category": "Pork",
-  "time": 95,
-  "servings": 4,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      250,
-      "g",
-      "yellow split peas"
-    ],
-    [
-      200,
-      "g",
-      "cooked ham, diced"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      1,
-      "",
-      "carrot, diced"
-    ],
-    [
-      1,
-      "",
-      "celery stalk, diced"
-    ],
-    [
-      1.2,
-      "L",
-      "low-sodium stock"
-    ],
-    [
-      1,
-      "",
-      "bay leaf"
-    ],
-    [
-      1,
-      "tbsp",
-      "butter"
-    ]
+  id: "soupepois",
+  name: "Soupe aux pois québécoise",
+  sub: "with yellow split peas and ham",
+  category: "Pork",
+  time: 95,
+  difficulty: "Easy",
+  servings: 4,
+  description: "A hearty, smoky split pea soup simmered with ham and carrots until thick and golden.",
+  ingredients: [
+    [250, "g", "yellow split peas"],
+    [200, "g", "cooked ham, diced"],
+    [1, "", "onion, diced"],
+    [1, "", "carrot, diced"],
+    [1, "", "celery stalk, diced"],
+    [1.2, "L", "low-sodium stock"],
+    [1, "", "bay leaf"],
+    [1, "tbsp", "butter"],
   ],
-  "steps": [
+  steps: [
     "Rinse split peas. Soften the onion, carrot and celery in butter for 6 minutes.",
     "Add peas, stock and bay leaf. Simmer gently for 60–75 minutes until the peas are tender, stirring occasionally.",
-    "Add ham and simmer 10 minutes. Remove the bay leaf and season to taste."
+    "Add ham and simmer 10 minutes. Remove the bay leaf and season to taste.",
   ],
-  "tip": "Mash a ladleful of peas against the pot for a thicker soup."
+  tip: "Mash a ladleful of peas against the pot for a thicker soup.",
 },
 {
-  "id": "quiche",
-  "name": "Quiche Lorraine",
-  "sub": "with bacon and cream",
-  "category": "Pork",
-  "time": 75,
-  "servings": 6,
-  "difficulty": "Moderate",
-  "description": "",
-  "ingredients": [
-    [
-      1,
-      "",
-      "9-inch pie crust"
-    ],
-    [
-      180,
-      "g",
-      "bacon, diced"
-    ],
-    [
-      4,
-      "",
-      "eggs"
-    ],
-    [
-      250,
-      "ml",
-      "heavy cream"
-    ],
-    [
-      100,
-      "ml",
-      "milk"
-    ],
-    [
-      0.125,
-      "tsp",
-      "nutmeg"
-    ]
+  id: "quiche",
+  name: "Quiche Lorraine",
+  sub: "with bacon and cream",
+  category: "Pork",
+  time: 75,
+  difficulty: "Moderate",
+  servings: 6,
+  description: "A buttery crust filled with bacon, eggs and cream, baked until just set and golden.",
+  ingredients: [
+    [1, "", "9-inch pie crust"],
+    [180, "g", "bacon, diced"],
+    [4, "", "eggs"],
+    [250, "ml", "heavy cream"],
+    [100, "ml", "milk"],
+    [0.125, "tsp", "nutmeg"],
   ],
-  "steps": [
+  steps: [
     "Line a pie dish with crust. Prick, line with parchment and weights, and bake 15 minutes at 375°F (190°C). Remove weights and bake 5 minutes more.",
     "Cook bacon until browned and drain. Whisk eggs, cream, milk, nutmeg and pepper.",
-    "Scatter bacon in the crust, add custard and bake at 350°F (175°C) for 30–40 minutes, until the center reaches 160°F (71°C). Rest 10 minutes."
+    "Scatter bacon in the crust, add custard and bake at 350°F (175°C) for 30–40 minutes, until the center reaches 160°F (71°C). Rest 10 minutes.",
   ],
-  "tip": "Bake on a sheet pan to catch drips."
+  tip: "Bake on a sheet pan to catch drips.",
 },
 {
-  "id": "ratatouille",
-  "name": "Ratatouille provençale",
-  "sub": "with eggplant, zucchini and peppers",
-  "category": "Vegetarian",
-  "time": 55,
-  "servings": 4,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      1,
-      "",
-      "eggplant"
-    ],
-    [
-      2,
-      "",
-      "zucchini"
-    ],
-    [
-      2,
-      "",
-      "bell peppers"
-    ],
-    [
-      1,
-      "",
-      "onion"
-    ],
-    [
-      3,
-      "",
-      "garlic cloves"
-    ],
-    [
-      400,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      3,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      1,
-      "tsp",
-      "dried thyme"
-    ]
+  id: "ratatouille",
+  name: "Ratatouille provençale",
+  sub: "with eggplant, zucchini and peppers",
+  category: "Vegetarian",
+  time: 55,
+  difficulty: "Easy",
+  servings: 4,
+  description: "Summer vegetables slowly simmered with olive oil and herbs until soft, sweet and fragrant.",
+  ingredients: [
+    [1, "", "eggplant"],
+    [2, "", "zucchini"],
+    [2, "", "bell peppers"],
+    [1, "", "onion"],
+    [3, "", "garlic cloves"],
+    [400, "g", "crushed tomatoes"],
+    [3, "tbsp", "olive oil"],
+    [1, "tsp", "dried thyme"],
   ],
-  "steps": [
+  steps: [
     "Dice the vegetables. Brown eggplant and zucchini in batches in two-thirds of the oil, then set aside.",
     "Soften onion and peppers in remaining oil. Add minced garlic, tomatoes and thyme and simmer 15 minutes.",
-    "Return eggplant and zucchini to the pot and simmer 10–15 minutes. Season with salt and pepper."
+    "Return eggplant and zucchini to the pot and simmer 10–15 minutes. Season with salt and pepper.",
   ],
-  "tip": "Brown the vegetables in batches so they retain their shape."
+  tip: "Brown the vegetables in batches so they retain their shape.",
 },
 {
-  "id": "croque",
-  "name": "Croque-monsieur",
-  "sub": "with ham, Gruyère and béchamel",
-  "category": "Pork",
-  "time": 25,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      4,
-      "",
-      "thick sandwich bread slices"
-    ],
-    [
-      100,
-      "g",
-      "sliced ham"
-    ],
-    [
-      100,
-      "g",
-      "Gruyère, grated"
-    ],
-    [
-      15,
-      "g",
-      "butter"
-    ],
-    [
-      15,
-      "g",
-      "flour"
-    ],
-    [
-      180,
-      "ml",
-      "milk"
-    ],
-    [
-      2,
-      "tsp",
-      "Dijon mustard"
-    ]
+  id: "croque",
+  name: "Croque-monsieur",
+  sub: "with ham, Gruyère and béchamel",
+  category: "Pork",
+  time: 25,
+  difficulty: "Easy",
+  servings: 2,
+  description: "A classic French café sandwich of ham and Gruyère under a bubbling, golden béchamel crust.",
+  ingredients: [
+    [4, "", "thick sandwich bread slices"],
+    [100, "g", "sliced ham"],
+    [100, "g", "Gruyère, grated"],
+    [15, "g", "butter"],
+    [15, "g", "flour"],
+    [180, "ml", "milk"],
+    [2, "tsp", "Dijon mustard"],
   ],
-  "steps": [
+  steps: [
     "Melt butter in a saucepan and stir in flour for 1 minute. Gradually whisk in milk and simmer until thick. Season with salt and pepper.",
     "Toast the bread lightly. Spread mustard inside and fill with ham and half the cheese.",
-    "Spread béchamel on top, sprinkle with remaining cheese and broil on a sheet pan until bubbling, 2–4 minutes."
+    "Spread béchamel on top, sprinkle with remaining cheese and broil on a sheet pan until bubbling, 2–4 minutes.",
   ],
-  "tip": "Keep an eye on the broiler. The cheese browns quickly."
+  tip: "Keep an eye on the broiler. The cheese browns quickly.",
 },
 {
-  "id": "tatin",
-  "name": "Tarte Tatin",
-  "sub": "with caramelized apples",
-  "category": "Dessert",
-  "time": 65,
-  "servings": 6,
-  "difficulty": "Moderate",
-  "description": "",
-  "ingredients": [
-    [
-      6,
-      "",
-      "firm apples"
-    ],
-    [
-      100,
-      "g",
-      "sugar"
-    ],
-    [
-      50,
-      "g",
-      "unsalted butter"
-    ],
-    [
-      1,
-      "",
-      "sheet puff pastry"
-    ],
-    [
-      2,
-      "tbsp",
-      "water"
-    ]
+  id: "tatin",
+  name: "Tarte Tatin",
+  sub: "with caramelized apples",
+  category: "Dessert",
+  time: 65,
+  difficulty: "Moderate",
+  servings: 6,
+  description: "An upside-down tart of caramelized apples on flaky pastry, served warm.",
+  ingredients: [
+    [6, "", "firm apples"],
+    [100, "g", "sugar"],
+    [50, "g", "unsalted butter"],
+    [1, "", "sheet puff pastry"],
+    [2, "tbsp", "water"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 375°F (190°C). Peel, halve and core the apples.",
     "In a 9-inch ovenproof skillet, cook sugar and water to an amber caramel. Take off heat, stir in butter carefully and arrange the apples rounded side down. Cook gently for 10 minutes.",
-    "Cover with pastry and tuck in the edges. Bake 30–35 minutes until deeply golden. Rest 10 minutes, then carefully invert onto a rimmed plate."
+    "Cover with pastry and tuck in the edges. Bake 30–35 minutes until deeply golden. Rest 10 minutes, then carefully invert onto a rimmed plate.",
   ],
-  "tip": "Use oven mitts and a plate larger than the skillet when inverting."
+  tip: "Use oven mitts and a plate larger than the skillet when inverting.",
 },
 {
-  "id": "madeleines",
-  "name": "Madeleines au citron",
-  "sub": "with lemon zest and butter",
-  "category": "Dessert",
-  "time": 55,
-  "servings": 6,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      100,
-      "g",
-      "flour"
-    ],
-    [
-      90,
-      "g",
-      "sugar"
-    ],
-    [
-      2,
-      "",
-      "eggs"
-    ],
-    [
-      85,
-      "g",
-      "unsalted butter"
-    ],
-    [
-      0.5,
-      "tsp",
-      "baking powder"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ]
+  id: "madeleines",
+  name: "Madeleines au citron",
+  sub: "with lemon zest and butter",
+  category: "Dessert",
+  time: 55,
+  difficulty: "Easy",
+  servings: 6,
+  description: "Tender, shell-shaped sponge cakes scented with lemon zest and rich butter.",
+  ingredients: [
+    [100, "g", "flour"],
+    [90, "g", "sugar"],
+    [2, "", "eggs"],
+    [85, "g", "unsalted butter"],
+    [0.5, "tsp", "baking powder"],
+    [1, "", "lemon"],
   ],
-  "steps": [
+  steps: [
     "Melt butter and let it cool. Whisk eggs and sugar until pale, then add lemon zest.",
     "Fold in flour and baking powder, then the butter. Chill batter for 30 minutes. Butter a madeleine pan.",
-    "Fill the molds three-quarters full and bake at 400°F (200°C) for 8–11 minutes until golden at the edges."
+    "Fill the molds three-quarters full and bake at 400°F (200°C) for 8–11 minutes until golden at the edges.",
   ],
-  "tip": "Makes about 12 madeleines in a standard pan."
+  tip: "Makes about 12 madeleines in a standard pan.",
 },
 {
-  "id": "bourguignon",
-  "name": "Bœuf bourguignon",
-  "sub": "with mushrooms, carrots and red wine",
-  "category": "Beef",
-  "time": 185,
-  "servings": 4,
-  "difficulty": "Moderate",
-  "description": "",
-  "ingredients": [
-    [
-      700,
-      "g",
-      "beef chuck, cubed"
-    ],
-    [
-      2,
-      "",
-      "carrots, sliced"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      200,
-      "g",
-      "mushrooms, quartered"
-    ],
-    [
-      350,
-      "ml",
-      "dry red wine"
-    ],
-    [
-      250,
-      "ml",
-      "beef stock"
-    ],
-    [
-      1,
-      "tbsp",
-      "tomato paste"
-    ],
-    [
-      1,
-      "tbsp",
-      "flour"
-    ],
-    [
-      2,
-      "tbsp",
-      "oil"
-    ],
-    [
-      2,
-      "sprigs",
-      "thyme"
-    ]
+  id: "bourguignon",
+  name: "Bœuf bourguignon",
+  sub: "with mushrooms, carrots and red wine",
+  category: "Beef",
+  time: 185,
+  difficulty: "Moderate",
+  servings: 4,
+  description: "Beef braised slowly in red wine with mushrooms, carrots and onions until meltingly tender.",
+  ingredients: [
+    [700, "g", "beef chuck, cubed"],
+    [2, "", "carrots, sliced"],
+    [1, "", "onion, diced"],
+    [200, "g", "mushrooms, quartered"],
+    [350, "ml", "dry red wine"],
+    [250, "ml", "beef stock"],
+    [1, "tbsp", "tomato paste"],
+    [1, "tbsp", "flour"],
+    [2, "tbsp", "oil"],
+    [2, "sprigs", "thyme"],
   ],
-  "steps": [
+  steps: [
     "Pat beef dry and brown in batches in half the oil. Soften onion and carrots in the same pot. Stir in flour and tomato paste.",
     "Add wine and scrape up the browned bits. Add stock, beef and thyme. Cover and braise at 325°F (165°C) for about 2½ hours until fork tender.",
-    "Brown mushrooms in remaining oil and stir into the stew. Remove thyme and season to taste."
+    "Brown mushrooms in remaining oil and stir into the stew. Remove thyme and season to taste.",
   ],
-  "tip": "The stew reheats well the next day."
+  tip: "The stew reheats well the next day.",
 },
 {
-  "id": "saladenicoise",
-  "name": "Salade niçoise",
-  "sub": "with tuna, eggs, potatoes and green beans",
-  "category": "Fish",
-  "time": 35,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      200,
-      "g",
-      "baby potatoes"
-    ],
-    [
-      150,
-      "g",
-      "green beans"
-    ],
-    [
-      2,
-      "",
-      "eggs"
-    ],
-    [
-      140,
-      "g",
-      "canned tuna, drained"
-    ],
-    [
-      150,
-      "g",
-      "cherry tomatoes"
-    ],
-    [
-      40,
-      "g",
-      "Niçoise or black olives"
-    ],
-    [
-      2,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      1,
-      "tbsp",
-      "red wine vinegar"
-    ],
-    [
-      1,
-      "tsp",
-      "Dijon mustard"
-    ]
+  id: "saladenicoise",
+  name: "Salade niçoise",
+  sub: "with tuna, eggs, potatoes and green beans",
+  category: "Fish",
+  time: 35,
+  difficulty: "Easy",
+  servings: 2,
+  description: "A bright, classic Provençal salad of tuna, eggs, potatoes and crisp green beans.",
+  ingredients: [
+    [200, "g", "baby potatoes"],
+    [150, "g", "green beans"],
+    [2, "", "eggs"],
+    [140, "g", "canned tuna, drained"],
+    [150, "g", "cherry tomatoes"],
+    [40, "g", "Niçoise or black olives"],
+    [2, "tbsp", "olive oil"],
+    [1, "tbsp", "red wine vinegar"],
+    [1, "tsp", "Dijon mustard"],
   ],
-  "steps": [
+  steps: [
     "Boil potatoes until tender, then halve. Blanch beans for 3–4 minutes and cool in cold water.",
     "Hard-boil eggs for 10–11 minutes, cool, peel and quarter. Halve the tomatoes.",
-    "Arrange potatoes, beans, tuna, eggs, tomatoes and olives on a platter. Whisk oil, vinegar and mustard and drizzle over."
+    "Arrange potatoes, beans, tuna, eggs, tomatoes and olives on a platter. Whisk oil, vinegar and mustard and drizzle over.",
   ],
-  "tip": "Dress the potatoes while they are still warm."
+  tip: "Dress the potatoes while they are still warm.",
 },
 {
-  "id": "merlu",
-  "name": "Fish with lemon and caper butter",
-  "sub": "with a browned butter pan sauce",
-  "category": "Fish",
-  "time": 20,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      2,
-      "",
-      "hake or cod fillets, about 150 g each"
-    ],
-    [
-      2,
-      "tbsp",
-      "flour"
-    ],
-    [
-      1,
-      "tbsp",
-      "oil"
-    ],
-    [
-      30,
-      "g",
-      "butter"
-    ],
-    [
-      1,
-      "tbsp",
-      "capers, drained"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ],
-    [
-      1,
-      "tbsp",
-      "chopped parsley"
-    ]
+  id: "merlu",
+  name: "Fish with lemon and caper butter",
+  sub: "with a browned butter pan sauce",
+  category: "Fish",
+  time: 20,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Tender white fish finished in a nutty browned butter sauce with lemon and tangy capers.",
+  ingredients: [
+    [2, "", "hake or cod fillets, about 150 g each"],
+    [2, "tbsp", "flour"],
+    [1, "tbsp", "oil"],
+    [30, "g", "butter"],
+    [1, "tbsp", "capers, drained"],
+    [1, "", "lemon"],
+    [1, "tbsp", "chopped parsley"],
   ],
-  "steps": [
+  steps: [
     "Pat fish dry, season and dust lightly with flour.",
     "Heat oil in a skillet. Cook fish for 3–5 minutes per side, depending on thickness, until it reaches 145°F (63°C). Transfer to warm plates.",
-    "Lower heat and add butter. When it smells nutty, take off the heat and add capers, lemon juice and parsley. Spoon over fish."
+    "Lower heat and add butter. When it smells nutty, take off the heat and add capers, lemon juice and parsley. Spoon over fish.",
   ],
-  "tip": "Have the lemon and capers ready before browning the butter."
+  tip: "Have the lemon and capers ready before browning the butter.",
 },
 {
-  "id": "citron",
-  "name": "Gâteau au yaourt et au citron",
-  "sub": "with lemon zest and plain yogurt",
-  "category": "Dessert",
-  "time": 65,
-  "servings": 8,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      200,
-      "g",
-      "flour"
-    ],
-    [
-      2,
-      "tsp",
-      "baking powder"
-    ],
-    [
-      150,
-      "g",
-      "sugar"
-    ],
-    [
-      3,
-      "",
-      "eggs"
-    ],
-    [
-      125,
-      "g",
-      "plain yogurt"
-    ],
-    [
-      85,
-      "ml",
-      "neutral oil"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ]
+  id: "citron",
+  name: "Gâteau au yaourt et au citron",
+  sub: "with lemon zest and plain yogurt",
+  category: "Dessert",
+  time: 65,
+  difficulty: "Easy",
+  servings: 8,
+  description: "A moist, tender yogurt cake with a bright lemon flavor. Simple to mix and hard to resist.",
+  ingredients: [
+    [200, "g", "flour"],
+    [2, "tsp", "baking powder"],
+    [150, "g", "sugar"],
+    [3, "", "eggs"],
+    [125, "g", "plain yogurt"],
+    [85, "ml", "neutral oil"],
+    [1, "", "lemon"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 350°F (175°C). Grease and line an 8-by-4-inch loaf pan.",
     "Rub lemon zest into sugar. Whisk in eggs, yogurt and oil. Fold in flour, baking powder and a pinch of salt.",
-    "Pour into the pan and bake 42–50 minutes until a skewer comes out clean. Cool 10 minutes before turning out."
+    "Pour into the pan and bake 42–50 minutes until a skewer comes out clean. Cool 10 minutes before turning out.",
   ],
-  "tip": "For extra lemon flavor, brush the warm loaf with a little juice from the zested lemon."
+  tip: "For extra lemon flavor, brush the warm loaf with a little juice from the zested lemon.",
 },
 {
-  "id": "dahl",
-  "name": "Red lentil dal",
-  "sub": "with tomatoes and basmati rice",
-  "category": "Vegetarian",
-  "time": 35,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      130,
-      "g",
-      "red lentils"
-    ],
-    [
-      140,
-      "g",
-      "basmati rice"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      2,
-      "",
-      "garlic cloves, minced"
-    ],
-    [
-      1,
-      "tsp",
-      "grated ginger"
-    ],
-    [
-      1,
-      "tsp",
-      "ground cumin"
-    ],
-    [
-      0.5,
-      "tsp",
-      "turmeric"
-    ],
-    [
-      200,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      1,
-      "tbsp",
-      "oil"
-    ]
+  id: "dahl",
+  name: "Red lentil dal",
+  sub: "with tomatoes and basmati rice",
+  category: "Vegetarian",
+  time: 35,
+  difficulty: "Easy",
+  servings: 2,
+  description: "A comforting red lentil dal, simmered with tomatoes and warm spices until silky.",
+  ingredients: [
+    [130, "g", "red lentils"],
+    [140, "g", "basmati rice"],
+    [1, "", "onion, diced"],
+    [2, "", "garlic cloves, minced"],
+    [1, "tsp", "grated ginger"],
+    [1, "tsp", "ground cumin"],
+    [0.5, "tsp", "turmeric"],
+    [200, "g", "crushed tomatoes"],
+    [1, "tbsp", "oil"],
   ],
-  "steps": [
+  steps: [
     "Cook rice according to the package. Rinse the lentils.",
     "Soften onion in oil, then add garlic, ginger, cumin and turmeric and stir for 30 seconds.",
-    "Add tomatoes, lentils and 400 ml water per two servings. Simmer 20–25 minutes, stirring occasionally. Season and serve over rice."
+    "Add tomatoes, lentils and 400 ml water per two servings. Simmer 20–25 minutes, stirring occasionally. Season and serve over rice.",
   ],
-  "tip": "Add a splash of water if the lentils thicken before becoming tender."
+  tip: "Add a splash of water if the lentils thicken before becoming tender.",
 },
 {
-  "id": "ginger",
-  "name": "Ginger-scallion chicken",
-  "sub": "with steamed rice",
-  "category": "Chicken",
-  "time": 35,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      300,
-      "g",
-      "boneless chicken thighs"
-    ],
-    [
-      150,
-      "g",
-      "rice"
-    ],
-    [
-      4,
-      "",
-      "scallions"
-    ],
-    [
-      20,
-      "g",
-      "fresh ginger"
-    ],
-    [
-      2,
-      "tbsp",
-      "neutral oil"
-    ],
-    [
-      1,
-      "tbsp",
-      "soy sauce"
-    ],
-    [
-      1,
-      "tsp",
-      "rice vinegar"
-    ]
+  id: "ginger",
+  name: "Ginger-scallion chicken",
+  sub: "with steamed rice",
+  category: "Chicken",
+  time: 35,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Tender chicken served with a fragrant ginger and scallion sauce over steamed rice.",
+  ingredients: [
+    [300, "g", "boneless chicken thighs"],
+    [150, "g", "rice"],
+    [4, "", "scallions"],
+    [20, "g", "fresh ginger"],
+    [2, "tbsp", "neutral oil"],
+    [1, "tbsp", "soy sauce"],
+    [1, "tsp", "rice vinegar"],
   ],
-  "steps": [
+  steps: [
     "Cook rice according to the package. Thinly slice scallions and grate ginger.",
     "Season chicken and sear in half the oil over medium-high heat. Turn and continue cooking until the center reaches 165°F (74°C). Rest briefly before slicing.",
-    "Warm the remaining oil, then remove from heat and stir in ginger, scallions, soy sauce and vinegar. Spoon over chicken and rice."
+    "Warm the remaining oil, then remove from heat and stir in ginger, scallions, soy sauce and vinegar. Spoon over chicken and rice.",
   ],
-  "tip": "Use the scallion greens and whites for the sauce."
+  tip: "Use the scallion greens and whites for the sauce.",
 },
 {
-  "id": "orzo",
-  "name": "Lemon chicken orzo soup",
-  "sub": "with dill and carrots",
-  "category": "Chicken",
-  "time": 40,
-  "servings": 4,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      350,
-      "g",
-      "boneless chicken breast"
-    ],
-    [
-      120,
-      "g",
-      "orzo"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      2,
-      "",
-      "carrots, sliced"
-    ],
-    [
-      1.2,
-      "L",
-      "chicken stock"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ],
-    [
-      2,
-      "tbsp",
-      "chopped dill"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ]
+  id: "orzo",
+  name: "Lemon chicken orzo soup",
+  sub: "with dill and carrots",
+  category: "Chicken",
+  time: 40,
+  difficulty: "Easy",
+  servings: 4,
+  description: "A light, brothy soup with tender chicken, orzo, dill and sweet carrots.",
+  ingredients: [
+    [350, "g", "boneless chicken breast"],
+    [120, "g", "orzo"],
+    [1, "", "onion, diced"],
+    [2, "", "carrots, sliced"],
+    [1.2, "L", "chicken stock"],
+    [1, "", "lemon"],
+    [2, "tbsp", "chopped dill"],
+    [1, "tbsp", "olive oil"],
   ],
-  "steps": [
+  steps: [
     "Soften onion and carrots in oil for 5 minutes. Add stock and chicken and simmer until the chicken reaches 165°F (74°C).",
     "Remove chicken and shred. Add orzo to the broth and simmer according to its package.",
-    "Return chicken to the pot. Add lemon juice and dill and season to taste."
+    "Return chicken to the pot. Add lemon juice and dill and season to taste.",
   ],
-  "tip": "If making ahead, cook the orzo separately and add it to each bowl."
+  tip: "If making ahead, cook the orzo separately and add it to each bowl.",
 },
 {
-  "id": "halloumi",
-  "name": "Grilled halloumi couscous bowl",
-  "sub": "with cucumber, tomatoes and lemon",
-  "category": "Vegetarian",
-  "time": 25,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      160,
-      "g",
-      "halloumi"
-    ],
-    [
-      120,
-      "g",
-      "couscous"
-    ],
-    [
-      0.5,
-      "",
-      "cucumber"
-    ],
-    [
-      180,
-      "g",
-      "cherry tomatoes"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ],
-    [
-      2,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      2,
-      "tbsp",
-      "chopped mint"
-    ]
+  id: "halloumi",
+  name: "Grilled halloumi couscous bowl",
+  sub: "with cucumber, tomatoes and lemon",
+  category: "Vegetarian",
+  time: 25,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Golden-seared halloumi on fluffy couscous with crisp cucumber, sweet tomatoes and lemon.",
+  ingredients: [
+    [160, "g", "halloumi"],
+    [120, "g", "couscous"],
+    [0.5, "", "cucumber"],
+    [180, "g", "cherry tomatoes"],
+    [1, "", "lemon"],
+    [2, "tbsp", "olive oil"],
+    [2, "tbsp", "chopped mint"],
   ],
-  "steps": [
+  steps: [
     "Prepare couscous according to the package. Fluff and let cool slightly.",
     "Dice cucumber and halve tomatoes. Toss with couscous, mint, lemon juice and half the oil.",
-    "Slice halloumi and sear in the remaining oil until golden on both sides. Serve over the couscous."
+    "Slice halloumi and sear in the remaining oil until golden on both sides. Serve over the couscous.",
   ],
-  "tip": "Taste before salting. Halloumi is already quite salty."
+  tip: "Taste before salting. Halloumi is already quite salty.",
 },
 {
-  "id": "panzanella",
-  "name": "Tuscan panzanella",
-  "sub": "with ripe tomatoes, toasted bread and basil",
-  "category": "Vegetarian",
-  "time": 30,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      180,
-      "g",
-      "day-old country bread"
-    ],
-    [
-      400,
-      "g",
-      "ripe tomatoes"
-    ],
-    [
-      0.5,
-      "",
-      "red onion"
-    ],
-    [
-      15,
-      "g",
-      "fresh basil"
-    ],
-    [
-      3,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      1,
-      "tbsp",
-      "red wine vinegar"
-    ]
+  id: "panzanella",
+  name: "Tuscan panzanella",
+  sub: "with ripe tomatoes, toasted bread and basil",
+  category: "Vegetarian",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "A rustic Tuscan bread salad of ripe tomatoes, toasted bread and fresh basil.",
+  ingredients: [
+    [180, "g", "day-old country bread"],
+    [400, "g", "ripe tomatoes"],
+    [0.5, "", "red onion"],
+    [15, "g", "fresh basil"],
+    [3, "tbsp", "olive oil"],
+    [1, "tbsp", "red wine vinegar"],
   ],
-  "steps": [
+  steps: [
     "Cube bread and toast at 400°F (200°C) for 8–12 minutes until golden.",
     "Chop tomatoes and salt lightly in a bowl. Let stand 10 minutes to release their juices. Thinly slice onion.",
-    "Toss tomatoes and juices with bread, onion, basil, oil and vinegar. Let stand 5 minutes before serving."
+    "Toss tomatoes and juices with bread, onion, basil, oil and vinegar. Let stand 5 minutes before serving.",
   ],
-  "tip": "Use bread with a sturdy crumb so it can absorb the dressing."
+  tip: "Use bread with a sturdy crumb so it can absorb the dressing.",
 },
 {
-  "id": "gnocchi",
-  "name": "Skillet gnocchi with mushrooms",
-  "sub": "with spinach, garlic and butter",
-  "category": "Vegetarian",
-  "time": 25,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      400,
-      "g",
-      "shelf-stable gnocchi"
-    ],
-    [
-      250,
-      "g",
-      "mushrooms, sliced"
-    ],
-    [
-      100,
-      "g",
-      "baby spinach"
-    ],
-    [
-      2,
-      "",
-      "garlic cloves, minced"
-    ],
-    [
-      25,
-      "g",
-      "butter"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ]
+  id: "gnocchi",
+  name: "Skillet gnocchi with mushrooms",
+  sub: "with spinach, garlic and butter",
+  category: "Vegetarian",
+  time: 25,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Pillowy potato gnocchi seared in a skillet with mushrooms, spinach and garlic butter.",
+  ingredients: [
+    [400, "g", "shelf-stable gnocchi"],
+    [250, "g", "mushrooms, sliced"],
+    [100, "g", "baby spinach"],
+    [2, "", "garlic cloves, minced"],
+    [25, "g", "butter"],
+    [1, "tbsp", "olive oil"],
   ],
-  "steps": [
+  steps: [
     "Brown mushrooms in oil over medium-high heat, then transfer to a plate.",
     "Melt butter and add gnocchi. Cook, turning occasionally, until golden and tender. Add a splash of water and cover briefly if the centers are still firm.",
-    "Add garlic, mushrooms and spinach. Toss until spinach wilts and season to taste."
+    "Add garlic, mushrooms and spinach. Toss until spinach wilts and season to taste.",
   ],
-  "tip": "Use a wide skillet to give the gnocchi room to crisp."
+  tip: "Use a wide skillet to give the gnocchi room to crisp.",
 },
 {
-  "id": "frittata",
-  "name": "Spinach and feta frittata",
-  "sub": "with scallions and black pepper",
-  "category": "Breakfast",
-  "time": 30,
-  "servings": 4,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      6,
-      "",
-      "eggs"
-    ],
-    [
-      100,
-      "g",
-      "baby spinach"
-    ],
-    [
-      80,
-      "g",
-      "feta, crumbled"
-    ],
-    [
-      3,
-      "",
-      "scallions, sliced"
-    ],
-    [
-      2,
-      "tbsp",
-      "milk"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ]
+  id: "frittata",
+  name: "Spinach and feta frittata",
+  sub: "with scallions and black pepper",
+  category: "Breakfast",
+  time: 30,
+  difficulty: "Easy",
+  servings: 4,
+  description: "A fluffy, oven-baked egg dish with spinach, feta and scallions that slices neatly.",
+  ingredients: [
+    [6, "", "eggs"],
+    [100, "g", "baby spinach"],
+    [80, "g", "feta, crumbled"],
+    [3, "", "scallions, sliced"],
+    [2, "tbsp", "milk"],
+    [1, "tbsp", "olive oil"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 375°F (190°C). Sauté scallions and spinach in oil in an ovenproof skillet until wilted.",
     "Whisk eggs with milk and pepper. Stir in feta and pour over the vegetables.",
-    "Cook over low heat for 2 minutes, then bake 10–15 minutes until the center is set and reaches 160°F (71°C). Rest briefly before slicing."
+    "Cook over low heat for 2 minutes, then bake 10–15 minutes until the center is set and reaches 160°F (71°C). Rest briefly before slicing.",
   ],
-  "tip": "Squeeze out excess moisture if substituting thawed frozen spinach."
+  tip: "Squeeze out excess moisture if substituting thawed frozen spinach.",
 },
 {
-  "id": "galette",
-  "name": "Rustic pear galette",
-  "sub": "with cinnamon and flaky pastry",
-  "category": "Dessert",
-  "time": 60,
-  "servings": 6,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      1,
-      "",
-      "round pie crust"
-    ],
-    [
-      3,
-      "",
-      "firm pears"
-    ],
-    [
-      30,
-      "g",
-      "sugar"
-    ],
-    [
-      1,
-      "tbsp",
-      "cornstarch"
-    ],
-    [
-      0.5,
-      "tsp",
-      "cinnamon"
-    ],
-    [
-      1,
-      "tbsp",
-      "lemon juice"
-    ],
-    [
-      1,
-      "",
-      "egg, beaten"
-    ]
+  id: "galette",
+  name: "Rustic pear galette",
+  sub: "with cinnamon and flaky pastry",
+  category: "Dessert",
+  time: 60,
+  difficulty: "Easy",
+  servings: 6,
+  description: "A free-form, rustic tart of sliced pears and cinnamon baked in flaky pastry.",
+  ingredients: [
+    [1, "", "round pie crust"],
+    [3, "", "firm pears"],
+    [30, "g", "sugar"],
+    [1, "tbsp", "cornstarch"],
+    [0.5, "tsp", "cinnamon"],
+    [1, "tbsp", "lemon juice"],
+    [1, "", "egg, beaten"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 400°F (200°C). Roll pastry onto a parchment-lined sheet pan.",
     "Slice pears thinly and toss with sugar, cornstarch, cinnamon and lemon juice.",
-    "Arrange pears over pastry, leaving a 2-inch border. Fold border over the filling, brush with egg and bake 35–40 minutes until golden."
+    "Arrange pears over pastry, leaving a 2-inch border. Fold border over the filling, brush with egg and bake 35–40 minutes until golden.",
   ],
-  "tip": "Let cool for at least 15 minutes so the juices can set."
+  tip: "Let cool for at least 15 minutes so the juices can set.",
 },
 {
-  "id": "butterchicken",
-  "name": "Butter chicken",
-  "sub": "with tomato cream sauce and basmati rice",
-  "category": "Chicken",
-  "time": 45,
-  "servings": 4,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      600,
-      "g",
-      "boneless chicken thighs, cubed"
-    ],
-    [
-      120,
-      "g",
-      "plain yogurt"
-    ],
-    [
-      1,
-      "tbsp",
-      "grated ginger"
-    ],
-    [
-      3,
-      "",
-      "garlic cloves, minced"
-    ],
-    [
-      2,
-      "tsp",
-      "garam masala"
-    ],
-    [
-      1,
-      "tsp",
-      "ground cumin"
-    ],
-    [
-      1,
-      "tsp",
-      "paprika"
-    ],
-    [
-      400,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      120,
-      "ml",
-      "heavy cream"
-    ],
-    [
-      30,
-      "g",
-      "butter"
-    ],
-    [
-      250,
-      "g",
-      "basmati rice"
-    ]
+  id: "butterchicken",
+  name: "Butter chicken",
+  sub: "with tomato cream sauce and basmati rice",
+  category: "Chicken",
+  time: 45,
+  difficulty: "Easy",
+  servings: 4,
+  description: "Tender chicken simmered in a mildly spiced tomato and cream sauce, a comforting favorite.",
+  ingredients: [
+    [600, "g", "boneless chicken thighs, cubed"],
+    [120, "g", "plain yogurt"],
+    [1, "tbsp", "grated ginger"],
+    [3, "", "garlic cloves, minced"],
+    [2, "tsp", "garam masala"],
+    [1, "tsp", "ground cumin"],
+    [1, "tsp", "paprika"],
+    [400, "g", "crushed tomatoes"],
+    [120, "ml", "heavy cream"],
+    [30, "g", "butter"],
+    [250, "g", "basmati rice"],
   ],
-  "steps": [
+  steps: [
     "Toss chicken with yogurt, half the garlic and ginger, half the garam masala, cumin, paprika and a pinch of salt. Let stand 15 minutes in the refrigerator while you start the rice.",
     "Melt half the butter in a skillet over medium-high heat. Shake excess marinade from the chicken and brown in batches. Transfer to a plate.",
     "Melt remaining butter and stir in remaining garlic, ginger and garam masala for 30 seconds. Add tomatoes and simmer 10 minutes. Return chicken and simmer until it reaches 165°F (74°C).",
-    "Stir in cream and warm gently. Adjust salt and serve over the cooked rice."
+    "Stir in cream and warm gently. Adjust salt and serve over the cooked rice.",
   ],
-  "tip": "Use a wide skillet so the chicken browns in batches."
+  tip: "Use a wide skillet so the chicken browns in batches.",
 },
 {
-  "id": "tonkatsu",
-  "name": "Tonkatsu",
-  "sub": "with shredded cabbage and tangy sauce",
-  "category": "Pork",
-  "time": 30,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      2,
-      "",
-      "boneless pork loin chops, about 150 g each"
-    ],
-    [
-      35,
-      "g",
-      "all-purpose flour"
-    ],
-    [
-      1,
-      "",
-      "egg"
-    ],
-    [
-      70,
-      "g",
-      "panko"
-    ],
-    [
-      150,
-      "ml",
-      "neutral frying oil"
-    ],
-    [
-      150,
-      "g",
-      "green cabbage"
-    ],
-    [
-      2,
-      "tbsp",
-      "ketchup"
-    ],
-    [
-      1,
-      "tbsp",
-      "Worcestershire sauce"
-    ],
-    [
-      1,
-      "tsp",
-      "soy sauce"
-    ],
-    [
-      1,
-      "tsp",
-      "sugar"
-    ]
+  id: "tonkatsu",
+  name: "Tonkatsu",
+  sub: "with shredded cabbage and tangy sauce",
+  category: "Pork",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Crisp, golden breaded pork cutlets served with shredded cabbage and a tangy sauce.",
+  ingredients: [
+    [2, "", "boneless pork loin chops, about 150 g each"],
+    [35, "g", "all-purpose flour"],
+    [1, "", "egg"],
+    [70, "g", "panko"],
+    [150, "ml", "neutral frying oil"],
+    [150, "g", "green cabbage"],
+    [2, "tbsp", "ketchup"],
+    [1, "tbsp", "Worcestershire sauce"],
+    [1, "tsp", "soy sauce"],
+    [1, "tsp", "sugar"],
   ],
-  "steps": [
+  steps: [
     "Thinly shred cabbage. Stir ketchup, Worcestershire, soy sauce and sugar together for the sauce.",
     "Pound chops to about ½ inch thick. Season, then coat in flour, beaten egg and panko, pressing the crumbs on gently.",
     "Heat a shallow layer of oil to 350°F (175°C) in a heavy skillet. Fry cutlets, turning once, until golden and the center reaches 145°F (63°C).",
-    "Drain on a rack and rest at least 3 minutes. Slice and serve with cabbage and sauce."
+    "Drain on a rack and rest at least 3 minutes. Slice and serve with cabbage and sauce.",
   ],
-  "tip": "Let the oil return to temperature between batches."
+  tip: "Let the oil return to temperature between batches.",
 },
 {
-  "id": "stroganoff",
-  "name": "Beef stroganoff",
-  "sub": "with mushrooms, sour cream and egg noodles",
-  "category": "Beef",
-  "time": 35,
-  "servings": 4,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      500,
-      "g",
-      "sirloin steak, thinly sliced"
-    ],
-    [
-      300,
-      "g",
-      "mushrooms, sliced"
-    ],
-    [
-      1,
-      "",
-      "onion, thinly sliced"
-    ],
-    [
-      250,
-      "ml",
-      "beef stock"
-    ],
-    [
-      150,
-      "g",
-      "sour cream"
-    ],
-    [
-      1,
-      "tbsp",
-      "Dijon mustard"
-    ],
-    [
-      1,
-      "tbsp",
-      "flour"
-    ],
-    [
-      25,
-      "g",
-      "butter"
-    ],
-    [
-      1,
-      "tbsp",
-      "neutral oil"
-    ],
-    [
-      300,
-      "g",
-      "egg noodles"
-    ]
+  id: "stroganoff",
+  name: "Beef stroganoff",
+  sub: "with mushrooms, sour cream and egg noodles",
+  category: "Beef",
+  time: 35,
+  difficulty: "Easy",
+  servings: 4,
+  description: "Tender strips of beef and mushrooms in a creamy sour cream sauce over egg noodles.",
+  ingredients: [
+    [500, "g", "sirloin steak, thinly sliced"],
+    [300, "g", "mushrooms, sliced"],
+    [1, "", "onion, thinly sliced"],
+    [250, "ml", "beef stock"],
+    [150, "g", "sour cream"],
+    [1, "tbsp", "Dijon mustard"],
+    [1, "tbsp", "flour"],
+    [25, "g", "butter"],
+    [1, "tbsp", "neutral oil"],
+    [300, "g", "egg noodles"],
   ],
-  "steps": [
+  steps: [
     "Cook noodles according to the package. Pat beef dry, season and sear in hot oil in batches. Transfer to a plate.",
     "Melt butter in the skillet. Brown mushrooms, then add onion and cook until soft. Stir in flour for 1 minute.",
     "Whisk in stock and mustard and simmer until lightly thickened. Return beef and its juices, heat to 145°F (63°C) and remove from the heat. Rest 3 minutes.",
-    "Stir a spoonful of warm sauce into the sour cream, then stir it into the skillet. Serve over noodles."
+    "Stir a spoonful of warm sauce into the sour cream, then stir it into the skillet. Serve over noodles.",
   ],
-  "tip": "Keep the pan off the heat when adding sour cream to prevent curdling."
+  tip: "Keep the pan off the heat when adding sour cream to prevent curdling.",
 },
 {
-  "id": "piccata",
-  "name": "Chicken piccata",
-  "sub": "with lemon, capers and butter",
-  "category": "Chicken",
-  "time": 25,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      2,
-      "",
-      "thin chicken breast cutlets"
-    ],
-    [
-      30,
-      "g",
-      "flour"
-    ],
-    [
-      1,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      30,
-      "g",
-      "butter"
-    ],
-    [
-      120,
-      "ml",
-      "chicken stock"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ],
-    [
-      1,
-      "tbsp",
-      "capers, drained"
-    ],
-    [
-      1,
-      "tbsp",
-      "chopped parsley"
-    ]
+  id: "piccata",
+  name: "Chicken piccata",
+  sub: "with lemon, capers and butter",
+  category: "Chicken",
+  time: 25,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Thin chicken cutlets in a bright lemon, caper and butter sauce.",
+  ingredients: [
+    [2, "", "thin chicken breast cutlets"],
+    [30, "g", "flour"],
+    [1, "tbsp", "olive oil"],
+    [30, "g", "butter"],
+    [120, "ml", "chicken stock"],
+    [1, "", "lemon"],
+    [1, "tbsp", "capers, drained"],
+    [1, "tbsp", "chopped parsley"],
   ],
-  "steps": [
+  steps: [
     "Season cutlets and dust with flour. Heat oil and half the butter in a skillet and cook chicken until golden on both sides and 165°F (74°C). Transfer to a plate.",
     "Add stock, lemon juice and capers. Scrape up the browned bits and simmer until slightly reduced.",
-    "Turn off the heat, swirl in remaining butter and return chicken to coat it. Finish with parsley."
+    "Turn off the heat, swirl in remaining butter and return chicken to coat it. Finish with parsley.",
   ],
-  "tip": "Taste the sauce before adding salt because capers are briny."
+  tip: "Taste the sauce before adding salt because capers are briny.",
 },
 {
-  "id": "moussaka",
-  "name": "Moussaka",
-  "sub": "with roasted eggplant, lamb and béchamel",
-  "category": "Lamb",
-  "time": 110,
-  "servings": 6,
-  "difficulty": "Moderate",
-  "description": "",
-  "ingredients": [
-    [
-      2,
-      "",
-      "large eggplants"
-    ],
-    [
-      500,
-      "g",
-      "ground lamb"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      2,
-      "",
-      "garlic cloves, minced"
-    ],
-    [
-      400,
-      "g",
-      "crushed tomatoes"
-    ],
-    [
-      0.5,
-      "tsp",
-      "ground cinnamon"
-    ],
-    [
-      3,
-      "tbsp",
-      "olive oil"
-    ],
-    [
-      40,
-      "g",
-      "butter"
-    ],
-    [
-      40,
-      "g",
-      "flour"
-    ],
-    [
-      500,
-      "ml",
-      "milk"
-    ],
-    [
-      50,
-      "g",
-      "Parmesan, grated"
-    ]
+  id: "moussaka",
+  name: "Moussaka",
+  sub: "with roasted eggplant, lamb and béchamel",
+  category: "Lamb",
+  time: 110,
+  difficulty: "Moderate",
+  servings: 6,
+  description: "A layered Greek casserole of roasted eggplant, spiced lamb and creamy béchamel.",
+  ingredients: [
+    [2, "", "large eggplants"],
+    [500, "g", "ground lamb"],
+    [1, "", "onion, diced"],
+    [2, "", "garlic cloves, minced"],
+    [400, "g", "crushed tomatoes"],
+    [0.5, "tsp", "ground cinnamon"],
+    [3, "tbsp", "olive oil"],
+    [40, "g", "butter"],
+    [40, "g", "flour"],
+    [500, "ml", "milk"],
+    [50, "g", "Parmesan, grated"],
   ],
-  "steps": [
+  steps: [
     "Slice eggplant ½ inch thick, brush with two-thirds of the oil and roast at 425°F (220°C) for 25 minutes, turning halfway.",
     "Soften onion in remaining oil. Add garlic and lamb and cook until the lamb reaches 160°F (71°C). Add tomatoes and cinnamon and simmer until thick, about 20 minutes.",
     "Melt butter, whisk in flour for 1 minute, then gradually whisk in milk. Simmer until thick. Stir in half the Parmesan and season.",
-    "Layer eggplant and lamb sauce in a baking dish. Top with béchamel and remaining Parmesan. Bake at 375°F (190°C) for 30–35 minutes. Rest 15 minutes."
+    "Layer eggplant and lamb sauce in a baking dish. Top with béchamel and remaining Parmesan. Bake at 375°F (190°C) for 30–35 minutes. Rest 15 minutes.",
   ],
-  "tip": "Roasting the eggplant before assembly helps keep the layers firm."
+  tip: "Roasting the eggplant before assembly helps keep the layers firm.",
 },
 {
-  "id": "jambalaya",
-  "name": "Chicken and andouille jambalaya",
-  "sub": "with peppers, celery and rice",
-  "category": "Chicken",
-  "time": 55,
-  "servings": 4,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      400,
-      "g",
-      "boneless chicken thighs, cubed"
-    ],
-    [
-      200,
-      "g",
-      "fully cooked andouille, sliced"
-    ],
-    [
-      250,
-      "g",
-      "long-grain rice"
-    ],
-    [
-      1,
-      "",
-      "onion, diced"
-    ],
-    [
-      1,
-      "",
-      "green bell pepper, diced"
-    ],
-    [
-      2,
-      "",
-      "celery stalks, diced"
-    ],
-    [
-      3,
-      "",
-      "garlic cloves, minced"
-    ],
-    [
-      600,
-      "ml",
-      "chicken stock"
-    ],
-    [
-      2,
-      "tsp",
-      "Cajun seasoning"
-    ],
-    [
-      1,
-      "tbsp",
-      "oil"
-    ]
+  id: "jambalaya",
+  name: "Chicken and andouille jambalaya",
+  sub: "with peppers, celery and rice",
+  category: "Chicken",
+  time: 55,
+  difficulty: "Easy",
+  servings: 4,
+  description: "A one-pot Louisiana classic of chicken, andouille sausage and peppers simmered with rice.",
+  ingredients: [
+    [400, "g", "boneless chicken thighs, cubed"],
+    [200, "g", "fully cooked andouille, sliced"],
+    [250, "g", "long-grain rice"],
+    [1, "", "onion, diced"],
+    [1, "", "green bell pepper, diced"],
+    [2, "", "celery stalks, diced"],
+    [3, "", "garlic cloves, minced"],
+    [600, "ml", "chicken stock"],
+    [2, "tsp", "Cajun seasoning"],
+    [1, "tbsp", "oil"],
   ],
-  "steps": [
+  steps: [
     "Brown chicken and sausage in oil in a heavy pot. Transfer to a plate. Soften onion, bell pepper and celery in the same pot.",
     "Add garlic, Cajun seasoning and rice and stir for 1 minute. Add stock and return chicken and sausage.",
-    "Cover and simmer on low until the rice is tender and chicken reaches 165°F (74°C), about 20–25 minutes. Rest covered for 5 minutes, then fluff."
+    "Cover and simmer on low until the rice is tender and chicken reaches 165°F (74°C), about 20–25 minutes. Rest covered for 5 minutes, then fluff.",
   ],
-  "tip": "Cajun seasoning blends vary in salt and heat. Taste before adding more."
+  tip: "Cajun seasoning blends vary in salt and heat. Taste before adding more.",
 },
 {
-  "id": "falafel",
-  "name": "Falafel pitas",
-  "sub": "with cucumber, tomatoes and tahini",
-  "category": "Vegetarian",
-  "time": 55,
-  "servings": 4,
-  "difficulty": "Moderate",
-  "description": "",
-  "ingredients": [
-    [
-      200,
-      "g",
-      "dried chickpeas, soaked overnight"
-    ],
-    [
-      0.5,
-      "",
-      "onion"
-    ],
-    [
-      2,
-      "",
-      "garlic cloves"
-    ],
-    [
-      25,
-      "g",
-      "parsley"
-    ],
-    [
-      2,
-      "tsp",
-      "ground cumin"
-    ],
-    [
-      1,
-      "tsp",
-      "ground coriander"
-    ],
-    [
-      1,
-      "tsp",
-      "baking powder"
-    ],
-    [
-      150,
-      "ml",
-      "neutral frying oil"
-    ],
-    [
-      4,
-      "",
-      "pitas"
-    ],
-    [
-      0.5,
-      "",
-      "cucumber"
-    ],
-    [
-      2,
-      "",
-      "tomatoes"
-    ],
-    [
-      60,
-      "g",
-      "tahini"
-    ],
-    [
-      1,
-      "",
-      "lemon"
-    ]
+  id: "falafel",
+  name: "Falafel pitas",
+  sub: "with cucumber, tomatoes and tahini",
+  category: "Vegetarian",
+  time: 55,
+  difficulty: "Moderate",
+  servings: 4,
+  description: "Crisp, herby chickpea falafel tucked into warm pitas with cucumber, tomato and tahini.",
+  ingredients: [
+    [200, "g", "dried chickpeas, soaked overnight"],
+    [0.5, "", "onion"],
+    [2, "", "garlic cloves"],
+    [25, "g", "parsley"],
+    [2, "tsp", "ground cumin"],
+    [1, "tsp", "ground coriander"],
+    [1, "tsp", "baking powder"],
+    [150, "ml", "neutral frying oil"],
+    [4, "", "pitas"],
+    [0.5, "", "cucumber"],
+    [2, "", "tomatoes"],
+    [60, "g", "tahini"],
+    [1, "", "lemon"],
   ],
-  "steps": [
+  steps: [
     "Drain the soaked chickpeas thoroughly. Pulse with onion, garlic, parsley, spices and salt until finely chopped and able to hold together. Chill for 20 minutes.",
     "Mix in baking powder and shape into small patties. Shallow-fry in oil at 350°F (175°C), turning once, until deep golden and cooked through, about 3–4 minutes per side.",
-    "Whisk tahini with lemon juice and enough water to drizzle. Fill warmed pitas with falafel, chopped cucumber and tomatoes, and sauce."
+    "Whisk tahini with lemon juice and enough water to drizzle. Fill warmed pitas with falafel, chopped cucumber and tomatoes, and sauce.",
   ],
-  "tip": "Use soaked dried chickpeas. Canned chickpeas make the mixture too soft."
+  tip: "Use soaked dried chickpeas. Canned chickpeas make the mixture too soft.",
 },
 {
-  "id": "carbonara",
-  "name": "Spaghetti carbonara",
-  "sub": "with guanciale, Pecorino and black pepper",
-  "category": "Pork",
-  "time": 25,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      200,
-      "g",
-      "spaghetti"
-    ],
-    [
-      100,
-      "g",
-      "guanciale"
-    ],
-    [
-      2,
-      "",
-      "large pasteurized eggs"
-    ],
-    [
-      60,
-      "g",
-      "Pecorino Romano, finely grated"
-    ],
-    [
-      1,
-      "tsp",
-      "cracked black pepper"
-    ]
+  id: "carbonara",
+  name: "Spaghetti carbonara",
+  sub: "with guanciale, Pecorino and black pepper",
+  category: "Pork",
+  time: 25,
+  difficulty: "Easy",
+  servings: 2,
+  description: "A silky Roman pasta of guanciale, Pecorino and black pepper, made without cream.",
+  ingredients: [
+    [200, "g", "spaghetti"],
+    [100, "g", "guanciale"],
+    [2, "", "large pasteurized eggs"],
+    [60, "g", "Pecorino Romano, finely grated"],
+    [1, "tsp", "cracked black pepper"],
   ],
-  "steps": [
+  steps: [
     "Cook spaghetti in lightly salted water. Reserve a mug of cooking water.",
     "Dice guanciale and cook in a skillet over medium heat until crisp. Remove the skillet from the heat. Beat the pasteurized eggs with most of the Pecorino and the pepper.",
-    "Toss hot drained pasta with guanciale and its fat. Off the heat, add the egg mixture and toss briskly, adding splashes of hot pasta water until glossy. Serve with the remaining cheese."
+    "Toss hot drained pasta with guanciale and its fat. Off the heat, add the egg mixture and toss briskly, adding splashes of hot pasta water until glossy. Serve with the remaining cheese.",
   ],
-  "tip": "Finely grated cheese melts more evenly into the sauce."
+  tip: "Finely grated cheese melts more evenly into the sauce.",
 },
 {
-  "id": "teriyakisalmon",
-  "name": "Teriyaki salmon",
-  "sub": "with rice and steamed broccoli",
-  "category": "Fish",
-  "time": 30,
-  "servings": 2,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      2,
-      "",
-      "salmon fillets, about 150 g each"
-    ],
-    [
-      150,
-      "g",
-      "rice"
-    ],
-    [
-      250,
-      "g",
-      "broccoli florets"
-    ],
-    [
-      2,
-      "tbsp",
-      "soy sauce"
-    ],
-    [
-      2,
-      "tbsp",
-      "mirin"
-    ],
-    [
-      1,
-      "tbsp",
-      "brown sugar"
-    ],
-    [
-      1,
-      "tsp",
-      "grated ginger"
-    ],
-    [
-      1,
-      "tsp",
-      "neutral oil"
-    ]
+  id: "teriyakisalmon",
+  name: "Teriyaki salmon",
+  sub: "with rice and steamed broccoli",
+  category: "Fish",
+  time: 30,
+  difficulty: "Easy",
+  servings: 2,
+  description: "Glazed salmon with a sweet-savory teriyaki sauce, served with rice and broccoli.",
+  ingredients: [
+    [2, "", "salmon fillets, about 150 g each"],
+    [150, "g", "rice"],
+    [250, "g", "broccoli florets"],
+    [2, "tbsp", "soy sauce"],
+    [2, "tbsp", "mirin"],
+    [1, "tbsp", "brown sugar"],
+    [1, "tsp", "grated ginger"],
+    [1, "tsp", "neutral oil"],
   ],
-  "steps": [
+  steps: [
     "Cook rice according to the package. Steam broccoli until crisp-tender.",
     "Simmer soy sauce, mirin, sugar and ginger in a small saucepan until lightly syrupy.",
-    "Pat salmon dry and sear in oil, skin side down if it has skin. Turn and cook until the center reaches 145°F (63°C). Brush with glaze and serve with rice and broccoli."
+    "Pat salmon dry and sear in oil, skin side down if it has skin. Turn and cook until the center reaches 145°F (63°C). Brush with glaze and serve with rice and broccoli.",
   ],
-  "tip": "Brush on the glaze near the end so the sugar does not scorch."
+  tip: "Brush on the glaze near the end so the sugar does not scorch.",
 },
 {
-  "id": "applecrisp",
-  "name": "Apple crisp",
-  "sub": "with cinnamon and a buttery oat topping",
-  "category": "Dessert",
-  "time": 55,
-  "servings": 6,
-  "difficulty": "Easy",
-  "description": "",
-  "ingredients": [
-    [
-      750,
-      "g",
-      "tart apples"
-    ],
-    [
-      1,
-      "tbsp",
-      "lemon juice"
-    ],
-    [
-      25,
-      "g",
-      "sugar"
-    ],
-    [
-      1,
-      "tsp",
-      "cinnamon"
-    ],
-    [
-      1,
-      "tbsp",
-      "cornstarch"
-    ],
-    [
-      85,
-      "g",
-      "rolled oats"
-    ],
-    [
-      60,
-      "g",
-      "flour"
-    ],
-    [
-      65,
-      "g",
-      "brown sugar"
-    ],
-    [
-      75,
-      "g",
-      "unsalted butter"
-    ]
+  id: "applecrisp",
+  name: "Apple crisp",
+  sub: "with cinnamon and a buttery oat topping",
+  category: "Dessert",
+  time: 55,
+  difficulty: "Easy",
+  servings: 6,
+  description: "Sweet cinnamon apples under a crunchy, buttery oat topping, baked until bubbling.",
+  ingredients: [
+    [750, "g", "tart apples"],
+    [1, "tbsp", "lemon juice"],
+    [25, "g", "sugar"],
+    [1, "tsp", "cinnamon"],
+    [1, "tbsp", "cornstarch"],
+    [85, "g", "rolled oats"],
+    [60, "g", "flour"],
+    [65, "g", "brown sugar"],
+    [75, "g", "unsalted butter"],
   ],
-  "steps": [
+  steps: [
     "Heat oven to 375°F (190°C). Peel and slice apples, then toss with lemon juice, sugar, cinnamon and cornstarch. Spread in an 8-inch baking dish.",
     "Mix oats, flour, brown sugar and a pinch of salt. Rub in cold cubed butter until clumps form. Scatter over the apples.",
-    "Bake 35–45 minutes until the fruit bubbles at the edges and the topping is golden. Rest 10 minutes before serving."
+    "Bake 35–45 minutes until the fruit bubbles at the edges and the topping is golden. Rest 10 minutes before serving.",
   ],
-  "tip": "Combine two varieties of apple for a mix of textures."
-}
+  tip: "Combine two varieties of apple for a mix of textures.",
+},
 ];
