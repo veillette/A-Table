@@ -14,7 +14,7 @@
   },
   "license": "UNLICENSED",
   "devDependencies": {
-    "html-validate": "^11.21.0",
+    "html-validate": "^11.21.1",
     "playwright": "^1.65.0"
   },
   "engines": {
