@@ -15,7 +15,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "html-validate": "^11.21.1",
-    "playwright": "^1.65.0"
+    "playwright": "^1.65.1"
   },
   "engines": {
     "node": ">=26"
