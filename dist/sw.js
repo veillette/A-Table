@@ -3,7 +3,7 @@
 // Strategy:
 // - App shell and code (HTML, JS, CSS, JSON): network first, so recipe changes
 //   appear after a deploy. The cache is used only when the network fails.
-// - Images and fonts: stale-while-revalidate, so they load instantly and
+// - Images and fonts: stale-while-revalidate, so cached assets load instantly and
 //   refresh in the background. The image cache keeps at most MAX_MEDIA_ENTRIES
 //   entries, dropping the oldest first.
 // - Install precaches SHELL (including the fonts), so the first repeat visit
@@ -92,7 +92,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   if (MEDIA_EXTENSIONS.some((ext) => pathname.endsWith(ext))) {
-    event.respondWith(staleWhileRevalidate(request, MEDIA_CACHE));
+    event.respondWith(staleWhileRevalidate(event));
   }
 });
 
@@ -111,20 +111,26 @@ async function networkFirst(request) {
   }
 }
 
-async function staleWhileRevalidate(request, cacheName) {
-  const cache = await caches.open(cacheName);
-  const cached = await cache.match(request);
-  const refresh = fetch(request)
+async function staleWhileRevalidate(event) {
+  const { request } = event;
+  const shell = await caches.open(SHELL_CACHE);
+  const precached = await shell.match(request);
+  const cache = precached ? shell : await caches.open(MEDIA_CACHE);
+  const cached = precached || await cache.match(request);
+  const responsePromise = fetch(request).catch(() => undefined);
+  const update = responsePromise
     .then(async (response) => {
-      if (response.ok) {
-        await cache.put(request, response.clone());
-        await trimCache(cache, MAX_MEDIA_ENTRIES);
-      }
-      return response;
+      if (!response?.ok) return;
+      await cache.put(request, response.clone());
+      if (!precached) await trimCache(cache, MAX_MEDIA_ENTRIES);
     })
     .catch(() => undefined);
-  if (cached) return cached;
-  const response = await refresh;
+  if (cached) {
+    event.waitUntil(update);
+    return cached;
+  }
+  await update;
+  const response = await responsePromise;
   return response || new Response('Offline', { status: 503, statusText: 'Offline' });
 }
 

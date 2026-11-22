@@ -1,4 +1,4 @@
-// Browser test: after one visit, the site must load with the network switched off.
+// Browser tests for installability and offline use under a deployment subpath.
 // It needs a Chromium build, so it runs separately from `npm test`:
 //   npx playwright install chromium   (first time)
 //   npm run test:offline
@@ -13,6 +13,7 @@ import { chromium } from 'playwright';
 import { recipes } from '../../dist/recipes.js';
 
 const dist = fileURLToPath(new URL('../../dist/', import.meta.url));
+const mount = '/A-Table/';
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
@@ -30,17 +31,28 @@ let baseUrl;
 
 before(async () => {
   server = createServer((req, res) => {
-    const path = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname));
-    let file = join(dist, path.endsWith('/') ? path + 'index.html' : path);
+    const pathname = new URL(req.url, 'http://x').pathname;
+    if (!pathname.startsWith(mount)) {
+      res.writeHead(404).end('not found');
+      return;
+    }
+    const path = normalize(decodeURIComponent(pathname.slice(mount.length)) || 'index.html');
+    const file = join(dist, path);
     if (!file.startsWith(dist) || !existsSync(file) || statSync(file).isDirectory()) {
       res.writeHead(404).end('not found');
       return;
     }
-    res.writeHead(200, { 'Content-Type': TYPES[extname(file)] ?? 'application/octet-stream' });
+    res.writeHead(200, {
+      'Content-Type': TYPES[extname(file)] ?? 'application/octet-stream',
+      'Cache-Control': 'no-store',
+    });
     res.end(readFileSync(file));
   });
-  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
-  baseUrl = `http://127.0.0.1:${server.address().port}/`;
+  await new Promise((resolve, reject) => {
+    server.once('error', reject);
+    server.listen(0, '127.0.0.1', resolve);
+  });
+  baseUrl = `http://127.0.0.1:${server.address().port}${mount}`;
   browser = await chromium.launch();
 });
 
@@ -49,18 +61,46 @@ after(async () => {
   await new Promise((resolve) => server?.close(resolve));
 });
 
-test('the site loads offline after one visit, with recipes, images and fonts', async () => {
+test('Chromium finds the app installable and recipes and fonts work offline after one visit', async () => {
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  try {
+    await page.goto(baseUrl, { waitUntil: 'load' });
+    await page.waitForFunction(() => navigator.serviceWorker.controller !== null);
+    const session = await context.newCDPSession(page);
+    const manifest = await session.send('Page.getAppManifest');
+    assert.equal(manifest.url, new URL('manifest.webmanifest', baseUrl).href);
+    const { installabilityErrors } = await session.send('Page.getInstallabilityErrors');
+    assert.deepEqual(installabilityErrors, []);
+
+    await context.setOffline(true);
+    await page.reload({ waitUntil: 'load' });
+    assert.equal(await page.locator('.card').count(), recipes.length, 'every recipe card renders offline');
+    await page.locator('.card .open-recipe').first().click();
+    assert.ok(await page.locator('dialog[open] .ingredients').isVisible(), 'recipe ingredients open offline');
+
+    const loadedFonts = await page.evaluate(async () => {
+      await document.fonts.ready;
+      return [...document.fonts].filter((face) => face.status === 'loaded').map((face) => face.family);
+    });
+    assert.ok(loadedFonts.includes('DM Sans'), 'DM Sans loads offline');
+    assert.ok(loadedFonts.includes('Libre Caslon Display'), 'Libre Caslon Display loads offline');
+  } finally {
+    await context.close();
+  }
+});
+
+test('recipe card images loaded under the service worker are available offline', async () => {
   const context = await browser.newContext();
   const page = await context.newPage();
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
 
-  // First visit: the service worker installs and precaches the app shell and fonts. It only
-  // controls the page from the next load, so images from this first load are not cached yet.
+  // Wait for the service worker to take control before requesting the card images again.
   await page.goto(baseUrl, { waitUntil: 'load' });
-  await page.evaluate(() => navigator.serviceWorker.ready);
+  await page.waitForFunction(() => navigator.serviceWorker.controller !== null);
 
-  // Second load runs under the service worker, which caches the card images as they load.
+  // Reload under the service worker so it can cache the card images as they load.
   await page.reload({ waitUntil: 'load' });
   await page.waitForSelector('.card');
   await page.waitForFunction(() =>
@@ -77,13 +117,6 @@ test('the site loads offline after one visit, with recipes, images and fonts', a
     [...document.querySelectorAll('.card img')].slice(0, 3).filter((img) => img.complete && img.naturalWidth > 0).length,
   );
   assert.equal(loadedImages, 3, 'the first card images come from the cache');
-
-  const loadedFonts = await page.evaluate(async () => {
-    await document.fonts.ready;
-    return [...document.fonts].filter((face) => face.status === 'loaded').map((face) => face.family);
-  });
-  assert.ok(loadedFonts.includes('DM Sans'), 'DM Sans loads offline');
-  assert.ok(loadedFonts.includes('Libre Caslon Display'), 'Libre Caslon Display loads offline');
 
   assert.deepEqual(errors, [], 'no uncaught page errors offline');
   await context.close();

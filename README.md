@@ -46,7 +46,7 @@ Saved favorites remain in the visitor's browser.
 
 ## Install and offline use (PWA)
 
-The site is a Progressive Web App. Visitors can install it from the browser (Add to Home Screen, or the install icon in the address bar). After one visit the pages, styles, fonts and recipe data work without a connection. Card and dialog images are cached when they load under the service worker, which starts controlling the page from the second load, so images are fully available offline from the second visit on.
+Serve the site over HTTPS in production or use localhost for development. Visitors can install À Table from a supported browser using its install control or Add to Home Screen. After the service worker finishes setting up on the first visit, the page, styles, fonts and recipe data work offline. Card and dialog photos become available offline as they load under the service worker and remain available while cached.
 
 - `dist/manifest.webmanifest` sets the name, colours and icons. Paths are relative, so the app also works under a subpath such as `username.github.io/A-Table/`.
 - `dist/sw.js` is the service worker. On install it precaches the app shell and fonts listed in `SHELL`. Pages, scripts and styles use network first, so recipe changes appear after a deploy, with the cache used only when offline. Images use stale-while-revalidate. The image cache keeps at most 200 entries and drops the oldest first.
@@ -55,7 +55,7 @@ The site is a Progressive Web App. Visitors can install it from the browser (Add
 
 When you add or rename a `.js`, `.css` or font file, add it to `SHELL` in `dist/sw.js`. `npm test` fails if a script or stylesheet is missing from the list. Whenever `SHELL` changes, bump `SHELL_VERSION` in `dist/sw.js` so old caches are replaced, then update `tests/shell.lock.json` with the new version and the hash shown in the failing test message. `npm test` checks both.
 
-The offline browser test (`npm run test:offline`) covers the main path. After manual changes, also check install in a real browser: load the site, wait for it to finish, switch the network off, and reload.
+The browser tests (`npm run test:offline`) check Chromium installability under a deployment subpath, offline use after the first visit, and offline availability of cached card photos.
 
 ## Project layout
 
