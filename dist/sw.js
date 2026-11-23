@@ -13,7 +13,7 @@
 // Paths are relative to this file, so the site works under a subpath such as
 // username.github.io/A-Table/.
 
-const SHELL_VERSION = 'v2';
+const SHELL_VERSION = 'v3';
 const SHELL_CACHE = `a-table-shell-${SHELL_VERSION}`;
 const MEDIA_CACHE = `a-table-media-${SHELL_VERSION}`;
 const MAX_MEDIA_ENTRIES = 200;
@@ -36,6 +36,7 @@ const SHELL = [
   "./fonts/libre-caslon-display-400-latin-ext.woff2",
   "./theme.js",
   "./pwa.js",
+  "./copy-link.js",
   "./app.js",
   "./recipes.js",
   "./lib/format.js",

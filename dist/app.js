@@ -97,3 +97,4 @@ if (featured) {
 
 renderFilters();
 render();
+openRecipe(new URLSearchParams(location.search).get('recipe'));

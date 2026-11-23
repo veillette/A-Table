@@ -85,6 +85,11 @@ test('Chromium finds the app installable and recipes and fonts work offline afte
     });
     assert.ok(loadedFonts.includes('DM Sans'), 'DM Sans loads offline');
     assert.ok(loadedFonts.includes('Libre Caslon Display'), 'Libre Caslon Display loads offline');
+
+    const featured = recipes.find((recipe) => recipe.featured);
+    await page.goto(new URL('?recipe=' + featured.id, baseUrl).href);
+    await page.getByRole('dialog').waitFor();
+    assert.equal(await page.locator('#recipe-title').textContent(), featured.name);
   } finally {
     await context.close();
   }
