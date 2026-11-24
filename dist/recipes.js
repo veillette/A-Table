@@ -1902,3 +1902,5 @@ export const recipes = [
   tip: "Use dry drinking sherry rather than salted cooking sherry. Pat the marinated steak very dry for a good sear, and use a thermometer to judge doneness.",
 },
 ];
+
+export const recipesById = new Map(recipes.map((recipe) => [recipe.id, recipe]));

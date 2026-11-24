@@ -85,6 +85,11 @@ test('Chromium finds the app installable and recipes and fonts work offline afte
     });
     assert.ok(loadedFonts.includes('DM Sans'), 'DM Sans loads offline');
     assert.ok(loadedFonts.includes('Libre Caslon Display'), 'Libre Caslon Display loads offline');
+
+    const featured = recipes.find((recipe) => recipe.featured);
+    await page.goto(new URL('?recipe=' + featured.id, baseUrl).href);
+    await page.getByRole('dialog').waitFor();
+    assert.equal(await page.locator('#recipe-title').textContent(), featured.name);
   } finally {
     await context.close();
   }
@@ -120,4 +125,45 @@ test('recipe card images loaded under the service worker are available offline',
 
   assert.deepEqual(errors, [], 'no uncaught page errors offline');
   await context.close();
+});
+
+test('favorite toggles keep cards mounted and move focus only when a card is removed', async (t) => {
+  const context = await browser.newContext();
+  t.after(() => context.close());
+  const page = await context.newPage();
+  await page.goto(baseUrl);
+  const favorite = (recipe) => page.locator('#cards [data-save="' + recipe.id + '"]');
+  const [firstRecipe, secondRecipe] = recipes;
+  const first = favorite(firstRecipe);
+  const second = favorite(secondRecipe);
+
+  const firstCard = await first.locator('..').elementHandle();
+  const secondCard = await second.locator('..').elementHandle();
+  await first.evaluate((button) => {
+    button.scrollIntoView({ block: 'center', behavior: 'instant' });
+    button.focus({ preventScroll: true });
+  });
+  const scrollBefore = await page.evaluate(() => scrollY);
+  await first.press('Space');
+  assert.equal(await first.getAttribute('aria-pressed'), 'true');
+  assert.equal(await first.getAttribute('aria-label'), 'Unsave ' + firstRecipe.name);
+  assert.ok(await first.evaluate((button) => button === document.activeElement));
+  assert.ok(await firstCard.evaluate((card) => card.isConnected));
+  assert.ok(await secondCard.evaluate((card) => card.isConnected));
+  assert.equal(await page.evaluate(() => scrollY), scrollBefore);
+
+  await second.press('Space');
+  await page.locator('#saved').click();
+  const remaining = await second.locator('..').elementHandle();
+  await first.press('Space');
+  assert.equal(await first.count(), 0);
+  assert.ok(await remaining.evaluate((card) => card.isConnected));
+  assert.ok(await second.evaluate((button) => button === document.activeElement));
+  assert.equal(await page.locator('#saved-count').textContent(), '1');
+
+  await second.press('Space');
+  assert.equal(await second.count(), 0);
+  assert.ok(await page.locator('#saved').evaluate((button) => button === document.activeElement));
+  assert.ok(await page.locator('#empty').isVisible());
+  assert.equal(await page.locator('#saved-count').textContent(), '0');
 });

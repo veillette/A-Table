@@ -1,15 +1,15 @@
-import { recipes } from './recipes.js';
-import { ALL_CATEGORIES, categoriesOf, filterRecipes, resultLabel, escapeHtml } from './lib/format.js';
+import { recipes, recipesById } from './recipes.js';
+import { recipeFromSearch, recipeLink } from './lib/recipe-links.js';
+import { ALL_CATEGORIES, categoriesOf, filterRecipes, resultLabel, escapeHtml, imagePath } from './lib/format.js';
 import { loadFavorites, saveFavorites, toggleFavorite, pruneFavorites } from './lib/favorites.js';
-import { imagePath } from './lib/format.js';
-import { cardsHtml } from './ui/cards.js';
+import { cardsHtml, updateFavoriteButton } from './ui/cards.js';
 import { createDetail } from './ui/detail.js';
 
 const $ = (selector) => document.querySelector(selector);
 
-const knownIds = new Set(recipes.map((r) => r.id));
+const cards = $('#cards');
 const storedFavorites = loadFavorites();
-const favorites = pruneFavorites(storedFavorites, knownIds);
+const favorites = pruneFavorites(storedFavorites, recipesById);
 if (favorites.length !== storedFavorites.length) saveFavorites(favorites);
 
 const state = {
@@ -26,10 +26,15 @@ const NO_SAVED_MESSAGE = 'Tap ♡ on a recipe to save it.';
 
 function render() {
   const list = filterRecipes(recipes, { ...state, savedIds: state.favorites });
-  $('#cards').innerHTML = cardsHtml(list, state.favorites);
-  $('#empty').hidden = list.length > 0;
+  cards.innerHTML = cardsHtml(list, state.favorites);
+  updateSummary();
+}
+
+function updateSummary() {
+  const count = cards.childElementCount;
+  $('#empty').hidden = count > 0;
   $('#empty').textContent = state.savedOnly && state.favorites.length === 0 ? NO_SAVED_MESSAGE : EMPTY_MESSAGE;
-  $('#result-count').textContent = resultLabel(list.length, state.savedOnly);
+  $('#result-count').textContent = resultLabel(count, state.savedOnly);
   $('#saved-count').textContent = state.favorites.length;
   $('#saved').setAttribute('aria-pressed', state.savedOnly);
 }
@@ -66,32 +71,40 @@ $('#saved').onclick = () => {
   $('#recipes').scrollIntoView({ behavior: 'smooth' });
 };
 
-$('#cards').onclick = (event) => {
+function removeSavedCard(button) {
+  const card = button.closest('.card');
+  const adjacentCard = card.nextElementSibling ?? card.previousElementSibling;
+  const hadFocus = card.contains(document.activeElement);
+  card.remove();
+  if (hadFocus) {
+    const target = adjacentCard?.querySelector('[data-save]') ?? $('#saved');
+    target.focus({ preventScroll: true });
+  }
+}
+
+cards.onclick = (event) => {
   const save = event.target.closest('[data-save]');
   const open = event.target.closest('[data-open]');
   if (save) {
-    state.favorites = toggleFavorite(state.favorites, save.dataset.save);
+    const recipe = recipesById.get(save.dataset.save);
+    state.favorites = toggleFavorite(state.favorites, recipe.id);
     saveFavorites(state.favorites);
-    render();
-    // Cards are rebuilt on every change, so put keyboard focus back on the same button.
-    $(`[data-save="${CSS.escape(save.dataset.save)}"]`)?.focus();
+    const saved = state.favorites.includes(recipe.id);
+    if (state.savedOnly && !saved) {
+      removeSavedCard(save);
+    } else {
+      updateFavoriteButton(save, recipe.name, saved);
+    }
+    updateSummary();
   }
   if (open) openRecipe(open.dataset.open);
 };
 
-function recipeUrl(id) {
-  const url = new URL(location.href);
-  url.search = '';
-  url.hash = '';
-  url.searchParams.set('recipe', id);
-  return url;
-}
-
 function openRecipe(id) {
-  const recipe = recipes.find((r) => r.id === id);
+  const recipe = recipesById.get(id);
   if (!recipe) return;
   detail.open(recipe);
-  history.replaceState(null, '', recipeUrl(id));
+  history.replaceState(null, '', recipeLink(id));
 }
 
 $('#recipe').addEventListener('close', () => {
@@ -115,5 +128,5 @@ if (featured) {
 renderFilters();
 render();
 
-const linked = new URLSearchParams(location.search).get('recipe');
-if (linked) openRecipe(linked);
+const linkedRecipe = recipeFromSearch(location.search);
+if (linkedRecipe) openRecipe(linkedRecipe.id);

@@ -1,26 +1,16 @@
-// Saved recipes, kept in the visitor's browser. Storage errors (private mode,
-// blocked site data) are ignored so the rest of the site keeps working.
+import { store } from './storage.js';
 
 export const STORAGE_KEY = 'atable-saved';
 
 /** Read saved recipe ids. Returns [] for missing, corrupt or non-array data. */
-export function loadFavorites(storage = globalThis.localStorage) {
-  try {
-    const value = JSON.parse(storage.getItem(STORAGE_KEY) || '[]');
-    return Array.isArray(value) ? value.filter((id) => typeof id === 'string') : [];
-  } catch {
-    return [];
-  }
+export function loadFavorites(storage) {
+  const value = store.get(STORAGE_KEY, [], storage);
+  return Array.isArray(value) ? value.filter((id) => typeof id === 'string') : [];
 }
 
 /** Persist saved recipe ids. Returns false if the browser refused to store them. */
-export function saveFavorites(favorites, storage = globalThis.localStorage) {
-  try {
-    storage.setItem(STORAGE_KEY, JSON.stringify(favorites));
-    return true;
-  } catch {
-    return false;
-  }
+export function saveFavorites(favorites, storage) {
+  return store.set(STORAGE_KEY, favorites, storage);
 }
 
 /** Keep only ids that still match a recipe, so removed or renamed recipes stop counting as saved. */

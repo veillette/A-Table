@@ -1,5 +1,5 @@
 {
-  "version": "v3",
-  "hash": "d5d24280ccfca7d5a8c4d66445e0edbe18a9576b8c0719f4a143ceb5747727f2",
+  "version": "v6",
+  "hash": "5795df677aa38e401b40e8a8d71103bd93a7b6df06d089f954f69858e0bd531c",
   "note": "Regenerate after changing SHELL: see tests/pwa.test.mjs"
 }

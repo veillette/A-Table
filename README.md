@@ -2,9 +2,20 @@
 
 A responsive recipe collection with editorial food cards, search and category filters, locally saved favorites, adjustable servings, ingredient checklists, and printable recipes.
 
-## Run locally
+Use **Copy recipe link** in a recipe to open that recipe directly from a bookmark or message.
 
-Serve `dist/` with any static HTTP server, for example `python3 -m http.server 8000 --directory dist`.
+## Check, build, and preview
+
+Use Node.js 26 and Python 3.
+
+```sh
+npm ci
+npm run check
+# dist/ is the checked-in deployment site
+python3 -m http.server 8000 --directory dist
+```
+
+The Pages workflow runs the deployment smoke test against `dist/`. Run `node .github/site-smoke.mjs dist --assets-only` to check the offline file list locally.
 
 ## Content
 
