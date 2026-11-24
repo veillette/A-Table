@@ -70,6 +70,9 @@ The browser tests (`npm run test:offline`) check Chromium installability under a
 
 ## Project layout
 
+`dist/` is the editable source and the deployment output. There is no separate
+`src/` tree and no client build step—by design, not as a temporary layout.
+
 - `dist/`: the site. `index.html`, `style.css`, `fonts.css` and `fonts/` (self-hosted fonts), `theme.js` (theme picker), `app.js` (wiring), `recipes.js` (data).
 - `dist/manifest.webmanifest`, `dist/icons/`, `dist/sw.js`, `dist/pwa.js`: the installable web app and offline support (see below).
 - `dist/lib/`: pure helpers (search, filtering, scaling, escaping) and favorites storage. No DOM access.

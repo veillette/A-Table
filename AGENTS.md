@@ -1,8 +1,12 @@
 # Working on À Table
 
 À Table is a static recipe collection. Read [README.md](README.md) for the full
-data reference and local setup. The files in `dist/` are the editable site source
-and the deployment artifact; there is no build step.
+data reference and local setup.
+
+**Layout decision:** edit the site in `dist/`. That directory is both the
+editable source and the deployment artifact; there is no `src/` → build step.
+This is intentional (same pattern as field-and-verge), not an unfinished
+migration toward origami/sketchbook. Do not add a parallel `src/` tree.
 
 ## Project map
 
@@ -137,9 +141,11 @@ not establish that a recipe is practical or its photo is accurate.
   the PWA test. Re-run checks after the update.
 - Photos are cached as they load while the service worker controls the page;
   visiting once does not guarantee every recipe photo is available offline.
-- Shared Pages CI and smoke helpers come from Origami; sync with
-  `node tools/sync-site-helpers.mjs --write` from that checkout. Use Node.js 26
-  (`.nvmrc`). Run `npm test` and `node .github/site-smoke.mjs dist --assets-only`.
+- Shared Pages CI, smoke helpers, and `dist/copy-link.js` come from Origami;
+  `dist/lib/storage.js` comes from aperitif. Sync from the Origami checkout with
+  `node tools/sync-site-helpers.mjs --write`. Do not fork a local `store`
+  helper. Use Node.js 26 (`.nvmrc`). Run `npm test` and
+  `node .github/site-smoke.mjs dist --assets-only`.
 - Preserve existing user changes. Commit, push or publish only when requested.
 - When reporting completion, name the recipes added, summarize validation and
   disclose any remaining failures or missing assets.
