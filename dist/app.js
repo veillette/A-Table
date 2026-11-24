@@ -79,10 +79,27 @@ $('#cards').onclick = (event) => {
   if (open) openRecipe(open.dataset.open);
 };
 
+function recipeUrl(id) {
+  const url = new URL(location.href);
+  url.search = '';
+  url.hash = '';
+  url.searchParams.set('recipe', id);
+  return url;
+}
+
 function openRecipe(id) {
   const recipe = recipes.find((r) => r.id === id);
-  if (recipe) detail.open(recipe);
+  if (!recipe) return;
+  detail.open(recipe);
+  history.replaceState(null, '', recipeUrl(id));
 }
+
+$('#recipe').addEventListener('close', () => {
+  const url = new URL(location.href);
+  if (!url.searchParams.has('recipe')) return;
+  url.searchParams.delete('recipe');
+  history.replaceState(null, '', url);
+});
 
 // The hero recipe is the one marked `featured: true` in recipes.js (validated by npm run validate).
 // Its photo, name and subtitle fill the hero, so changing `featured` updates the page.
@@ -92,8 +109,11 @@ if (featured) {
   $('#hero-photo').alt = `${featured.name}, ${featured.sub}`;
   $('#hero-name').textContent = featured.name;
   $('#hero-sub').textContent = featured.sub;
-  $('#featured').onclick = () => detail.open(featured);
+  $('#featured').onclick = () => openRecipe(featured.id);
 }
 
 renderFilters();
 render();
+
+const linked = new URLSearchParams(location.search).get('recipe');
+if (linked) openRecipe(linked);

@@ -459,6 +459,11 @@ dialog::backdrop {
   line-height: 1.7;
 }
 
+.copy-status:not(:empty) {
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
 .detail-tools {
   display: flex;
   gap: 20px;

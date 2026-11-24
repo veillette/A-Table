@@ -25,6 +25,7 @@ export function createDetail(dialog) {
     <span id="servings-label" aria-live="polite"></span>
     <button id="plus" aria-label="More servings">+</button>
     <button id="print">Print card ↗</button>
+    <button type="button" data-copy-link="?recipe=${escapeHtml(r.id)}">Copy recipe link</button><span class="copy-status" role="status"></span>
   </div>
   <div class="detail-columns">
     <section>

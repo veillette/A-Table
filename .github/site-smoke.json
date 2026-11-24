@@ -1,0 +1,13 @@
+{
+  "shell": "SHELL",
+  "shellRoots": [
+    "."
+  ],
+  "routes": [
+    {
+      "path": "?recipe=salmon",
+      "selector": "#recipe-title",
+      "text": "Lemon & herb salmon"
+    }
+  ]
+}

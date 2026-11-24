@@ -127,6 +127,8 @@ not establish that a recipe is practical or its photo is accurate.
 ## Offline support and delivery
 
 - Keep local URLs relative so deployment under a subpath works.
+- Recipe deep links use `?recipe=<id>`. The detail dialog includes **Copy recipe
+  link** via the shared `copy-link.js` helper from Origami.
 - New recipe objects and photos use existing application files and image caching;
   they do not need entries in `SHELL` or a cache version bump.
 - If adding or renaming JavaScript, CSS or font files, update `SHELL` in
@@ -135,6 +137,9 @@ not establish that a recipe is practical or its photo is accurate.
   the PWA test. Re-run checks after the update.
 - Photos are cached as they load while the service worker controls the page;
   visiting once does not guarantee every recipe photo is available offline.
+- Shared Pages CI and smoke helpers come from Origami; sync with
+  `node tools/sync-site-helpers.mjs --write` from that checkout. Use Node.js 26
+  (`.nvmrc`). Run `npm test` and `node .github/site-smoke.mjs dist --assets-only`.
 - Preserve existing user changes. Commit, push or publish only when requested.
 - When reporting completion, name the recipes added, summarize validation and
   disclose any remaining failures or missing assets.
