@@ -1,4 +1,5 @@
 import { escapeHtml, formatIngredient, imagePath } from '../lib/format.js';
+import { recipeLink } from '../lib/recipe-links.js';
 
 const MIN_SERVINGS = 1;
 
@@ -25,7 +26,7 @@ export function createDetail(dialog) {
     <span id="servings-label" aria-live="polite"></span>
     <button id="plus" aria-label="More servings">+</button>
     <button id="print">Print card ↗</button>
-    <button type="button" data-copy-link="?recipe=${encodeURIComponent(r.id)}">Copy recipe link</button><span class="copy-status" role="status"></span>
+    <button type="button" data-copy-link="${escapeHtml(recipeLink(r.id))}">Copy recipe link</button><span class="copy-status" role="status"></span>
   </div>
   <div class="detail-columns">
     <section>

@@ -13,7 +13,7 @@
 // Paths are relative to this file, so the site works under a subpath such as
 // username.github.io/A-Table/.
 
-const SHELL_VERSION = 'v3';
+const SHELL_VERSION = 'v5';
 const SHELL_CACHE = `a-table-shell-${SHELL_VERSION}`;
 const MEDIA_CACHE = `a-table-media-${SHELL_VERSION}`;
 const MAX_MEDIA_ENTRIES = 200;
@@ -40,7 +40,9 @@ const SHELL = [
   "./app.js",
   "./recipes.js",
   "./lib/format.js",
+  "./lib/recipe-links.js",
   "./lib/favorites.js",
+  "./lib/storage.js",
   "./ui/cards.js",
   "./ui/detail.js",
   "./manifest.webmanifest",

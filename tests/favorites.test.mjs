@@ -47,3 +47,18 @@ describe('favorites storage', () => {
     assert.deepEqual(original, ['a']);
   });
 });
+
+test('a throwing localStorage getter leaves favorites usable', (t) => {
+  const original = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
+  t.after(() => {
+    if (original) Object.defineProperty(globalThis, 'localStorage', original);
+    else delete globalThis.localStorage;
+  });
+  Object.defineProperty(globalThis, 'localStorage', {
+    configurable: true,
+    get() { throw new Error('blocked'); },
+  });
+
+  assert.deepEqual(loadFavorites(), []);
+  assert.equal(saveFavorites(['salmon']), false);
+});
